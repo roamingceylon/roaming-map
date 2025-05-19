@@ -1,0 +1,107 @@
+[
+  {
+    "id": "venue001",
+    "name": "Galle Fort",
+    "type": "Attraction",
+    "category": "Cultural",
+    "latitude": 6.032,
+    "longitude": 80.217,
+    "description": "A historic Dutch fort with cobbled streets and ocean views.",
+    "image": "",
+    "events": []
+  },
+  {
+    "id": "venue002",
+    "name": "Nelum Pokuna Theatre",
+    "type": "EventVenue",
+    "category": "Music",
+    "latitude": 6.919,
+    "longitude": 79.861,
+    "description": "Colombo’s modern event venue hosting concerts and performances.",
+    "image": "",
+    "events": [
+      {
+        "id": "event001",
+        "title": "Colombo Jazz Night",
+        "category": "Music",
+        "description": "An evening of smooth jazz with top local artists.",
+        "date": "2025-07-12",
+        "startTime": "19:00",
+        "endTime": "22:00"
+      },
+      {
+        "id": "event002",
+        "title": "Sinhalese Orchestra Live",
+        "category": "Cultural",
+        "description": "Traditional Sinhalese music concert.",
+        "date": "2025-08-01",
+        "startTime": "18:30",
+        "endTime": "21:00"
+      }
+    ]
+  },
+  {
+    "id": "venue003",
+    "name": "Mirissa Beach",
+    "type": "Attraction",
+    "category": "Beach",
+    "latitude": 5.948,
+    "longitude": 80.457,
+    "description": "A palm-lined beach known for its surf and whale watching.",
+    "image": "",
+    "events": []
+  },
+  {
+    "id": "venue004",
+    "name": "Kandy City Center",
+    "type": "EventVenue",
+    "category": "Festival",
+    "latitude": 7.294,
+    "longitude": 80.638,
+    "description": "A popular gathering area for cultural parades and festivals.",
+    "image": "",
+    "events": [
+      {
+        "id": "event003",
+        "title": "Esala Perahera",
+        "category": "Festival",
+        "description": "Sri Lanka’s grandest procession with dancers, elephants, and fire acts.",
+        "date": "2025-08-15",
+        "startTime": "17:00",
+        "endTime": "23:00"
+      }
+    ]
+  },
+  {
+    "id": "venue005",
+    "name": "Yala National Park Entrance",
+    "type": "Attraction",
+    "category": "Wildlife",
+    "latitude": 6.470,
+    "longitude": 81.517,
+    "description": "Entry to Sri Lanka’s famous wildlife park, home to leopards and elephants.",
+    "image": "",
+    "events": []
+  },
+  {
+    "id": "venue006",
+    "name": "Colombo Art Gallery",
+    "type": "EventVenue",
+    "category": "Cultural",
+    "latitude": 6.927,
+    "longitude": 79.862,
+    "description": "An indoor venue for rotating art exhibitions and talks.",
+    "image": "",
+    "events": [
+      {
+        "id": "event004",
+        "title": "Contemporary Lankan Art",
+        "category": "Art",
+        "description": "Exhibition of modern Sri Lankan painters and sculptors.",
+        "date": "2025-06-20",
+        "startTime": "10:00",
+        "endTime": "18:00"
+      }
+    ]
+  }
+]
