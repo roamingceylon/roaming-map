@@ -20,14 +20,42 @@
       border-right: 1px solid #ccc;
     }
     .event {
-      margin-bottom: 20px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 10px;
-      cursor: pointer;
-      transition: background 0.2s;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
     }
     .event:hover {
-      background-color: #f4f8ff;
+      transform: scale(1.02);
+      background-color: #f9fbff;
+    }
+    .event h3 {
+      margin: 0 0 5px;
+      font-size: 18px;
+    }
+    .event p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #444;
+    }
+    .event small {
+      color: #777;
+    }
+    .event a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .event a.button:hover {
+      background-color: #0056b3;
     }
     .filters {
       position: absolute;
@@ -200,24 +228,16 @@
 
           const div = document.createElement('div');
           div.className = 'event';
-
-          if (venue.type === 'Attraction' && venue.url) {
-            div.innerHTML = `
-              <a href="${venue.url}" target="_blank" style="text-decoration:none; color:inherit;">
-                <strong>${venue.name}</strong><br>
-                <small>${venue.category}</small><br>
-                <p>${venue.description}</p>
-              </a>
-            `;
-          } else {
-            div.innerHTML = `
-              <a href="venue.html?id=${venue.id}" style="text-decoration:none; color:inherit;">
-                <strong>${venue.name}</strong><br>
-                <small>${venue.category}</small><br>
-                <p>${venue.description}</p>
-              </a>
-            `;
-          }
+          div.innerHTML = `
+            <h3>${venue.name}</h3>
+            <small>${venue.category}</small>
+            <p>${venue.description}</p>
+            ${
+              venue.type === 'Attraction' && venue.url
+                ? `<a class="button" href="${venue.url}" target="_blank">Visit Website</a>`
+                : `<a class="button" href="venue.html?id=${venue.id}">View Details</a>`
+            }
+          `;
 
           div.addEventListener('click', () => {
             map.setView([venue.latitude, venue.longitude], 14);
