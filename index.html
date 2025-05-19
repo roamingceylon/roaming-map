@@ -162,7 +162,7 @@
     <script>
         const map = L.map('map', {
             zoomControl: true
-        }).setView([7.8731, 80.7718], 9);
+        }).setView([7.8731, 80.7718], 8);
 
         map.zoomControl.setPosition('bottomright');
 
@@ -316,7 +316,7 @@
       `;
 
                     div.addEventListener('click', () => {
-                        map.setView([venue.latitude, venue.longitude], 14);
+                        map.setView([venue.latitude, venue.longitude], 9);
                         marker.openPopup();
                     });
 
