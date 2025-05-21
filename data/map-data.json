@@ -1,46 +1,73 @@
 [
-  {
+    {
     "id": "venue001",
     "name": "Galle Fort",
-    "type": "Attraction",
+    "type": "Attraction", 
     "category": "Cultural",
-    "city":"Galle",
+    "city": "Galle",
     "latitude": 6.032,
     "longitude": 80.217,
     "description": "A historic Dutch fort with cobbled streets and ocean views.",
-    "image": "",
+    "image": "https://media.roamingceylon.com/content/images/2025/05/galle-dutch-fort-sri-lanka-roaming-ceylon.webp",
+    "contact": {
+        "phone": "+94 77 123 4567",
+        "email": "info@gallefort.lk",
+        "website": "https://roamingceylon.com"
+    },
+    "openingHours": "08:00 AM – 06:00 PM",
+    "entryFee": "Free",
+    "amenities": {
+        "parking": true,
+        "toilets": true,
+        "wifi": false,
+        "accessibility": "Wheelchair ramp available",
+        "childFriendly": true
+    },
     "highlights": [
         {
-            "name": "Galle Clock Tower",
-            "description": "A famous old clock tower within the fort.",
-            "latitude": 6.0308,
-            "longitude": 80.2165
+        "name": "Galle Clock Tower",
+        "description": "An iconic colonial-era clock tower.",
+        "latitude": 6.0308,
+        "longitude": 80.2165
         },
         {
-            "name": "Lighthouse",
-            "description": "Iconic Galle lighthouse on the ramparts.",
-            "latitude": 6.0259,
-            "longitude": 80.2201
+        "name": "Galle Lighthouse",
+        "description": "Beautiful lighthouse on the fort ramparts.",
+        "latitude": 6.0259,
+        "longitude": 80.2201
         },
         {
-            "name": "Dutch Hospital",
-            "description": "Now a charming shopping and dining precinct.",
-            "latitude": 6.0268,
-            "longitude": 80.2187
+        "name": "Dutch Hospital",
+        "description": "Historic building converted into shops and restaurants.",
+        "latitude": 6.0268,
+        "longitude": 80.2187
         }
-    ], 
+    ],
     "events": [
         {
         "id": "event001",
-        "title": "Galle Fort Jazz Night",
+        "title": "Jazz at the Fort",
         "category": "Music",
-        "description": "An evening of smooth jazz with top local artists.",
+        "description": "Live jazz performances under the stars.",
         "date": "2025-09-12",
         "startTime": "19:00",
         "endTime": "22:00"
-      }
-    ]
-  },
+        }
+    ],
+    "photos": [
+        "https://media.roamingceylon.com/content/images/2025/05/galle-dutch-fort-sri-lanka-roaming-ceylon.webp",
+        "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp",
+        "https://media.roamingceylon.com/content/images/2025/05/unawatuna-beach-sunset-galle.webp"
+    ],
+    "reviews": {
+        "rating": 4.7,
+        "totalReviews": 124,
+        "source": "Google"
+    },
+    "tags": ["UNESCO", "Historical", "Photography Spot"],
+    "weatherNote": "Best visited during the dry season (Dec–Apr). Can be very hot midday.",
+    "relatedVenues": ["venue002", "venue007"]
+    },
   {
     "id": "venue002",
     "name": "Nelum Pokuna Theatre",
@@ -51,6 +78,20 @@
     "longitude": 79.861,
     "description": "Colombo’s modern event venue hosting concerts and performances.",
     "image": "",
+    "contact": {
+        "phone": "+94 77 123 4567",
+        "email": "info@gallefort.lk",
+        "website": "https://roamingceylon.com"
+    },
+    "openingHours": "08:00 AM – 06:00 PM",
+    "entryFee": "Paid",
+    "amenities": {
+        "parking": true,
+        "toilets": true,
+        "wifi": false,
+        "accessibility": "Wheelchair ramp available",
+        "childFriendly": true
+    },
     "events": [
       {
         "id": "event001",

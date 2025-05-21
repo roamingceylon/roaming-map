@@ -103,28 +103,60 @@
             }
 
             document.getElementById("venueDetails").innerHTML = `
-    <div class="venue-info">
-      <h1>${venue.name}</h1>
-      <p><strong>Category:</strong> ${venue.category}</p>
-      <p><strong>Type:</strong> ${venue.type}</p>
-      <p>${venue.description}</p>
-    </div>
-  `;
+                    <div class="venue-info">
+                        <h1>${venue.name}</h1>
+                        <p><strong>Category:</strong> ${venue.category}</p>
+                        <p><strong>Type:</strong> ${venue.type}</p>
+                        <p>${venue.description}</p>
+                        ${venue.openingHours ? `<p><strong>Hours:</strong> ${venue.openingHours}</p>` : ''}
+                        ${venue.entryFee ? `<p><strong>Entry Fee:</strong> ${venue.entryFee}</p>` : ''}
+
+                        ${venue.contact ? `
+                        <p><strong>Contact:</strong><br>
+                            ${venue.contact.phone ? `📞 ${venue.contact.phone}<br>` : ''}
+                            ${venue.contact.email ? `✉️ <a href="mailto:${venue.contact.email}">${venue.contact.email}</a><br>` : ''}
+                            ${venue.contact.website ? `🌐 <a href="${venue.contact.website}" target="_blank">${venue.contact.website}</a>` : ''}
+                        </p>
+                        ` : ''}
+
+                        ${venue.amenities ? `
+                        <p><strong>Amenities:</strong><br>
+                            ${venue.amenities.parking ? '🅿️ Parking<br>' : ''}
+                            ${venue.amenities.toilets ? '🚻 Toilets<br>' : ''}
+                            ${venue.amenities.wifi ? '📶 Wi-Fi<br>' : ''}
+                            ${venue.amenities.accessibility ? `♿ ${venue.amenities.accessibility}<br>` : ''}
+                            ${venue.amenities.childFriendly ? '👶 Child Friendly' : ''}
+                        </p>
+                        ` : ''}
+
+                        ${venue.tags && venue.tags.length > 0 ? `
+                        <p><strong>Tags:</strong> ${venue.tags.map(t => `<span>#${t}</span>`).join(', ')}</p>
+                        ` : ''}
+
+                        ${venue.reviews ? `
+                        <p><strong>Rating:</strong> ⭐ ${venue.reviews.rating} (${venue.reviews.totalReviews} reviews on ${venue.reviews.source})</p>
+                        ` : ''}
+                    </div>
+                    `;
+            if (venue.photos && venue.photos.length > 0) {
+                const gallery = venue.photos.map(p => `<img src="${p}" style="width: 100%; max-width: 300px; margin: 10px 5px; border-radius: 8px;" alt="Venue photo"/>`).join('');
+                document.getElementById("venueDetails").innerHTML += `<h2>Photos</h2><div style="display: flex; flex-wrap: wrap;">${gallery}</div>`;
+            }
 
             if (venue.events && venue.events.length > 0) {
                 const eventsHTML = venue.events.map(e => `
-      <div class="event-card">
-        <h3>${e.title}</h3>
-        <p><strong>Date:</strong> ${e.date} ${e.startTime}–${e.endTime}</p>
-        <p><strong>Category:</strong> ${e.category}</p>
-        <p>${e.description}</p>
-      </div>
-    `).join("");
+                <div class="event-card">
+                    <h3>${e.title}</h3>
+                    <p><strong>Date:</strong> ${e.date} ${e.startTime}–${e.endTime}</p>
+                    <p><strong>Category:</strong> ${e.category}</p>
+                    <p>${e.description}</p>
+                </div>
+                `).join("");
 
                 document.getElementById("eventsList").innerHTML = `
-      <h2>Upcoming Events</h2>
-      ${eventsHTML}
-    `;
+                    <h2>Upcoming Events</h2>
+                    ${eventsHTML}
+                    `;
             } else {
                 document.getElementById("eventsList").innerHTML = "<p>No upcoming events.</p>";
             }
