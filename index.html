@@ -294,7 +294,7 @@
 
                     let eventHtml = '';
                     if (venue.type === 'EventVenue' && matchingEvents.length > 0) {
-                        eventHtml = '<ul style="margin-top:10px; padding-left:20px;">' +
+                        eventHtml = '<h3> Events </h3><ul style="margin-top:10px; padding-left:20px;">' +
                             matchingEvents.map(e => `
             <li>
               <strong>${e.title}</strong> — <small>${e.date} ${e.startTime}-${e.endTime}</small><br/>
@@ -304,10 +304,23 @@
                             '</ul>';
                     }
 
+                    let attractionHtml = '';
+                    if (venue.highlights && venue.highlights.length > 0) {
+                        attractionHtml = '<h3> Highlights </h3><ul style="margin-top:10px; padding-left:20px;">' +
+                            venue.highlights.map(a => `
+                        <li>
+                            <strong>${a.name}</strong><br/>
+                            <em>${a.description}</em>
+                        </li>
+                        `).join('') +
+                            '</ul>';
+                    }
+
                     div.innerHTML = `
         <h3>${venue.name}</h3>
         <small>${venue.category}</small>
         <p>${venue.description}</p>
+        ${attractionHtml}
         ${eventHtml}
         ${venue.type === 'Attraction' && venue.url
                             ? `<a class="button" href="${venue.url}" target="_blank">Visit Website</a>`

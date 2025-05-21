@@ -9,7 +9,37 @@
     "longitude": 80.217,
     "description": "A historic Dutch fort with cobbled streets and ocean views.",
     "image": "",
-    "events": []
+    "highlights": [
+        {
+            "name": "Galle Clock Tower",
+            "description": "A famous old clock tower within the fort.",
+            "latitude": 6.0308,
+            "longitude": 80.2165
+        },
+        {
+            "name": "Lighthouse",
+            "description": "Iconic Galle lighthouse on the ramparts.",
+            "latitude": 6.0259,
+            "longitude": 80.2201
+        },
+        {
+            "name": "Dutch Hospital",
+            "description": "Now a charming shopping and dining precinct.",
+            "latitude": 6.0268,
+            "longitude": 80.2187
+        }
+    ], 
+    "events": [
+        {
+        "id": "event001",
+        "title": "Galle Fort Jazz Night",
+        "category": "Music",
+        "description": "An evening of smooth jazz with top local artists.",
+        "date": "2025-09-12",
+        "startTime": "19:00",
+        "endTime": "22:00"
+      }
+    ]
   },
   {
     "id": "venue002",

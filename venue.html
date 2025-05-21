@@ -1,101 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Venue Details</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; max-width: 800px; }
-    h1 { margin-bottom: 0; }
-    .venue-info { margin-bottom: 2rem; }
-    .event-card {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
-    #map { height: 300px; margin-bottom: 2rem; border-radius: 8px; }
-    .share {
-      margin: 1rem 0;
-    }
-    .share input {
-      width: 100%;
-      padding: 8px;
-      font-size: 14px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <title>Venue Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            max-width: 800px;
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .venue-info {
+            margin-bottom: 2rem;
+        }
+
+        .event-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        #map {
+            height: 300px;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+
+        .share {
+            margin: 1rem 0;
+        }
+
+        .share input {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-  <a href="index.html">&larr; Back to map</a>
-  <div id="map"></div>
-  <div id="venueDetails"></div>
-  <div class="share">
-    <label>Share this page:</label>
-    <input id="shareUrl" type="text" readonly />
-  </div>
-  <div id="eventsList"></div>
+    <a href="index.html">&larr; Back to map</a>
+    <div id="map"></div>
+    <div id="venueDetails"></div>
+    <div class="share">
+        <label>Share this page:</label>
+        <input id="shareUrl" type="text" readonly />
+    </div>
+    <div id="eventsList"></div>
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const venueId = urlParams.get("id");
-    const shareInput = document.getElementById("shareUrl");
-    shareInput.value = window.location.href;
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const venueId = urlParams.get("id");
+        const shareInput = document.getElementById("shareUrl");
+        shareInput.value = window.location.href;
 
-    let map;
+        let map;
 
-    async function loadVenueDetails() {
-      const res = await fetch('./data/map-data.json');
-      const data = await res.json();
+        async function loadVenueDetails() {
+            const res = await fetch('./data/map-data.json');
+            const data = await res.json();
 
-      const venue = data.find(v => v.id === venueId);
-      if (!venue) {
-        document.getElementById("venueDetails").innerHTML = "<p>Venue not found.</p>";
-        return;
-      }
+            const venue = data.find(v => v.id === venueId);
+            if (!venue) {
+                document.getElementById("venueDetails").innerHTML = "<p>Venue not found.</p>";
+                return;
+            }
 
-      map = L.map('map').setView([venue.latitude, venue.longitude], 13);
-    //  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //    attribution: '&copy; OpenStreetMap contributors'
-    // }).addTo(map);
+            map = L.map('map').setView([venue.latitude, venue.longitude], 13);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap & CartoDB'
-    }).addTo(map);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap & CartoDB'
+            }).addTo(map);
 
-      const marker = L.marker([venue.latitude, venue.longitude]).addTo(map);
-      marker.bindPopup(`<b>${venue.name}</b><br>${venue.description}`).openPopup();
+            const bounds = [];
 
-      document.getElementById("venueDetails").innerHTML = `
-        <div class="venue-info">
-          <h1>${venue.name}</h1>
-          <p><strong>Category:</strong> ${venue.category}</p>
-          <p><strong>Type:</strong> ${venue.type}</p>
-          <p>${venue.description}</p>
-        </div>
-      `;
+            // Main venue marker
+            const mainMarker = L.marker([venue.latitude, venue.longitude]).addTo(map);
+            mainMarker.bindPopup(`<b>${venue.name}</b><br>${venue.description}`).openPopup();
+            bounds.push([venue.latitude, venue.longitude]);
 
-      if (venue.events && venue.events.length > 0) {
-        const eventsHTML = venue.events.map(e => `
-          <div class="event-card">
-            <h3>${e.title}</h3>
-            <p><strong>Date:</strong> ${e.date} ${e.startTime}–${e.endTime}</p>
-            <p><strong>Category:</strong> ${e.category}</p>
-            <p>${e.description}</p>
-          </div>
-        `).join("");
+            // Add attractions if present
+            if (venue.highlights && Array.isArray(venue.highlights)) {
+                venue.highlights.forEach(attraction => {
+                    const marker = L.marker([attraction.latitude, attraction.longitude]).addTo(map);
+                    marker.bindPopup(`<b>${attraction.name}</b><br>${attraction.description}`);
+                    bounds.push([attraction.latitude, attraction.longitude]);
+                });
+            }
 
-        document.getElementById("eventsList").innerHTML = `
-          <h2>Upcoming Events</h2>
-          ${eventsHTML}
-        `;
-      } else {
-        document.getElementById("eventsList").innerHTML = "<p>No upcoming events.</p>";
-      }
-    }
+            // Fit map to all markers
+            if (bounds.length > 1) {
+                map.fitBounds(bounds, { padding: [30, 30] });
+            }
 
-    loadVenueDetails();
-  </script>
+            document.getElementById("venueDetails").innerHTML = `
+    <div class="venue-info">
+      <h1>${venue.name}</h1>
+      <p><strong>Category:</strong> ${venue.category}</p>
+      <p><strong>Type:</strong> ${venue.type}</p>
+      <p>${venue.description}</p>
+    </div>
+  `;
+
+            if (venue.events && venue.events.length > 0) {
+                const eventsHTML = venue.events.map(e => `
+      <div class="event-card">
+        <h3>${e.title}</h3>
+        <p><strong>Date:</strong> ${e.date} ${e.startTime}–${e.endTime}</p>
+        <p><strong>Category:</strong> ${e.category}</p>
+        <p>${e.description}</p>
+      </div>
+    `).join("");
+
+                document.getElementById("eventsList").innerHTML = `
+      <h2>Upcoming Events</h2>
+      ${eventsHTML}
+    `;
+            } else {
+                document.getElementById("eventsList").innerHTML = "<p>No upcoming events.</p>";
+            }
+        }
+
+        loadVenueDetails();
+    </script>
 </body>
+
 </html>
