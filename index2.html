@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roaming Ceylon - Attractions & Events</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .app-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            backdrop-filter: blur(10px);
+            flex: 1;
+            max-width: 400px;
+            margin: 0 1rem;
+        }
+
+        .search-input {
+            background: none;
+            border: none;
+            color: white;
+            flex: 1;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .toggle-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-btn.active {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+
+        .filters {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-select {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-select:hover, .filter-select:focus {
+            border-color: #667eea;
+            outline: none;
+            transform: translateY(-1px);
+        }
+
+        .main-content {
+            display: flex;
+            height: calc(100vh - 140px);
+        }
+
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .list-container {
+            display: none;
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+            background: #f8f9fa;
+        }
+
+        .list-container.active {
+            display: block;
+        }
+
+        .list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .item-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .card-type {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stars {
+            color: #ffd700;
+        }
+
+        .sidebar {
+            width: 350px;
+            background: white;
+            border-left: 1px solid #e9ecef;
+            padding: 2rem;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar.hidden {
+            width: 0;
+            padding: 0;
+            border: none;
+        }
+
+        .sidebar-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .quick-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .quick-filter {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .quick-filter.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .popup-overlay.active {
+            display: flex;
+        }
+
+        .popup {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active .popup {
+            transform: scale(1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-left: none;
+                border-top: 1px solid #e9ecef;
+            }
+            
+            .header {
+                padding: 1rem;
+            }
+            
+            .search-container {
+                margin: 0;
+                max-width: none;
+            }
+            
+            .filters {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                Roaming Ceylon
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" class="search-input" placeholder="Search attractions, events, locations..." id="searchInput">
+            </div>
+            <div class="view-toggle">
+                <button class="toggle-btn active" onclick="switchView('map')" id="mapBtn">
+                    <i class="fas fa-map"></i>
+                    Map
+                </button>
+                <button class="toggle-btn" onclick="switchView('list')" id="listBtn">
+                    <i class="fas fa-list"></i>
+                    List
+                </button>
+            </div>
+        </header>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label><i class="fas fa-tag"></i> Type:</label>
+                <select class="filter-select" id="typeFilter">
+                    <option value="">All Types</option>
+                    <option value="attraction">Attractions</option>
+                    <option value="event">Events</option>
+                    <option value="restaurant">Restaurants</option>
+                    <option value="hotel">Hotels</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label><i class="fas fa-map-marker-alt"></i> Location:</label>
+                <select class="filter-select" id="locationFilter">
+                    <option value="">All Locations</option>
+                    <option value="colombo">Colombo</option>
+                    <option value="kandy">Kandy</option>
+                    <option value="galle">Galle</option>
+                    <option value="sigiriya">Sigiriya</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label><i class="fas fa-star"></i> Rating:</label>
+                <select class="filter-select" id="ratingFilter">
+                    <option value="">All Ratings</option>
+                    <option value="4">4+ Stars</option>
+                    <option value="3">3+ Stars</option>
+                    <option value="2">2+ Stars</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-area">
+                <div class="map-container" id="mapContainer">
+                    <div id="map"></div>
+                </div>
+                <div class="list-container" id="listContainer">
+                    <div class="list-grid" id="listGrid">
+                        <!-- Items will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar" id="sidebar">
+                <h3 class="sidebar-title">Quick Filters</h3>
+                <div class="quick-filters">
+                    <div class="quick-filter active" onclick="toggleQuickFilter(this, '')">All</div>
+                    <div class="quick-filter" onclick="toggleQuickFilter(this, 'attraction')">Attractions</div>
+                    <div class="quick-filter" onclick="toggleQuickFilter(this, 'event')">Events</div>
+                    <div class="quick-filter" onclick="toggleQuickFilter(this, 'restaurant')">Dining</div>
+                    <div class="quick-filter" onclick="toggleQuickFilter(this, 'hotel')">Hotels</div>
+                </div>
+
+                <div class="stats">
+                    <h4 style="margin-bottom: 1rem;">Statistics</h4>
+                    <div class="stat-item">
+                        <span>Total Items:</span>
+                        <span class="stat-value" id="totalItems">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Attractions:</span>
+                        <span class="stat-value" id="attractionCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Events:</span>
+                        <span class="stat-value" id="eventCount">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Average Rating:</span>
+                        <span class="stat-value" id="avgRating">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="floating-btn" onclick="toggleSidebar()">
+        <i class="fas fa-filter"></i>
+    </button>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup" id="popup">
+            <button class="close-btn" onclick="closePopup()">&times;</button>
+            <div id="popupContent"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Sample data
+        const sampleData = [
+            {
+                id: 1,
+                name: "Sigiriya Rock Fortress",
+                type: "attraction",
+                location: "sigiriya",
+                lat: 7.9570,
+                lng: 80.7603,
+                rating: 4.8,
+                description: "Ancient rock fortress and palace ruins surrounded by extensive gardens, pools, and fountains.",
+                image: "🏛️"
+            },
+            {
+                id: 2,
+                name: "Temple of the Tooth",
+                type: "attraction",
+                location: "kandy",
+                lat: 7.2906,
+                lng: 80.6337,
+                rating: 4.6,
+                description: "Sacred Buddhist temple in Kandy housing a relic of the tooth of Buddha.",
+                image: "🏯"
+            },
+            {
+                id: 3,
+                name: "Galle Fort",
+                type: "attraction",
+                location: "galle",
+                lat: 6.0329,
+                lng: 80.2168,
+                rating: 4.5,
+                description: "Historic fortified city built by Portuguese and later modified by Dutch.",
+                image: "🏰"
+            },
+            {
+                id: 4,
+                name: "Perahera Festival",
+                type: "event",
+                location: "kandy",
+                lat: 7.2906,
+                lng: 80.6337,
+                rating: 4.9,
+                description: "Annual procession held in Kandy, Sri Lanka, to honor the Sacred Tooth Relic.",
+                image: "🎭"
+            },
+            {
+                id: 5,
+                name: "Ministry of Crab",
+                type: "restaurant",
+                location: "colombo",
+                lat: 6.9271,
+                lng: 79.8612,
+                rating: 4.7,
+                description: "World-renowned restaurant serving the finest Sri Lankan crab dishes.",
+                image: "🦀"
+            },
+            {
+                id: 6,
+                name: "Galle Face Hotel",
+                type: "hotel",
+                location: "colombo",
+                lat: 6.9271,
+                lng: 79.8420,
+                rating: 4.4,
+                description: "Historic luxury hotel overlooking the Indian Ocean with colonial charm.",
+                image: "🏨"
+            },
+            {
+                id: 7,
+                name: "Yala Safari Experience",
+                type: "event",
+                location: "colombo",
+                lat: 6.3715,
+                lng: 81.5209,
+                rating: 4.6,
+                description: "Wildlife safari experience in Sri Lanka's most famous national park.",
+                image: "🦁"
+            },
+            {
+                id: 8,
+                name: "Lighthouse Restaurant",
+                type: "restaurant",
+                location: "galle",
+                lat: 6.0329,
+                lng: 80.2150,
+                rating: 4.3,
+                description: "Scenic restaurant with ocean views serving fresh seafood and local cuisine.",
+                image: "🍽️"
+            }
+        ];
+
+        let map;
+        let markers = [];
+        let filteredData = [...sampleData];
+        let currentView = 'map';
+
+        // Initialize the app
+        function init() {
+            initMap();
+            populateItems();
+            updateStats();
+            setupEventListeners();
+        }
+
+        // Initialize map
+        function initMap() {
+            map = L.map('map').setView([7.8731, 80.7718], 8);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            addMarkersToMap();
+        }
+
+        // Add markers to map
+        function addMarkersToMap() {
+            markers.forEach(marker => map.removeLayer(marker));
+            markers = [];
+
+            filteredData.forEach(item => {
+                const icon = getIconForType(item.type);
+                const marker = L.marker([item.lat, item.lng])
+                    .addTo(map)
+                    .bindPopup(`
+                        <div style="text-align: center; padding: 10px;">
+                            <div style="font-size: 2rem; margin-bottom: 10px;">${item.image}</div>
+                            <h3>${item.name}</h3>
+                            <p><strong>Type:</strong> ${item.type}</p>
+                            <p><strong>Rating:</strong> ${'⭐'.repeat(Math.floor(item.rating))} ${item.rating}</p>
+                            <p>${item.description}</p>
+                            <button onclick="showDetails(${item.id})" style="
+                                background: linear-gradient(135deg, #667eea, #764ba2);
+                                color: white;
+                                border: none;
+                                padding: 8px 16px;
+                                border-radius: 20px;
+                                cursor: pointer;
+                                margin-top: 10px;
+                            ">View Details</button>
+                        </div>
+                    `);
+                
+                markers.push(marker);
+            });
+        }
+
+        // Get icon for item type
+        function getIconForType(type) {
+            const icons = {
+                attraction: '🏛️',
+                event: '🎭',
+                restaurant: '🍽️',
+                hotel: '🏨'
+            };
+            return icons[type] || '📍';
+        }
+
+        // Populate list items
+        function populateItems() {
+            const listGrid = document.getElementById('listGrid');
+            listGrid.innerHTML = '';
+
+            filteredData.forEach(item => {
+                const card = createItemCard(item);
+                listGrid.appendChild(card);
+            });
+        }
+
+        // Create item card
+        function createItemCard(item) {
+            const card = document.createElement('div');
+            card.className = 'item-card';
+            card.onclick = () => showDetails(item.id);
+
+            card.innerHTML = `
+                <div class="card-image">
+                    <span style="position: relative; z-index: 1;">${item.image}</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-type">${item.type}</div>
+                    <h3 class="card-title">${item.name}</h3>
+                    <p class="card-description">${item.description}</p>
+                    <div class="card-meta">
+                        <div class="rating">
+                            <span class="stars">${'⭐'.repeat(Math.floor(item.rating))}</span>
+                            <span>${item.rating}</span>
+                        </div>
+                        <span><i class="fas fa-map-marker-alt"></i> ${item.location}</span>
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        // Switch between map and list views
+        function switchView(view) {
+            currentView = view;
+            const mapBtn = document.getElementById('mapBtn');
+            const listBtn = document.getElementById('listBtn');
+            const mapContainer = document.getElementById('mapContainer');
+            const listContainer = document.getElementById('listContainer');
+
+            if (view === 'map') {
+                mapBtn.classList.add('active');
+                listBtn.classList.remove('active');
+                mapContainer.style.display = 'block';
+                listContainer.classList.remove('active');
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                listBtn.classList.add('active');
+                mapBtn.classList.remove('active');
+                mapContainer.style.display = 'none';
+                listContainer.classList.add('active');
+            }
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const typeFilter = document.getElementById('typeFilter').value;
+            const locationFilter = document.getElementById('locationFilter').value;
+            const ratingFilter = document.getElementById('ratingFilter').value;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            filteredData = sampleData.filter(item => {
+                const matchesType = !typeFilter || item.type === typeFilter;
+                const matchesLocation = !locationFilter || item.location === locationFilter;
+                const matchesRating = !ratingFilter || item.rating >= parseFloat(ratingFilter);
+                const matchesSearch = !searchTerm || 
+                    item.name.toLowerCase().includes(searchTerm) ||
+                    item.description.toLowerCase().includes(searchTerm);
+
+                return matchesType && matchesLocation && matchesRating && matchesSearch;
+            });
+
+            addMarkersToMap();
+            populateItems();
+            updateStats();
+        }
+
+        // Toggle quick filter
+        function toggleQuickFilter(element, type) {
+            document.querySelectorAll('.quick-filter').forEach(filter => {
+                filter.classList.remove('active');
+            });
+            element.classList.add('active');
+
+            document.getElementById('typeFilter').value = type;
+            applyFilters();
+        }
+
+        // Update statistics
+        function updateStats() {
+            const totalItems = filteredData.length;
+            const attractionCount = filteredData.filter(item => item.type === 'attraction').length;
+            const eventCount = filteredData.filter(item => item.type === 'event').length;
+            const avgRating = filteredData.length > 0 ? 
+                (filteredData.reduce((sum, item) => sum + item.rating, 0) / filteredData.length).toFixed(1) : 0;
+
+            document.getElementById('totalItems').textContent = totalItems;
+            document.getElementById('attractionCount').textContent = attractionCount;
+            document.getElementById('eventCount').textContent = eventCount;
+            document.getElementById('avgRating').textContent = avgRating;
+        }
+
+        // Show item details
+        function showDetails(itemId) {
+            const item = sampleData.find(i => i.id === itemId);
+            if (!item) return;
+
+            const popupContent = document.getElementById('popupContent');
+            popupContent.innerHTML = `
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">${item.image}</div>
+                    <h2>${item.name}</h2>
+                    <div style="display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 0.5rem 1rem; border-radius: 20px; margin: 1rem 0;">
+                        ${item.type}
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: #666;">${item.description}</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                    <div>
+                        <strong>Rating:</strong><br>
+                        <span style="color: #ffd700; font-size: 1.2rem;">${'⭐'.repeat(Math.floor(item.rating))}</span>
+                        <span style="margin-left: 0.5rem; font-size: 1.1rem;">${item.rating}</span>
+                    </div>
+                    <div>
+                        <strong>Location:</strong><br>
+                        <span style="color: #667eea; font-size: 1.1rem;">${item.location}</span>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button onclick="viewOnMap(${item.lat}, ${item.lng})" style="
+                        background: linear-gradient(135deg, #667eea, #764ba2);
+                        color: white;
+                        border: none;
+                        padding: 1rem 2rem;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        font-size: 1rem;
+                        margin-right: 1rem;
+                    ">
+                        <i class="fas fa-map-marker-alt"></i> View on Map
+                    </button>
+                    <button onclick="closePopup()" style="
+                        background: #f8f9fa;
+                        color: #333;
+                        border: 2px solid #e9ecef;
+                        padding: 1rem 2rem;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        font-size: 1rem;
+                    ">
+                        Close
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('popupOverlay').classList.add('active');
+        }
+
+        // View item on map
+        function viewOnMap(lat, lng) {
+            closePopup();
+            switchView('map');
+            map.setView([lat, lng], 15);
+        }
+
+        // Close popup
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.remove('active');
+        }
+
+        // Toggle sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            document.getElementById('typeFilter').addEventListener('change', applyFilters);
+            document.getElementById('locationFilter').addEventListener('change', applyFilters);
+            document.getElementById('ratingFilter').addEventListener('change', applyFilters);
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+
+            // Close popup when clicking overlay
+            document.getElementById('popupOverlay').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget) {
+                    closePopup();
+                }
+            });
+        }
+
+        // Initialize app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
