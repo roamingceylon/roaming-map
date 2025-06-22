@@ -1,20 +1,19 @@
-const CACHE_NAME = "roaming-map-cache-v2";
+const VERSION = "v3"; // 🔁 Change this to trigger a new version
+const CACHE_NAME = `roaming-map-cache-${VERSION}`;
 
-// Static assets to pre-cache
 const ASSETS = [
   "/",
   "/index.html",
+  "/venue.html",
   "/manifest.json",
   "/data/map-data.json",
-  "/venue.html",
   "/icons/icon-192.png",
   "/icons/icon-512.png",
   "https://unpkg.com/leaflet/dist/leaflet.css",
   "https://unpkg.com/leaflet/dist/leaflet.js"
-  // Add other CSS/JS files here if needed
 ];
 
-// Generate tile URLs for Sri Lanka (zoom 7–9)
+// Add pre-defined map tiles for Sri Lanka (zoom 7–9)
 function generateSriLankaTiles() {
   const tiles = [];
   const zooms = [7, 8, 9];
@@ -36,10 +35,8 @@ function generateSriLankaTiles() {
   return tiles;
 }
 
-// Add tile URLs to cache list
 ASSETS.push(...generateSriLankaTiles());
 
-// Install event: pre-cache assets
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -48,10 +45,9 @@ self.addEventListener("install", event => {
       });
     })
   );
-  self.skipWaiting(); // Activate immediately
+  self.skipWaiting(); // activate new SW immediately
 });
 
-// Activate event: clear old caches
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -65,11 +61,9 @@ self.addEventListener("activate", event => {
   self.clients.claim();
 });
 
-// Fetch event: cache-first strategy with dynamic caching
 self.addEventListener("fetch", event => {
   const { request } = event;
 
-  // Only cache GET requests
   if (request.method !== "GET") return;
 
   event.respondWith(
@@ -78,7 +72,7 @@ self.addEventListener("fetch", event => {
 
       return fetch(request)
         .then(networkRes => {
-          // Dynamically cache relevant assets
+          // Cache relevant responses dynamically
           if (
             request.url.includes("map-data.json") ||
             request.url.includes("cartocdn.com") ||
@@ -94,21 +88,22 @@ self.addEventListener("fetch", event => {
           return networkRes;
         })
         .catch(() => {
-          // Offline fallback for map-data.json
           if (request.url.endsWith("map-data.json")) {
             return new Response(JSON.stringify([]), {
               headers: { "Content-Type": "application/json" }
             });
           }
+          if (request.url.endsWith("/venue.html")) {
+            return caches.match("/venue.html");
+          }
 
-          // Generic fallback
           return new Response("You are offline", { status: 503 });
         });
     })
   );
 });
 
-// Listen for skipWaiting trigger from the app
+// Handle skipWaiting from app
 self.addEventListener("message", event => {
   if (event.data && event.data.action === "skipWaiting") {
     self.skipWaiting();
