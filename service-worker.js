@@ -1,4 +1,4 @@
-const VERSION = "v3"; // 🔁 Change this to trigger a new version
+const VERSION = "v4"; // 🔁 Change this to trigger a new version
 const CACHE_NAME = `roaming-map-cache-${VERSION}`;
 
 const ASSETS = [
