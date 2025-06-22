@@ -1101,12 +1101,51 @@
         // Initialize
         loadData();
         handleResize();
+    </script>
 
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker.register("/service-worker.js")
-                .then(reg => console.log("✅ Service Worker registered:", reg))
-                .catch(err => console.error("❌ Service Worker registration failed:", err));
+    <script>
+        function isRunningStandalone() {
+            return window.matchMedia('(display-mode: standalone)').matches ||
+                window.navigator.standalone === true;
+        }
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                console.log('✅ Service Worker registered:', registration);
+
+                // Only check for updates if app is already controlled (not first install)
+                if (navigator.serviceWorker.controller) {
+                registration.onupdatefound = () => {
+                    const newWorker = registration.installing;
+
+                    newWorker.onstatechange = () => {
+                    if (
+                        newWorker.state === 'installed' &&
+                        isRunningStandalone()
+                    ) {
+                        // Show update banner
+                        const banner = document.getElementById('updateBanner');
+                        if (banner) banner.style.display = 'flex';
+
+                        const reloadBtn = document.getElementById('reloadBtn');
+                        if (reloadBtn) {
+                        reloadBtn.addEventListener('click', () => {
+                            newWorker.postMessage({ action: 'skipWaiting' });
+                        });
+                        }
+                    }
+                    };
+                };
+                }
+
+                // Reload the page once the new SW takes control
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                window.location.reload();
+                });
+            }).catch(err => {
+                console.error('❌ Service Worker registration failed:', err);
+            });
             });
         }
     </script>
