@@ -1114,17 +1114,19 @@
             navigator.serviceWorker.register('/service-worker.js').then(registration => {
                 console.log('✅ Service Worker registered:', registration);
 
-                // Only check for updates if app is already controlled (not first install)
-                if (navigator.serviceWorker.controller) {
-                registration.onupdatefound = () => {
-                    const newWorker = registration.installing;
+                // Wait for a controller to be active before checking for updates
+                if (!navigator.serviceWorker.controller) {
+                console.log('ℹ️ No SW controller yet — likely first install. Skipping update check.');
+                return;
+                }
 
-                    newWorker.onstatechange = () => {
-                    if (
-                        newWorker.state === 'installed' &&
-                        isRunningStandalone()
-                    ) {
-                        // Show update banner
+                registration.onupdatefound = () => {
+                const newWorker = registration.installing;
+
+                newWorker.onstatechange = () => {
+                    if (newWorker.state === 'installed') {
+                    if (isRunningStandalone()) {
+                        console.log('📣 New version found — showing update banner');
                         const banner = document.getElementById('updateBanner');
                         if (banner) banner.style.display = 'flex';
 
@@ -1134,12 +1136,14 @@
                             newWorker.postMessage({ action: 'skipWaiting' });
                         });
                         }
+                    } else {
+                        console.log('🔕 New version available but not showing banner (not standalone)');
                     }
-                    };
+                    }
                 };
-                }
+                };
 
-                // Reload the page once the new SW takes control
+                // Reload the app when the new service worker takes control
                 navigator.serviceWorker.addEventListener('controllerchange', () => {
                 window.location.reload();
                 });
