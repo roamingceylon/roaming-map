@@ -1,4 +1,4 @@
-const VERSION = "v4"; // 🔁 Change this to trigger a new version
+const VERSION = "v4.5"; // 🔁 Change this to trigger a new version
 const CACHE_NAME = `roaming-map-cache-${VERSION}`;
 
 const ASSETS = [
@@ -64,43 +64,46 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   const { request } = event;
 
-  if (request.method !== "GET") return;
+  // 1. Serve venue.html on navigation to venue pages
+  if (request.mode === "navigate" && request.url.includes("/venue.html")) {
+    event.respondWith(
+      caches.match("/venue.html").then(resp => resp || fetch("/venue.html"))
+    );
+    return;
+  }
 
-  event.respondWith(
-    caches.match(request).then(cachedRes => {
-      if (cachedRes) return cachedRes;
+  // 2. Cache-first for other assets
+  if (request.method === "GET") {
+    event.respondWith(
+      caches.match(request).then(cachedRes => {
+        if (cachedRes) return cachedRes;
 
-      return fetch(request)
-        .then(networkRes => {
-          // Cache relevant responses dynamically
-          if (
-            request.url.includes("map-data.json") ||
-            request.url.includes("cartocdn.com") ||
-            request.url.endsWith(".js") ||
-            request.url.endsWith(".css")
-          ) {
-            return caches.open(CACHE_NAME).then(cache => {
-              cache.put(request, networkRes.clone());
-              return networkRes;
-            });
-          }
-
-          return networkRes;
-        })
-        .catch(() => {
-          if (request.url.endsWith("map-data.json")) {
-            return new Response(JSON.stringify([]), {
-              headers: { "Content-Type": "application/json" }
-            });
-          }
-          if (request.url.endsWith("/venue.html")) {
-            return caches.match("/venue.html");
-          }
-
-          return new Response("You are offline", { status: 503 });
-        });
-    })
-  );
+        return fetch(request)
+          .then(networkRes => {
+            // Dynamically cache JSON, CSS, JS, tile requests
+            if (
+              request.url.includes("map-data.json") ||
+              request.url.includes("cartocdn.com") ||
+              request.url.endsWith(".js") ||
+              request.url.endsWith(".css")
+            ) {
+              caches.open(CACHE_NAME).then(cache => {
+                cache.put(request, networkRes.clone());
+              });
+            }
+            return networkRes;
+          })
+          .catch(() => {
+            if (request.url.endsWith("map-data.json")) {
+              return new Response(JSON.stringify([]), {
+                headers: { "Content-Type": "application/json" }
+              });
+            }
+            return new Response("You are offline", { status: 503 });
+          });
+      })
+    );
+  }
 });
 
 // Handle skipWaiting from app
