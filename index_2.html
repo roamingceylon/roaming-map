@@ -635,7 +635,7 @@
                             </div>
                         ` : ''}
                         <small><strong>Location:</strong> ${venue.city} | <strong>Type:</strong> ${venue.type}</small>
-                        <a href="venue_2.html?id=${venue.id}" class="button" onclick="event.stopPropagation()">View Details</a>
+                        <a href="venue.html?id=${venue.id}" class="button" onclick="event.stopPropagation()">View Details</a>
                     </div>
                 `;
             }).join('');
@@ -828,11 +828,26 @@
             applyFilters();
         }
 
+        // Show/hide event filters based on type selection
+        function toggleEventFilters() {
+            const typeFilter = document.getElementById('typeFilter').value;
+            const eventFilters = document.querySelector('.event-filters');
+            
+            if (typeFilter === 'EventVenue') {
+                eventFilters.style.display = 'block';
+            } else {
+                eventFilters.style.display = 'none';
+            }
+        }
+
         // Event listeners
         document.getElementById('searchInput').addEventListener('input', syncSearchInputs);
         document.getElementById('mobileSearchInput').addEventListener('input', syncSearchInputs);
         document.getElementById('categoryFilter').addEventListener('change', applyFilters);
-        document.getElementById('typeFilter').addEventListener('change', applyFilters);
+        document.getElementById('typeFilter').addEventListener('change', function() {
+            toggleEventFilters();
+            applyFilters();
+        });
         document.getElementById('eventDateFilter').addEventListener('change', applyFilters);
         document.getElementById('cityFilter').addEventListener('change', applyFilters);
 
@@ -841,6 +856,7 @@
         // Initialize
         loadData();
         handleResize();
+        toggleEventFilters(); // Initialize event filter visibility
     </script>
 </body>
 

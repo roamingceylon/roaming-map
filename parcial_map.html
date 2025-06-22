@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hidden Beaches of Sri Lanka</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    
+    <style>
+        #hidden-beaches-map {
+            height: 500px;
+            width: 100%;
+            margin-top: 1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .popup-link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        .popup-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Hidden Beaches of Southern Sri Lanka</h2>
+<div id="hidden-beaches-map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+<script>
+    // Function to get the appropriate map link based on device
+    function getMapLink(lat, lng) {
+        // Check if user is on iOS
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            return `maps://maps.google.com/maps?daddr=${lat},${lng}&amp;ll=`;
+        }
+        // Check if user is on Android
+        else if (/Android/.test(navigator.userAgent)) {
+            return `geo:${lat},${lng}?q=${lat},${lng}`;
+        }
+        // Default to web version
+        else {
+            return `https://www.google.com/maps?q=${lat},${lng}`;
+        }
+    }
+
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize the map
+        var map = L.map('hidden-beaches-map').setView([6.1, 80.8], 9);
+        
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap & CartoDB',
+            subdomains: 'abcd',
+            maxZoom: 19
+        }).addTo(map);
+        
+        // Beach data
+        var hiddenBeaches = [
+            {
+                name: "Goyambokka & Silent Beach",
+                coords: [6.0239, 80.7912],
+                description: "Twin beaches near Tangalle with serene vibes and soft waves."
+            },
+            {
+                name: "Unakuruwa Beach",
+                coords: [6.0315, 80.7657],
+                description: "A rustic surfer's hideout west of Tangalle."
+            },
+            {
+                name: "Gurubebila Beach",
+                coords: [5.9653, 80.4215],
+                description: "A sleepy village beach between Weligama and Midigama."
+            },
+            {
+                name: "Kirinda Beach",
+                coords: [6.2255, 81.3187],
+                description: "A windswept beach near Yala with a spiritual view from the temple."
+            },
+            {
+                name: "Rekawa Beach",
+                coords: [6.0400, 80.8770],
+                description: "Turtle nesting site with quiet sand dunes and conservation activity."
+            },
+            {
+                name: "Batheegama Beach",
+                coords: [5.9737, 80.6959],
+                description: "A pristine beach near Dikwella, ideal for solitude and sunrise."
+            },
+            {
+                name: "Mawella Beach",
+                coords: [5.9817, 80.7411],
+                description: "Golden sands and a peaceful lagoon near Tangalle."
+            }
+        ];
+
+        // Add markers for each beach
+        hiddenBeaches.forEach(function(beach) {
+            var mapLink = getMapLink(beach.coords[0], beach.coords[1]);
+            var popupContent = `
+                <b>${beach.name}</b><br>
+                ${beach.description}<br>
+                <a href="${mapLink}" target="_blank" class="popup-link">
+                    Open in Maps
+                </a>
+            `;
+            
+            L.marker(beach.coords)
+                .addTo(map)
+                .bindPopup(popupContent);
+        });
+
+        // Add a simple error handler
+        map.on('load', function() {
+            console.log('Map successfully loaded');
+        });
+        
+        map.on('error', function() {
+            console.error('Map failed to load');
+            alert('Failed to load map. Please check your internet connection.');
+        });
+    });
+</script>
+
+</body>
+</html>

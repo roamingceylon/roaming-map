@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sri Lanka Hidden Beaches Map Widget</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+    <style>
+        .beaches-map-widget {
+            height: 500px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .map-popup a {
+            color: #1a73e8;
+            font-weight: bold;
+            margin-top: 8px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="beaches-map" class="beaches-map-widget"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+        function initMap() {
+            const map = L.map('beaches-map').setView([6.1, 80.8], 9);
+            
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap & CartoDB',
+                subdomains: 'abcd',
+                maxZoom: 19
+            }).addTo(map);
+
+            const beaches = [
+    {
+        name: "Goyambokka Beach",
+        coords: [6.0168, 80.7936],  // More precise location near Tangalle
+        description: "Beautiful sandy beach with calm waters near Tangalle."
+    },
+    {
+        name: "Silent Beach (Secret Beach)",
+        coords: [6.0194, 80.7895],  // Adjacent to Goyambokka
+        description: "Secluded cove with tranquil atmosphere, accessible via short walk."
+    },
+    {
+        name: "Unakuruwa Beach",
+        coords: [6.0378, 80.7632],  // Adjusted west of Tangalle
+        description: "Surfer-friendly beach with rocky outcrops and consistent waves."
+    },
+    {
+        name: "Gurubebila Beach",
+        coords: [5.9705, 80.4263],  // Between Weligama and Midigama
+        description: "Local fishing beach with authentic coastal village vibe."
+    },
+    {
+        name: "Kirinda Beach",
+        coords: [6.2132, 81.3354],  // Near Yala National Park
+        description: "Dramatic coastal scenery with historic Kirinda temple overlooking the beach."
+    },
+    {
+        name: "Rekawa Beach",
+        coords: [6.0392, 80.8375],  // Turtle conservation area
+        description: "Famous sea turtle nesting site with conservation programs."
+    },
+    {
+        name: "Batheegama Beach",
+        coords: [5.9773, 80.7016],  // Near Dikwella
+        description: "Pristine stretch of sand perfect for peaceful sunrise views."
+    },
+    {
+        name: "Mawella Beach",
+        coords: [5.9850, 80.7367],  // Near Tangalle
+        description: "Golden sandy beach with a scenic lagoon and calm swimming conditions."
+    },
+    {
+        name: "Hiriketiya Beach",
+        coords: [5.9647, 80.4518],  // Popular surf spot
+        description: "Picturesque horseshoe-shaped bay with excellent surfing conditions."
+    }
+];
+            
+            
+            {{/*  [
+                {name: "Goyambokka & Silent Beach", coords: [6.0239, 80.7912], desc: "Twin beaches near Tangalle with serene vibes"},
+                {name: "Unakuruwa Beach", coords: [6.0315, 80.7657], desc: "Rustic surfer's hideout west of Tangalle"},
+                // Add other beaches...
+            ];  */}}
+
+            beaches.forEach(beach => {
+                const popup = `
+                    <div class="map-popup">
+                        <b>${beach.name}</b><br>
+                        ${beach.description}<br>
+                        <a href="https://maps.google.com?q=${beach.coords[0]},${beach.coords[1]}" 
+                           target="_blank" 
+                           onclick="window.open(this.href, '_blank'); return false;">
+                            Open in Maps
+                        </a>
+                    </div>
+                `;
+                L.marker(beach.coords).addTo(map).bindPopup(popup);
+            });
+        }
+        
+        // Initialize when added to DOM
+        if (window.Leaflet) {
+            initMap();
+        } else {
+            document.addEventListener('DOMContentLoaded', initMap);
+        }
+    </script>
+</body>
+</html>

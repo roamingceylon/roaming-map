@@ -345,6 +345,33 @@
             color: white;
         }
 
+        #cityFilterBadges {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        #cityFilterBadges::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        #cityFilterBadges {
+            scrollbar-width: none;
+        }
+
+        #filters {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        #filters::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        #filters {
+            scrollbar-width: none;
+        }
+
         /* Mobile Styles */
         @media (max-width: 768px) {
             .container {
@@ -432,10 +459,6 @@
         }
 
         @media (max-width: 480px) {
-            .sidebar {
-                padding: 16px;
-            }
-
             .filters {
                 padding: 16px;
                 width: 95%;
@@ -512,24 +535,35 @@
                     </div>
                 </div>
                 <div class="filter-group">
-                    <label for="typeFilter"><strong>Type</strong></label>
+                    <label><strong>Type</strong></label>
                     <div id="typeFilterBadges" class="d-flex flex-wrap gap-2 mt-2">
-                        <button class="primary-button filter-btn active" onclick="setActiveType()">All</button>
-                        <button class="primary-button filter-btn" onclick="setActiveType('Attraction')">Attraction</button>
-                        <button class="primary-button filter-btn" onclick="setActiveType('Event Venue')">Event Venue</button>
+                        <button class="primary-button filter-btn active" data-value="All" onclick="setActiveType()">All</button>
+                        <button class="primary-button filter-btn" data-value="Attraction" onclick="setActiveType('Attraction')">Attraction</button>
+                        <button class="primary-button filter-btn" data-value="EventVenue" onclick="setActiveType('EventVenue')">Event Venue</button>
                     </div>
                 </div>
-                <div class="filter-group event-filters">
-                    <label for="eventDateFilter"><strong>Event Time</strong></label>
+                <div class="filter-group event-filters hidden">
+                    <label><strong>Event Time</strong></label>
                     <div id="eventTypeFilterBadges" class="d-flex flex-wrap gap-2 mt-2">
-                        <button class="primary-button filter-btn active" onclick="setActiveEventType()">All Upcoming</button>
-                        <button class="primary-button filter-btn" onclick="setActiveEventType('Today')">Today</button>
-                        <button class="primary-button filter-btn" onclick="setActiveEventType('This Week')">This Week</button>
-                        <button class="primary-button filter-btn" onclick="setActiveEventType('This Month')">This Month</button>
+                        <button class="primary-button filter-btn active" data-value="All Upcoming" onclick="setActiveEventType()">All Upcoming</button>
+                        <button class="primary-button filter-btn" data-value="Today" onclick="setActiveEventType('Today')">Today</button>
+                        <button class="primary-button filter-btn" data-value="This Week" onclick="setActiveEventType('This Week')">This Week</button>
+                        <button class="primary-button filter-btn" data-value="This Month" onclick="setActiveEventType('This Month')">This Month</button>
+                        <button class="primary-button filter-btn" data-value="Custom Range" onclick="setActiveEventType('Custom Range')">Custom Range</button>
+                    </div>
+                </div>
+                <div class="filter-group event-filter-date hidden">
+                    <label><strong>From</strong></label>
+                    <div id="typeFilterBadges" class="d-flex flex-wrap gap-2 mt-2">
+                        <input type="date" class="form-control" id="dateRangeFrom">
+                    </div>
+                    <label class="mt-2"><strong>To</strong></label>
+                    <div id="typeFilterBadges" class="d-flex flex-wrap gap-2 mt-2">
+                        <input type="date" class="form-control" id="dateRangeTo">
                     </div>
                 </div>
                 <div class="filter-group">
-                    <label for="cityFilter"><strong>City</strong></label>
+                    <label><strong>City</strong></label>
                     <div id="cityFilterBadges" class="d-flex flex-wrap gap-2 mt-2">
                     </div>
                 </div>
@@ -625,7 +659,7 @@
             defaultCityBtn.addEventListener('click', () => {
                 setActiveCity('');
             });
-
+            console.log('Cities:', cities);
             // Loop through and create a button for each category
             cities.forEach(city => {
                 const btn = document.createElement('button');
@@ -694,7 +728,9 @@
             const listHTML = filteredData.map(venue => {
                 const hasEvents = venue.events && venue.events.length > 0;
                 const upcomingEvents = hasEvents ? venue.events.filter(e => isEventUpcoming(e.date)) : [];
-                
+
+                const hasHighlights = venue.highlights && venue.highlights.length > 0;
+                console.log(venue)
                 return `
                     <div class="event" data-id="${venue.id}" onclick="focusOnMap(${venue.latitude}, ${venue.longitude}, '${venue.id}')">
                         <div class="category-badge">${venue.category}</div>
@@ -703,7 +739,17 @@
                         ${upcomingEvents.length > 0 ? `
                             <div style="background: #f0f8ff; padding: 8px; border-radius: 4px; margin: 8px 0;">
                                 <strong style="color: #1976d2;">Upcoming Event:</strong><br>
-                                <small>${upcomingEvents[0].title} - ${upcomingEvents[0].date}</small>
+                                ${upcomingEvents.map(e => `
+                                <small>${e.title} - ${e.date}</small>
+                                `).join('<br>')}
+                            </div>
+                        ` : ''}
+                        ${hasHighlights ? `
+                            <div style="background: #f0f8ff; padding: 8px; border-radius: 4px; margin: 8px 0;">
+                                <strong style="color: #1976d2;">Highlights:</strong><br>
+                                ${venue.highlights.map(e => `
+                                <small>${e.name}</small>
+                                `).join('<br>')}
                             </div>
                         ` : ''}
                         <small><strong>Location:</strong> ${venue.city} | <strong>Type:</strong> ${venue.type}</small>
@@ -747,26 +793,64 @@
         }
 
         let selectedType = '';
+        let selectedEventType = '';
         function setActiveType(value) {
             console.log('Setting active type:--', value);
             selectedType = value;
             document.querySelectorAll('#typeFilterBadges button').forEach(btn => {
+                console.log('Removing active class from:', btn);
                 btn.classList.remove('active');
             });
-            const activeBtn = [...document.querySelectorAll('#typeFilterBadges button')].find(b => b.dataset.value === value);
-            if (activeBtn) activeBtn.classList.add('active');
 
+            document.querySelectorAll('#typeFilterBadges button').forEach(btn => {
+                if (value) {
+                    if (btn.dataset.value.trim().toLowerCase() === value.trim().toLowerCase()) {
+                        btn.classList.add('active');
+                    }
+                } else {
+                    if (btn.dataset.value.trim().toLowerCase() === 'All') {
+                        btn.classList.add('active');
+                    }
+                }
+            });
+
+            // Toggle event time filter visibility
+            const eventFilters = document.querySelector('.event-filters');
+            if (value === 'EventVenue') {
+                eventFilters.classList.remove('hidden');
+            } else {
+                eventFilters.classList.add('hidden');
+            }
+            
             applyFilters(); // reapply filters
         }
 
-        let selectedEventType = '';
+
         function setActiveEventType(value) {
             selectedEventType = value;
             document.querySelectorAll('#eventTypeFilterBadges button').forEach(btn => {
                 btn.classList.remove('active');
             });
-            const activeBtn = [...document.querySelectorAll('#eventTypeFilterBadges button')].find(b => b.dataset.value === value);
-            if (activeBtn) activeBtn.classList.add('active');
+
+            document.querySelectorAll('#eventTypeFilterBadges button').forEach(btn => {
+                if (value) {
+                    if (btn.dataset.value.trim().toLowerCase() === value.trim().toLowerCase()) {
+                        btn.classList.add('active');
+                    }
+                } else {
+                    if (btn.dataset.value.trim().toLowerCase() === 'All Upcoming') {
+                        btn.classList.add('active');
+                    }
+                }
+            });
+
+            // Toggle event date ranger filter visibility
+            const eventDateRangeFilters = document.querySelector('.event-filter-date');
+            if (value === 'Custom Range') {
+                eventDateRangeFilters.classList.remove('hidden');
+            } else {
+                eventDateRangeFilters.classList.add('hidden');
+            }
 
             applyFilters(); // reapply filters
         }
@@ -778,10 +862,16 @@
             const eventDateFilter = selectedEventType; //document.getElementById('eventDateFilter').value;
             const cityFilter = selectedCity; //document.getElementById('cityFilter').value;
             
+            const from = document.getElementById('dateRangeFrom').value;
+            const to = document.getElementById('dateRangeTo').value;
+
+            console.log('Applying filters with values:', { from, to, eventDateFilter, typeFilter });
+            
             console.log('Applying filters:', {
                 categoryFilter, typeFilter, eventDateFilter, cityFilter
             });
             filteredData = allData.filter(venue => {
+                console.log('Checking venue:', venue);
                 // Search filter
                 const matchesSearch = venue.name.toLowerCase().includes(searchTerm) ||
                                     venue.description.toLowerCase().includes(searchTerm) ||
@@ -789,15 +879,16 @@
                 
                 // Category filter
                 const matchesCategory = !categoryFilter || venue.category === categoryFilter;
-                
+                console.log('Match date matchesCategory:', matchesCategory);
                 // Type filter
                 const matchesType = !typeFilter || venue.type === typeFilter;
-                
+                console.log('Match date matchesType:', matchesType);
                 // City filter
                 const matchesCity = !cityFilter || venue.city === cityFilter;
-                
+                console.log('Match date matchesCity:', matchesCity);
                 // Event date filter
-                const matchesEventDate = filterByEventDate(venue, eventDateFilter);
+                const matchesEventDate = filterByEventDate(venue, eventDateFilter, from, to);
+                console.log('Match date range:', matchesEventDate);
                 
                 return matchesSearch && matchesCategory && matchesType && matchesCity && matchesEventDate;
             });
@@ -806,23 +897,28 @@
             updateMapMarkers();
         }
 
-        function filterByEventDate(venue, filter) {
-            if (filter === 'all') return true;
-            if (!venue.events || venue.events.length === 0) return filter === 'all';
+        function filterByEventDate(venue, filter, from, to) {
+            if (!filter) return true;
+            if (!venue.events || venue.events.length === 0) return true;
             
             const today = new Date();
             const hasMatchingEvent = venue.events.some(event => {
                 const eventDate = new Date(event.date);
                 
                 switch (filter) {
-                    case 'today':
+                    case 'Today':
                         return eventDate.toDateString() === today.toDateString();
-                    case 'week':
+                    case 'This Week':
                         const weekFromNow = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
                         return eventDate >= today && eventDate <= weekFromNow;
-                    case 'month':
+                    case 'This Month':
                         const monthFromNow = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
                         return eventDate >= today && eventDate <= monthFromNow;
+                    case 'Custom Range':
+                        if (!from || !to) return false; // If no custom range is set
+                        const fromDate = new Date(from);
+                        const toDate = new Date(to);
+                        return eventDate >= fromDate && eventDate <= toDate;
                     default:
                         return true;
                 }
@@ -955,6 +1051,8 @@
         // Event listeners
         document.getElementById('searchInput').addEventListener('input', syncSearchInputs);
         document.getElementById('mobileSearchInput').addEventListener('input', syncSearchInputs);
+        document.getElementById('dateRangeFrom').addEventListener('change', applyFilters);
+        document.getElementById('dateRangeTo').addEventListener('change', applyFilters);
         // document.getElementById('categoryFilter').addEventListener('change', applyFilters);
         // document.getElementById('typeFilter').addEventListener('change', applyFilters);
         // document.getElementById('eventDateFilter').addEventListener('change', applyFilters);
