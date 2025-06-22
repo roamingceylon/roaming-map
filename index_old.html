@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Sri Lanka Map - Local JSON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .sidebar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 340px;
+            height: 100vh;
+            background: #fff;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 999;
+            border-right: 1px solid #ccc;
+        }
+
+        .event {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .event:hover {
+            transform: scale(1.02);
+            background-color: #f9fbff;
+        }
+
+        .event h3 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+
+        .event p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .event small {
+            color: #777;
+        }
+
+        .event a.button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .event a.button:hover {
+            background-color: #0056b3;
+        }
+
+        .filters {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .filters h3 {
+            margin-top: 0;
+        }
+
+        .filter-group {
+            margin-bottom: 15px;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 6px;
+            border-radius: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Events & Attractions</h2>
+        <input type="text" id="searchInput" placeholder="Search by name..."
+            style="width:100%; padding:8px; margin-bottom:15px;">
+        <div id="list"></div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="filters">
+        <h3>Filter</h3>
+        <div class="filter-group">
+            <label for="categoryFilter"><strong>Category</strong></label>
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="typeFilter"><strong>Type</strong></label>
+            <select id="typeFilter">
+                <option value="">All</option>
+                <option value="Attraction">Attraction</option>
+                <option value="EventVenue">Event Venue</option>
+            </select>
+        </div>
+        <div class="filter-group event-filters">
+            <label for="eventDateFilter"><strong>Event Time</strong></label>
+            <select id="eventDateFilter">
+                <option value="all">All Upcoming</option>
+                <option value="today">Today</option>
+                <option value="tomorrow">Tomorrow</option>
+                <option value="weekend">This Weekend</option>
+                <option value="range">Custom Range</option>
+            </select>
+        </div>
+        <div class="filter-group event-filters hidden" id="customDateRange">
+            <label>From:</label>
+            <input type="date" id="startDate">
+            <label>To:</label>
+            <input type="date" id="endDate">
+        </div>
+        <div class="filter-group">
+            <label for="cityFilter"><strong>City</strong></label>
+            <select id="cityFilter" multiple size="3" style="height:auto;"></select>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map', {
+            zoomControl: true
+        }).setView([7.8731, 80.7718], 8);
+
+        map.zoomControl.setPosition('bottomright');
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap & CartoDB',
+            subdomains: 'abcd',
+            maxZoom: 19
+        }).addTo(map);
+
+        let markers = [];
+        let markerMap = new Map();
+        let cachedData = [];
+
+        async function loadLocalData() {
+            const res = await fetch('./data/map-data.json');
+            const data = await res.json();
+            cachedData = data;
+            populateCategoryFilter(data);
+            populateCityFilter(data);
+            renderMap();
+        }
+
+        function populateCategoryFilter(data) {
+            const select = document.getElementById('categoryFilter');
+            const categories = new Set();
+
+            data.forEach(v => {
+                if (v.category) categories.add(v.category);
+                (v.events || []).forEach(e => {
+                    if (e.category) categories.add(e.category);
+                });
+            });
+
+            Array.from(categories).sort().forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat;
+                opt.textContent = cat;
+                select.appendChild(opt);
+            });
+        }
+
+        function clearMap() {
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+            markerMap.clear();
+            document.getElementById('list').innerHTML = "";
+        }
+
+        function isDateInFilter(dateStr) {
+            if (!dateStr) return false;
+            const filter = document.getElementById('eventDateFilter').value;
+            const eventDate = new Date(dateStr);
+            const today = new Date();
+
+            if (filter === 'all') return eventDate >= today;
+            if (filter === 'today') return eventDate.toDateString() === today.toDateString();
+            if (filter === 'tomorrow') {
+                const tomorrow = new Date(today);
+                tomorrow.setDate(today.getDate() + 1);
+                return eventDate.toDateString() === tomorrow.toDateString();
+            }
+            if (filter === 'weekend') {
+                const day = eventDate.getDay();
+                return eventDate >= today && (day === 6 || day === 0);
+            }
+            if (filter === 'range') {
+                const startInput = document.getElementById('startDate').value;
+                const endInput = document.getElementById('endDate').value;
+                if (!startInput || !endInput) return false;
+
+                const start = new Date(startInput);
+                const end = new Date(endInput);
+
+                if (isNaN(start) || isNaN(end)) return false;
+
+                return eventDate >= start && eventDate <= end;
+            }
+
+            return true;
+        }
+
+        function renderMap() {
+            const list = document.getElementById('list');
+            const filterCat = document.getElementById('categoryFilter').value;
+            const filterType = document.getElementById('typeFilter').value;
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const citySelect = document.getElementById('cityFilter');
+            const selectedCities = Array.from(citySelect.selectedOptions).map(opt => opt.value);
+
+            clearMap();
+
+            cachedData.forEach(venue => {
+                const matchesCategory = !filterCat || venue.category === filterCat;
+                const matchesType = !filterType || venue.type === filterType;
+                const matchesCity = selectedCities.length === 0 || selectedCities.includes(venue.city);
+                const matchesSearch = venue.name.toLowerCase().includes(search);
+
+                let matchingEvents = [];
+                if (venue.type === 'EventVenue') {
+                    matchingEvents = (venue.events || []).filter(e => {
+                        const matchesEventSearch = e.title.toLowerCase().includes(search);
+                        const matchesEventCategory = !filterCat || e.category === filterCat;
+                        return matchesEventSearch && matchesEventCategory && isDateInFilter(e.date);
+                    });
+                }
+
+                let shouldRender = false;
+
+                if (!filterType || filterType === '') { // Show all attractions and events
+                    shouldRender = matchesCategory && matchesCity && matchesSearch && (
+                        venue.type === 'Attraction' || (venue.type === 'EventVenue' && matchingEvents.length > 0)
+                    );
+                } else if (venue.type === 'Attraction') {
+                    shouldRender = matchesCategory && matchesType && matchesCity && matchesSearch;
+                } else if (venue.type === 'EventVenue') {
+                    shouldRender = matchesCategory && matchesType && matchesCity && matchingEvents.length > 0;
+                }
+
+                if (shouldRender) {
+                    const marker = L.marker([venue.latitude, venue.longitude])
+                        .addTo(map)
+                        .bindPopup(`<b>${venue.name}</b><br>${venue.description}`);
+
+                    markers.push(marker);
+                    markerMap.set(venue.id, marker);
+
+                    const div = document.createElement('div');
+                    div.className = 'event';
+
+                    let eventHtml = '';
+                    if (venue.type === 'EventVenue' && matchingEvents.length > 0) {
+                        eventHtml = '<h3> Events </h3><ul style="margin-top:10px; padding-left:20px;">' +
+                            matchingEvents.map(e => `
+            <li>
+              <strong>${e.title}</strong> — <small>${e.date} ${e.startTime}-${e.endTime}</small><br/>
+              <em>${e.description}</em>
+            </li>
+          `).join('') +
+                            '</ul>';
+                    }
+
+                    let attractionHtml = '';
+                    if (venue.highlights && venue.highlights.length > 0) {
+                        attractionHtml = '<h3> Highlights </h3><ul style="margin-top:10px; padding-left:20px;">' +
+                            venue.highlights.map(a => `
+                        <li>
+                            <strong>${a.name}</strong><br/>
+                            <em>${a.description}</em>
+                        </li>
+                        `).join('') +
+                            '</ul>';
+                    }
+
+                    div.innerHTML = `
+        <h3>${venue.name}</h3>
+        <small>${venue.category}</small>
+        <p>${venue.description}</p>
+        ${attractionHtml}
+        ${eventHtml}
+        ${venue.type === 'Attraction' && venue.url
+                            ? `<a class="button" href="${venue.url}" target="_blank">Visit Website</a>`
+                            : `<a class="button" href="venue.html?id=${venue.id}">View Details</a>`
+                        }
+      `;
+
+                    div.addEventListener('click', () => {
+                        map.setView([venue.latitude, venue.longitude], 9);
+                        marker.openPopup();
+                    });
+
+                    list.appendChild(div);
+                }
+            });
+        }
+
+        function populateCityFilter(data) {
+            const select = document.getElementById('cityFilter');
+            const cities = new Set();
+            data.forEach(v => {
+                if (v.city) cities.add(v.city);
+            });
+            Array.from(cities).sort().forEach(city => {
+                const opt = document.createElement('option');
+                opt.value = city;
+                opt.textContent = city;
+                select.appendChild(opt);
+            });
+        }
+
+
+        function updateCustomDateVisibility() {
+            const type = document.getElementById('typeFilter').value;
+            const eventFilters = document.querySelectorAll('.event-filters');
+
+            if (type === 'EventVenue') {
+                eventFilters.forEach(e => e.classList.remove('hidden'));
+                const dateType = document.getElementById('eventDateFilter').value;
+                const show = dateType === 'range';
+                document.getElementById('customDateRange').classList.toggle('hidden', !show);
+            } else {
+                eventFilters.forEach(e => e.classList.add('hidden'));
+                document.getElementById('eventDateFilter').value = 'all';
+                document.getElementById('customDateRange').classList.add('hidden');
+            }
+        }
+
+
+
+        document.getElementById('categoryFilter').addEventListener('change', renderMap);
+        document.getElementById('typeFilter').addEventListener('change', () => {
+            const showFilters = document.getElementById('typeFilter').value !== 'Attraction';
+            document.querySelectorAll('.event-filters').forEach(e => {
+                e.classList.toggle('hidden', !showFilters);
+            });
+            updateCustomDateVisibility();
+            renderMap();
+        });
+        document.getElementById('eventDateFilter').addEventListener('change', () => {
+            //const value = document.getElementById('eventDateFilter').value;
+            //document.getElementById('customDateRange').classList.toggle('hidden', value !== 'range');
+            updateCustomDateVisibility();
+            renderMap();
+        });
+        document.getElementById('startDate').addEventListener('change', renderMap);
+        document.getElementById('endDate').addEventListener('change', renderMap);
+        document.getElementById('searchInput').addEventListener('input', renderMap);
+        document.getElementById('cityFilter').addEventListener('change', renderMap);
+
+        loadLocalData();
+
+        // Initial visibility setup when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCustomDateVisibility();
+        });
+
+    </script>
+</body>
+
+</html>
