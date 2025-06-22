@@ -65,11 +65,19 @@ self.addEventListener("fetch", event => {
   const { request } = event;
 
   // 1. Serve venue.html on navigation to venue pages
-  if (request.mode === "navigate" && request.url.includes("/venue.html")) {
-    event.respondWith(
-      caches.match("/venue.html").then(resp => resp || fetch("/venue.html"))
-    );
-    return;
+ // Intercept all navigations
+  if (request.mode === "navigate") {
+    const url = new URL(request.url);
+
+    // If navigating to venue.html (with or without query params)
+    if (url.pathname === '/venue.html') {
+      event.respondWith(
+        caches.match('/venue.html').then(cached => {
+          return cached || fetch('/venue.html');
+        })
+      );
+      return;
+    }
   }
 
   // 2. Cache-first for other assets
