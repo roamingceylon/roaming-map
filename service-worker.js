@@ -86,7 +86,10 @@ self.addEventListener("fetch", event => {
             });
           }
           if (request.mode === "navigate") {
-            return caches.match(`${BASE_PATH}/index.html`);
+            if (url.pathname.endsWith("/venue.html")) {
+              return caches.match(`${BASE_PATH}/venue.html`);
+            }
+            return caches.match(`${BASE_PATH}/index.html`); 
           }
 
           return new Response("You are offline", { status: 503 });
