@@ -1,14 +1,28 @@
 const VERSION = "v4.5"; // 🔁 Change this to trigger a new version
 const CACHE_NAME = `roaming-map-cache-${VERSION}`;
 
+// const ASSETS = [
+//   "/",
+//   "/index.html",
+//   "/venue.html",
+//   "/manifest.json",
+//   "/data/map-data.json",
+//   "/icons/icon-192.png",
+//   "/icons/icon-512.png",
+//   "https://unpkg.com/leaflet/dist/leaflet.css",
+//   "https://unpkg.com/leaflet/dist/leaflet.js"
+// ];
+
+const BASE_PATH = self.location.pathname.replace(/\/[^/]*$/, '');
+
 const ASSETS = [
-  "/",
-  "/index.html",
-  "/venue.html",
-  "/manifest.json",
-  "/data/map-data.json",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
+  `${BASE_PATH}/`,
+  `${BASE_PATH}/index.html`,
+  `${BASE_PATH}/venue.html`,
+  `${BASE_PATH}/manifest.json`,
+  `${BASE_PATH}/data/map-data.json`,
+  `${BASE_PATH}/icons/icon-192.png`,
+  `${BASE_PATH}/icons/icon-512.png`,
   "https://unpkg.com/leaflet/dist/leaflet.css",
   "https://unpkg.com/leaflet/dist/leaflet.js"
 ];
