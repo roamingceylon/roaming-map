@@ -13,18 +13,17 @@ const CACHE_NAME = `roaming-map-cache-${VERSION}`;
 //   "https://unpkg.com/leaflet/dist/leaflet.js"
 // ];
 
-const BASE_PATH = self.location.pathname.replace(/\/[^/]*$/, '');
-
 const ASSETS = [
-  `${BASE_PATH}/`,
-  `${BASE_PATH}/index.html`,
-  `${BASE_PATH}/venue.html`,
-  `${BASE_PATH}/manifest.json`,
-  `${BASE_PATH}/data/map-data.json`,
-  `${BASE_PATH}/icons/icon-192.png`,
-  `${BASE_PATH}/icons/icon-512.png`,
+  "/roaming-map/",
+  "/roaming-map/index.html",
+  "/roaming-map/venue.html",
+  "/roaming-map/manifest.json",
+  "/roaming-map/data/map-data.json",
+  "/roaming-map/icons/icon-192.png",
+  "/roaming-map/icons/icon-512.png",
   "https://unpkg.com/leaflet/dist/leaflet.css",
-  "https://unpkg.com/leaflet/dist/leaflet.js"
+  "https://unpkg.com/leaflet/dist/leaflet.js",
+  // include any other /roaming-map/* files
 ];
 
 // Add pre-defined map tiles for Sri Lanka (zoom 7–9)
@@ -84,14 +83,23 @@ self.addEventListener("fetch", event => {
     const url = new URL(request.url);
 
     // If navigating to venue.html (with or without query params)
-    if (url.pathname === '/venue.html') {
-      event.respondWith(
-        caches.match('/venue.html').then(cached => {
-          return cached || fetch('/venue.html');
-        })
-      );
-      return;
-    }
+    // if (url.pathname === '/venue.html') {
+    //   event.respondWith(
+    //     caches.match('/venue.html').then(cached => {
+    //       return cached || fetch('/venue.html');
+    //     })
+    //   );
+    //   return;
+    // }
+
+    if (url.pathname.endsWith('/venue.html')) {
+    event.respondWith(
+      caches.match('/roaming-map/venue.html').then(cached => {
+        return cached || fetch('/roaming-map/venue.html');
+      })
+    );
+    return;
+  }
   }
 
   // 2. Cache-first for other assets
