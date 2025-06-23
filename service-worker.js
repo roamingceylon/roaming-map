@@ -48,40 +48,48 @@ self.addEventListener("fetch", event => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // 🧠 Intercept SPA-style navigation to venue.html?id=123
-  if (request.mode === "navigate" && url.pathname.endsWith("venue.html")) {
+  // 🧠 Intercept navigation requests to venue.html with query params
+  if (request.mode === "navigate" && url.pathname.includes("venue.html")) {
     event.respondWith(
-      caches.match(`${BASE_PATH}/venue.html`).then(resp => {
-        return resp || fetch(`${BASE_PATH}/venue.html`);
+      caches.match(`${BASE_PATH}/venue.html`).then(response => {
+        return response || fetch(`${BASE_PATH}/venue.html`);
       })
     );
     return;
   }
 
-  // ✅ Cache-first for everything else
+  // ✅ Cache-first for other assets
   event.respondWith(
     caches.match(request).then(cached => {
       if (cached) return cached;
+
       return fetch(request)
         .then(networkRes => {
+          // Dynamically cache common file types
           if (
+            request.url.includes("map-data.json") ||
             request.url.endsWith(".js") ||
             request.url.endsWith(".css") ||
-            request.url.includes("map-data.json") ||
             request.url.includes("cartocdn.com")
           ) {
-            return caches.open(CACHE_NAME).then(cache => {
+            caches.open(CACHE_NAME).then(cache => {
               cache.put(request, networkRes.clone());
-              return networkRes;
             });
           }
           return networkRes;
         })
         .catch(() => {
+          // Offline fallback
           if (request.url.includes("map-data.json")) {
-            return new Response("[]", { headers: { "Content-Type": "application/json" } });
+            return new Response("[]", {
+              headers: { "Content-Type": "application/json" }
+            });
           }
-          return new Response("Offline", { status: 503 });
+          if (request.mode === "navigate") {
+            return caches.match(`${BASE_PATH}/index.html`);
+          }
+
+          return new Response("You are offline", { status: 503 });
         });
     })
   );
