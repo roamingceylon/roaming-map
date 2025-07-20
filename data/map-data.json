@@ -24,7 +24,7 @@
         "childFriendly": true
     },
     "highlights": [
-       { "venueId": "venue007" },
+        { "venueId": "venue007" },
         {
         "name": "Galle Clock Tower",
         "description": "An iconic colonial-era clock tower.",

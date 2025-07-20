@@ -426,12 +426,24 @@
             mainMarker.bindPopup(`<b>${venue.name}</b><br>${venue.description}`).openPopup();
             bounds.push([venue.latitude, venue.longitude]);
 
-            // Add attractions if present
+            // Add highlights/attractions if present
             if (venue.highlights && Array.isArray(venue.highlights)) {
-                venue.highlights.forEach(attraction => {
-                    const marker = L.marker([attraction.latitude, attraction.longitude]).addTo(map);
-                    marker.bindPopup(`<b>${attraction.name}</b><br>${attraction.description}`);
-                    bounds.push([attraction.latitude, attraction.longitude]);
+                venue.highlights.forEach(highlight => {
+                    // If it's a reference to a sub-venue by venueId, look up that venue in the loaded data
+                    if (highlight.venueId) {
+                        // data is the full JSON loaded earlier, already available
+                        const subVenue = data.find(v => v.id === highlight.venueId);
+                        if (subVenue && subVenue.latitude && subVenue.longitude) {
+                            const marker = L.marker([subVenue.latitude, subVenue.longitude]).addTo(map);
+                            marker.bindPopup(`<b>${subVenue.name}</b><br>${subVenue.description || ''}`);
+                            bounds.push([subVenue.latitude, subVenue.longitude]);
+                        }
+                    } else if (highlight.latitude && highlight.longitude) {
+                        // Standard highlight with lat/lng
+                        const marker = L.marker([highlight.latitude, highlight.longitude]).addTo(map);
+                        marker.bindPopup(`<b>${highlight.name}</b><br>${highlight.description || ''}`);
+                        bounds.push([highlight.latitude, highlight.longitude]);
+                    }
                 });
             }
 
