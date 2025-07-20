@@ -887,9 +887,22 @@
                         ${hasHighlights ? `
                             <div style="background: #f0f8ff; padding: 8px; border-radius: 4px; margin: 8px 0;">
                                 <strong style="color: #1976d2;">Highlights:</strong><br>
-                                ${venue.highlights.map(e => `
-                                <small>${e.name}</small>
-                                `).join('<br>')}
+                                ${venue.highlights.map(h => {
+                                    
+                                    if(h.venueId) {
+                                        const subVenue = allData.find(v => v.id === h.venueId);
+                                        if (subVenue) {
+                                            return ` 
+                                                <a href="venue.html?id=${subVenue.id}">
+                                                <small>${subVenue.name}</small> 
+                                                </a> 
+                                            `;
+                                        }
+                                    }
+                                   return `
+                                    <small>${h.name}</small>
+                                    `;
+                                 } ).join('<br>')}
                             </div>
                         ` : ''}
                         <small><strong>Location:</strong> ${venue.city} | <strong>Type:</strong> ${venue.type}</small>

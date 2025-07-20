@@ -24,6 +24,7 @@
         "childFriendly": true
     },
     "highlights": [
+       { "venueId": "venue007" },
         {
         "name": "Galle Clock Tower",
         "description": "An iconic colonial-era clock tower.",
@@ -189,5 +190,66 @@
         "endTime": "18:00"
       }
     ]
+  },
+  {
+    "id": "venue007",
+    "name": "Dutch Reformed Church",
+    "type": "Attraction",
+    "category": "Religious",
+    "city": "Galle",
+    "latitude": 6.0263,
+    "longitude": 80.2174,
+    "description": "Built in 1755, this beautiful church showcases Dutch colonial architecture with ornate pulpit and historic gravestones.",
+    "image": "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp",
+    "contact": {
+      "phone": "+94 91 222 3765",
+      "email": "info@dutchchurchgalle.org",
+      "website": "https://dutchchurchgalle.org"
+    },
+    "openingHours": "09:00 AM – 05:00 PM",
+    "entryFee": "Rs. 200 (Foreign tourists)",
+    "amenities": {
+      "parking": false,
+      "toilets": false,
+      "wifi": false,
+      "accessibility": "Ground level access",
+      "childFriendly": true
+    },
+    "highlights": [
+      {
+        "name": "Historic Organ",
+        "description": "Original Dutch pipe organ from the 18th century.",
+        "latitude": 6.0263,
+        "longitude": 80.2174
+      },
+      {
+        "name": "Colonial Gravestones",
+        "description": "Ancient tombstones with Dutch inscriptions in the church floor.",
+        "latitude": 6.0263,
+        "longitude": 80.2174
+      }
+    ],
+    "events": [
+      {
+        "id": "event002",
+        "title": "Christmas Service",
+        "category": "Religious",
+        "description": "Traditional Christmas service with organ music.",
+        "date": "2025-12-25",
+        "startTime": "10:00",
+        "endTime": "11:30"
+      }
+    ],
+    "photos": [
+      "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp"
+    ],
+    "reviews": {
+      "rating": 4.4,
+      "totalReviews": 568,
+      "source": "Google"
+    },
+    "tags": ["Religious", "Colonial Architecture", "Historical", "Photography Spot"],
+    "weatherNote": "Indoor attraction, suitable for any weather. Cool interior provides respite from heat.",
+    "relatedVenues": ["venue001", "venue003", "venue005"]
   }
 ]
