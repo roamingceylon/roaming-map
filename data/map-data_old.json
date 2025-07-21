@@ -1,0 +1,255 @@
+[
+    {
+    "id": "venue001",
+    "name": "Galle Fort",
+    "type": "Attraction", 
+    "category": "Cultural",
+    "city": "Galle",
+    "latitude": 6.032,
+    "longitude": 80.217,
+    "description": "A historic Dutch fort with cobbled streets and ocean views.",
+    "image": "https://media.roamingceylon.com/content/images/2025/05/galle-dutch-fort-sri-lanka-roaming-ceylon.webp",
+    "contact": {
+        "phone": "+94 77 123 4567",
+        "email": "info@gallefort.lk",
+        "website": "https://roamingceylon.com"
+    },
+    "openingHours": "08:00 AM – 06:00 PM",
+    "entryFee": "Free",
+    "amenities": {
+        "parking": true,
+        "toilets": true,
+        "wifi": false,
+        "accessibility": "Wheelchair ramp available",
+        "childFriendly": true
+    },
+    "highlights": [
+        { "venueId": "venue007" },
+        {
+        "name": "Galle Clock Tower",
+        "description": "An iconic colonial-era clock tower.",
+        "latitude": 6.0308,
+        "longitude": 80.2165
+        },
+        {
+        "name": "Galle Lighthouse",
+        "description": "Beautiful lighthouse on the fort ramparts.",
+        "latitude": 6.0259,
+        "longitude": 80.2201
+        },
+        {
+        "name": "Dutch Hospital",
+        "description": "Historic building converted into shops and restaurants.",
+        "latitude": 6.0268,
+        "longitude": 80.2187
+        }
+    ],
+    "events": [
+        {
+        "id": "event001",
+        "title": "Jazz at the Fort",
+        "category": "Music",
+        "description": "Live jazz performances under the stars.",
+        "date": "2025-09-12",
+        "startTime": "19:00",
+        "endTime": "22:00"
+        }
+    ],
+    "photos": [
+        "https://media.roamingceylon.com/content/images/2025/05/galle-dutch-fort-sri-lanka-roaming-ceylon.webp",
+        "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp",
+        "https://media.roamingceylon.com/content/images/2025/05/unawatuna-beach-sunset-galle.webp"
+    ],
+    "reviews": {
+        "rating": 4.7,
+        "totalReviews": 124,
+        "source": "Google"
+    },
+    "tags": ["UNESCO", "Historical", "Photography Spot"],
+    "weatherNote": "Best visited during the dry season (Dec–Apr). Can be very hot midday.",
+    "relatedVenues": ["venue002", "venue007"]
+    },
+  {
+    "id": "venue002",
+    "name": "Nelum Pokuna Theatre",
+    "type": "EventVenue",
+    "category": "Music",
+    "city":"Colombo",
+    "latitude": 6.919,
+    "longitude": 79.861,
+    "description": "Colombo’s modern event venue hosting concerts and performances.",
+    "image": "",
+    "contact": {
+        "phone": "+94 77 123 4567",
+        "email": "info@gallefort.lk",
+        "website": "https://roamingceylon.com"
+    },
+    "openingHours": "08:00 AM – 06:00 PM",
+    "entryFee": "Paid",
+    "amenities": {
+        "parking": true,
+        "toilets": true,
+        "wifi": false,
+        "accessibility": "Wheelchair ramp available",
+        "childFriendly": true
+    },
+    "events": [
+      {
+        "id": "event001",
+        "title": "Colombo Jazz Night",
+        "category": "Music",
+        "description": "An evening of smooth jazz with top local artists.",
+        "date": "2025-07-12",
+        "startTime": "19:00",
+        "endTime": "22:00"
+      },
+      {
+        "id": "event002",
+        "title": "Sinhalese Orchestra Live",
+        "category": "Cultural",
+        "description": "Traditional Sinhalese music concert.",
+        "date": "2025-08-01",
+        "startTime": "18:30",
+        "endTime": "21:00"
+      },
+      {
+        "id": "event003",
+        "title": "English Orchestra Live",
+        "category": "Cultural",
+        "description": "Traditional Sinhalese music concert.",
+        "date": "2025-08-02",
+        "startTime": "18:30",
+        "endTime": "21:00"
+      }
+    ]
+  },
+  {
+    "id": "venue003",
+    "name": "Mirissa Beach",
+    "type": "Attraction",
+    "category": "Beach",
+    "city":"Mirissa",
+    "latitude": 5.948,
+    "longitude": 80.457,
+    "description": "A palm-lined beach known for its surf and whale watching.",
+    "image": "",
+    "events": []
+  },
+  {
+    "id": "venue004",
+    "name": "Kandy City Center",
+    "type": "EventVenue",
+    "category": "Festival",
+    "city":"Kandy",
+    "latitude": 7.294,
+    "longitude": 80.638,
+    "description": "A popular gathering area for cultural parades and festivals.",
+    "image": "",
+    "events": [
+      {
+        "id": "event003",
+        "title": "Esala Perahera",
+        "category": "Festival",
+        "description": "Sri Lanka’s grandest procession with dancers, elephants, and fire acts.",
+        "date": "2025-08-15",
+        "startTime": "17:00",
+        "endTime": "23:00"
+      }
+    ]
+  },
+  {
+    "id": "venue005",
+    "name": "Yala National Park Entrance",
+    "type": "Attraction",
+    "category": "Wildlife",
+    "city":"Yala",
+    "latitude": 6.470,
+    "longitude": 81.517,
+    "description": "Entry to Sri Lanka’s famous wildlife park, home to leopards and elephants.",
+    "image": "",
+    "events": []
+  },
+  {
+    "id": "venue006",
+    "name": "Colombo Art Gallery",
+    "type": "EventVenue",
+    "category": "Cultural",
+    "city":"Colombo",
+    "latitude": 6.927,
+    "longitude": 79.862,
+    "description": "An indoor venue for rotating art exhibitions and talks.",
+    "image": "",
+    "events": [
+      {
+        "id": "event004",
+        "title": "Contemporary Lankan Art",
+        "category": "Art",
+        "description": "Exhibition of modern Sri Lankan painters and sculptors.",
+        "date": "2025-06-20",
+        "startTime": "10:00",
+        "endTime": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "venue007",
+    "name": "Dutch Reformed Church",
+    "type": "Attraction",
+    "category": "Religious",
+    "city": "Galle",
+    "latitude": 6.0263,
+    "longitude": 80.2174,
+    "description": "Built in 1755, this beautiful church showcases Dutch colonial architecture with ornate pulpit and historic gravestones.",
+    "image": "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp",
+    "contact": {
+      "phone": "+94 91 222 3765",
+      "email": "info@dutchchurchgalle.org",
+      "website": "https://dutchchurchgalle.org"
+    },
+    "openingHours": "09:00 AM – 05:00 PM",
+    "entryFee": "Rs. 200 (Foreign tourists)",
+    "amenities": {
+      "parking": false,
+      "toilets": false,
+      "wifi": false,
+      "accessibility": "Ground level access",
+      "childFriendly": true
+    },
+    "highlights": [
+      {
+        "name": "Historic Organ",
+        "description": "Original Dutch pipe organ from the 18th century.",
+        "latitude": 6.0263,
+        "longitude": 80.2174
+      },
+      {
+        "name": "Colonial Gravestones",
+        "description": "Ancient tombstones with Dutch inscriptions in the church floor.",
+        "latitude": 6.0263,
+        "longitude": 80.2174
+      }
+    ],
+    "events": [
+      {
+        "id": "event002",
+        "title": "Christmas Service",
+        "category": "Religious",
+        "description": "Traditional Christmas service with organ music.",
+        "date": "2025-12-25",
+        "startTime": "10:00",
+        "endTime": "11:30"
+      }
+    ],
+    "photos": [
+      "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp"
+    ],
+    "reviews": {
+      "rating": 4.4,
+      "totalReviews": 568,
+      "source": "Google"
+    },
+    "tags": ["Religious", "Colonial Architecture", "Historical", "Photography Spot"],
+    "weatherNote": "Indoor attraction, suitable for any weather. Cool interior provides respite from heat.",
+    "relatedVenues": ["venue001", "venue003", "venue005"]
+  }
+]

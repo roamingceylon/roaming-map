@@ -1,198 +1,145 @@
 [
-    {
-    "id": "venue001",
+  {
+    "id": "05c40e16-f729-4577-8352-c617a9f3671c",
     "name": "Galle Fort",
-    "type": "Attraction", 
+    "type": "Attraction",
     "category": "Cultural",
     "city": "Galle",
     "latitude": 6.032,
     "longitude": 80.217,
-    "description": "A historic Dutch fort with cobbled streets and ocean views.",
-    "image": "https://media.roamingceylon.com/content/images/2025/05/galle-dutch-fort-sri-lanka-roaming-ceylon.webp",
-    "contact": {
-        "phone": "+94 77 123 4567",
-        "email": "info@gallefort.lk",
-        "website": "https://roamingceylon.com"
-    },
-    "openingHours": "08:00 AM – 06:00 PM",
-    "entryFee": "Free",
-    "amenities": {
-        "parking": true,
-        "toilets": true,
-        "wifi": false,
-        "accessibility": "Wheelchair ramp available",
-        "childFriendly": true
-    },
+    "description": "A historic UNESCO World Heritage Site with cobbled streets, ocean views, and centuries of history.",
+    "photos": [
+      "https://media.roamingceylon.com/content/images/2025/05/galle-dutch-fort-sri-lanka-roaming-ceylon.webp",
+      "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp",
+      "https://media.roamingceylon.com/content/images/2025/05/galle-fort-lighthouse.webp"
+    ],
     "highlights": [
-        { "venueId": "venue007" },
-        {
+      { "venueId": "a51773e5-5a8e-4a49-b4be-073cc774dba0" },
+      { "venueId": "b346bc55-1a2a-4443-9e67-13fcf505a3f8" },
+      { "venueId": "d7c3987d-2af4-480e-bf8d-6a4d9fdaacfe" },
+      { "venueId": "ea53c0ef-dad1-43d3-a325-118ac977c18f" },
+      { "venueId": "a00cb176-054c-4f7c-a6ae-9e5cc468c827" },
+      { "venueId": "f62e9822-4a0f-4a5c-8dcf-205a4cf981d2" },
+      {
+        "id": "d5be2de6-4045-4c12-ae62-62080e7ebbd3",
         "name": "Galle Clock Tower",
-        "description": "An iconic colonial-era clock tower.",
+        "description": "An iconic 19th-century clock tower that dominates the Fort skyline.",
         "latitude": 6.0308,
         "longitude": 80.2165
-        },
-        {
+      },
+      {
+        "id": "665d0628-c678-41e4-b6e4-0cd89a1a4be7",
         "name": "Galle Lighthouse",
-        "description": "Beautiful lighthouse on the fort ramparts.",
+        "description": "Sri Lanka's oldest light station, built in 1848, offering panoramic sea views.",
         "latitude": 6.0259,
         "longitude": 80.2201
-        },
-        {
-        "name": "Dutch Hospital",
-        "description": "Historic building converted into shops and restaurants.",
+      },
+      {
+        "id": "203f4927-7b29-4b59-acc1-5fc36e457e3a",
+        "name": "Dutch Hospital Shopping Precinct",
+        "description": "Historic hospital now housing boutique shops, restaurants, and cafes.",
         "latitude": 6.0268,
         "longitude": 80.2187
-        }
-    ],
-    "events": [
-        {
-        "id": "event001",
-        "title": "Jazz at the Fort",
-        "category": "Music",
-        "description": "Live jazz performances under the stars.",
-        "date": "2025-09-12",
-        "startTime": "19:00",
-        "endTime": "22:00"
-        }
-    ],
-    "photos": [
-        "https://media.roamingceylon.com/content/images/2025/05/galle-dutch-fort-sri-lanka-roaming-ceylon.webp",
-        "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp",
-        "https://media.roamingceylon.com/content/images/2025/05/unawatuna-beach-sunset-galle.webp"
-    ],
-    "reviews": {
-        "rating": 4.7,
-        "totalReviews": 124,
-        "source": "Google"
-    },
-    "tags": ["UNESCO", "Historical", "Photography Spot"],
-    "weatherNote": "Best visited during the dry season (Dec–Apr). Can be very hot midday.",
-    "relatedVenues": ["venue002", "venue007"]
-    },
-  {
-    "id": "venue002",
-    "name": "Nelum Pokuna Theatre",
-    "type": "EventVenue",
-    "category": "Music",
-    "city":"Colombo",
-    "latitude": 6.919,
-    "longitude": 79.861,
-    "description": "Colombo’s modern event venue hosting concerts and performances.",
-    "image": "",
-    "contact": {
-        "phone": "+94 77 123 4567",
-        "email": "info@gallefort.lk",
-        "website": "https://roamingceylon.com"
-    },
-    "openingHours": "08:00 AM – 06:00 PM",
-    "entryFee": "Paid",
-    "amenities": {
-        "parking": true,
-        "toilets": true,
-        "wifi": false,
-        "accessibility": "Wheelchair ramp available",
-        "childFriendly": true
-    },
-    "events": [
-      {
-        "id": "event001",
-        "title": "Colombo Jazz Night",
-        "category": "Music",
-        "description": "An evening of smooth jazz with top local artists.",
-        "date": "2025-07-12",
-        "startTime": "19:00",
-        "endTime": "22:00"
       },
       {
-        "id": "event002",
-        "title": "Sinhalese Orchestra Live",
-        "category": "Cultural",
-        "description": "Traditional Sinhalese music concert.",
-        "date": "2025-08-01",
-        "startTime": "18:30",
-        "endTime": "21:00"
+        "id": "d048c3f8-053e-498a-a4ae-ec4b832fcfd4",
+        "name": "Ramparts Walk",
+        "description": "Scenic walkway atop the fort walls with sunset views and sea breeze.",
+        "latitude": 6.0325,
+        "longitude": 80.2177
       },
       {
-        "id": "event003",
-        "title": "English Orchestra Live",
-        "category": "Cultural",
-        "description": "Traditional Sinhalese music concert.",
-        "date": "2025-08-02",
-        "startTime": "18:30",
-        "endTime": "21:00"
+        "id": "46ac9c98-d8b6-4d7d-bbbc-e770c23e5c6e",
+        "name": "Flag Rock Bastion",
+        "description": "Famous for dramatic waves and sunset, the best spot to watch cliff jumpers.",
+        "latitude": 6.0251,
+        "longitude": 80.2157
+      },
+      {
+        "id": "c827a2c8-1369-4f5a-b46b-1811c1b621f2",
+        "name": "Galle Fort Walls",
+        "description": "Walkable 17th-century walls that once protected the city from invaders.",
+        "latitude": 6.0331,
+        "longitude": 80.2169
+      },
+      {
+        "id": "5b27c3d5-44bc-4867-9547-6ab3c7286da4",
+        "name": "Old Gate",
+        "description": "Original entrance with British and Dutch coats of arms carved in stone.",
+        "latitude": 6.0361,
+        "longitude": 80.2159
+      },
+      {
+        "id": "bf4ecbe0-44c9-4e6d-93eb-9295eada025b",
+        "name": "Maritime Archaeology Museum",
+        "description": "Museum with exhibits from shipwrecks and colonial era.",
+        "latitude": 6.0354,
+        "longitude": 80.2148
+      },
+      {
+        "id": "9f35b1c6-c764-48d2-97c6-23bcb7b71a47",
+        "name": "Meera Mosque",
+        "description": "A white-washed mosque built in 1904, blending Islamic and colonial architecture.",
+        "latitude": 6.0296,
+        "longitude": 80.2197
+      },
+      {
+        "id": "d3b4d2cf-5dc1-4d47-9735-13c9892d3929",
+        "name": "All Saints’ Church",
+        "description": "Gothic-style Anglican church with beautiful stained glass windows.",
+        "latitude": 6.0298,
+        "longitude": 80.2181
+      },
+      {
+        "id": "d105ed1b-d37d-42e7-8e65-ef6221eaabef",
+        "name": "National Maritime Museum",
+        "description": "Museum featuring local marine history, fishing, and ecology exhibits.",
+        "latitude": 6.0329,
+        "longitude": 80.2162
+      },
+      {
+        "id": "e2bb6baf-3b7a-4f24-96e0-efede8dc95f3",
+        "name": "Pedlar Street",
+        "description": "Charming street lined with art galleries, cafes, and boutiques.",
+        "latitude": 6.0317,
+        "longitude": 80.2165
+      },
+      {
+        "id": "cf753a2b-d5d7-48c0-8ed1-8f9d4d4c69a5",
+        "name": "Historical Mansion Museum",
+        "description": "Private museum with antiques, curios, and colonial artifacts.",
+        "latitude": 6.0322,
+        "longitude": 80.2154
+      },
+      {
+        "id": "b8fc2487-1ff6-4eeb-86f2-96456d11080c",
+        "name": "Bastion Museum",
+        "description": "Exhibition dedicated to Galle’s defense and colonial history.",
+        "latitude": 6.0341,
+        "longitude": 80.2173
+      },
+      {
+        "id": "89b7a8c9-bc5a-4a65-a3ee-085b947baa1b",
+        "name": "Groote Kerk (Great Church)",
+        "description": "Historic Dutch Reformed Church with a centuries-old organ and tombstones.",
+        "latitude": 6.0276,
+        "longitude": 80.2172
       }
-    ]
-  },
-  {
-    "id": "venue003",
-    "name": "Mirissa Beach",
-    "type": "Attraction",
-    "category": "Beach",
-    "city":"Mirissa",
-    "latitude": 5.948,
-    "longitude": 80.457,
-    "description": "A palm-lined beach known for its surf and whale watching.",
-    "image": "",
-    "events": []
-  },
-  {
-    "id": "venue004",
-    "name": "Kandy City Center",
-    "type": "EventVenue",
-    "category": "Festival",
-    "city":"Kandy",
-    "latitude": 7.294,
-    "longitude": 80.638,
-    "description": "A popular gathering area for cultural parades and festivals.",
-    "image": "",
+    ],
     "events": [
       {
-        "id": "event003",
-        "title": "Esala Perahera",
+        "id": "a95e22b5-2fa5-4180-8e6b-6d89ad2dc58d",
+        "title": "Galle Literary Festival",
         "category": "Festival",
-        "description": "Sri Lanka’s grandest procession with dancers, elephants, and fire acts.",
-        "date": "2025-08-15",
-        "startTime": "17:00",
-        "endTime": "23:00"
+        "description": "Annual celebration of literature, arts, and culture within the fort.",
+        "date": "2025-01-18",
+        "startTime": "09:00",
+        "endTime": "21:00"
       }
     ]
   },
   {
-    "id": "venue005",
-    "name": "Yala National Park Entrance",
-    "type": "Attraction",
-    "category": "Wildlife",
-    "city":"Yala",
-    "latitude": 6.470,
-    "longitude": 81.517,
-    "description": "Entry to Sri Lanka’s famous wildlife park, home to leopards and elephants.",
-    "image": "",
-    "events": []
-  },
-  {
-    "id": "venue006",
-    "name": "Colombo Art Gallery",
-    "type": "EventVenue",
-    "category": "Cultural",
-    "city":"Colombo",
-    "latitude": 6.927,
-    "longitude": 79.862,
-    "description": "An indoor venue for rotating art exhibitions and talks.",
-    "image": "",
-    "events": [
-      {
-        "id": "event004",
-        "title": "Contemporary Lankan Art",
-        "category": "Art",
-        "description": "Exhibition of modern Sri Lankan painters and sculptors.",
-        "date": "2025-06-20",
-        "startTime": "10:00",
-        "endTime": "18:00"
-      }
-    ]
-  },
-  {
-    "id": "venue007",
+    "id": "a51773e5-5a8e-4a49-b4be-073cc774dba0",
     "name": "Dutch Reformed Church",
     "type": "Attraction",
     "category": "Religious",
@@ -200,29 +147,19 @@
     "latitude": 6.0263,
     "longitude": 80.2174,
     "description": "Built in 1755, this beautiful church showcases Dutch colonial architecture with ornate pulpit and historic gravestones.",
-    "image": "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp",
-    "contact": {
-      "phone": "+94 91 222 3765",
-      "email": "info@dutchchurchgalle.org",
-      "website": "https://dutchchurchgalle.org"
-    },
-    "openingHours": "09:00 AM – 05:00 PM",
-    "entryFee": "Rs. 200 (Foreign tourists)",
-    "amenities": {
-      "parking": false,
-      "toilets": false,
-      "wifi": false,
-      "accessibility": "Ground level access",
-      "childFriendly": true
-    },
+    "photos": [
+      "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp"
+    ],
     "highlights": [
       {
+        "id": "b01b7cc8-3501-42e3-9e12-6f3c01c6d088",
         "name": "Historic Organ",
         "description": "Original Dutch pipe organ from the 18th century.",
         "latitude": 6.0263,
         "longitude": 80.2174
       },
       {
+        "id": "d73ff9e1-6d51-4c60-b3b0-f7dfbe3a3e6f",
         "name": "Colonial Gravestones",
         "description": "Ancient tombstones with Dutch inscriptions in the church floor.",
         "latitude": 6.0263,
@@ -231,7 +168,7 @@
     ],
     "events": [
       {
-        "id": "event002",
+        "id": "be3a3a3c-80c5-41f8-b9b1-3321e273f36c",
         "title": "Christmas Service",
         "category": "Religious",
         "description": "Traditional Christmas service with organ music.",
@@ -239,17 +176,71 @@
         "startTime": "10:00",
         "endTime": "11:30"
       }
-    ],
-    "photos": [
-      "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp"
-    ],
-    "reviews": {
-      "rating": 4.4,
-      "totalReviews": 568,
-      "source": "Google"
-    },
-    "tags": ["Religious", "Colonial Architecture", "Historical", "Photography Spot"],
-    "weatherNote": "Indoor attraction, suitable for any weather. Cool interior provides respite from heat.",
-    "relatedVenues": ["venue001", "venue003", "venue005"]
+    ]
+  },
+  {
+    "id": "b346bc55-1a2a-4443-9e67-13fcf505a3f8",
+    "name": "All Saints’ Church",
+    "type": "Attraction",
+    "category": "Religious",
+    "city": "Galle",
+    "latitude": 6.0298,
+    "longitude": 80.2181,
+    "description": "Gothic-style Anglican church with beautiful stained glass windows and historic charm.",
+    "photos": [],
+    "highlights": [],
+    "events": []
+  },
+  {
+    "id": "d7c3987d-2af4-480e-bf8d-6a4d9fdaacfe",
+    "name": "Meera Mosque",
+    "type": "Attraction",
+    "category": "Religious",
+    "city": "Galle",
+    "latitude": 6.0296,
+    "longitude": 80.2197,
+    "description": "A white-washed mosque built in 1904, blending Islamic and colonial architecture.",
+    "photos": [],
+    "highlights": [],
+    "events": []
+  },
+  {
+    "id": "ea53c0ef-dad1-43d3-a325-118ac977c18f",
+    "name": "Maritime Archaeology Museum",
+    "type": "Attraction",
+    "category": "Museum",
+    "city": "Galle",
+    "latitude": 6.0354,
+    "longitude": 80.2148,
+    "description": "Museum with exhibits from shipwrecks and colonial era.",
+    "photos": [],
+    "highlights": [],
+    "events": []
+  },
+  {
+    "id": "a00cb176-054c-4f7c-a6ae-9e5cc468c827",
+    "name": "National Maritime Museum",
+    "type": "Attraction",
+    "category": "Museum",
+    "city": "Galle",
+    "latitude": 6.0329,
+    "longitude": 80.2162,
+    "description": "Museum featuring local marine history, fishing, and ecology exhibits.",
+    "photos": [],
+    "highlights": [],
+    "events": []
+  },
+  {
+    "id": "f62e9822-4a0f-4a5c-8dcf-205a4cf981d2",
+    "name": "Historical Mansion Museum",
+    "type": "Attraction",
+    "category": "Museum",
+    "city": "Galle",
+    "latitude": 6.0322,
+    "longitude": 80.2154,
+    "description": "Private museum with antiques, curios, and colonial artifacts.",
+    "photos": [],
+    "highlights": [],
+    "events": []
   }
 ]
