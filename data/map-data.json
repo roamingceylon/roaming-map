@@ -1,246 +1,1889 @@
 [
-  {
-    "id": "05c40e16-f729-4577-8352-c617a9f3671c",
-    "name": "Galle Fort",
-    "type": "Attraction",
-    "category": "Cultural",
-    "city": "Galle",
-    "latitude": 6.032,
-    "longitude": 80.217,
-    "description": "A historic UNESCO World Heritage Site with cobbled streets, ocean views, and centuries of history.",
-    "photos": [
-      "https://media.roamingceylon.com/content/images/2025/05/galle-dutch-fort-sri-lanka-roaming-ceylon.webp",
-      "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp",
-      "https://media.roamingceylon.com/content/images/2025/05/galle-fort-lighthouse.webp"
-    ],
-    "highlights": [
-      { "venueId": "a51773e5-5a8e-4a49-b4be-073cc774dba0" },
-      { "venueId": "b346bc55-1a2a-4443-9e67-13fcf505a3f8" },
-      { "venueId": "d7c3987d-2af4-480e-bf8d-6a4d9fdaacfe" },
-      { "venueId": "ea53c0ef-dad1-43d3-a325-118ac977c18f" },
-      { "venueId": "a00cb176-054c-4f7c-a6ae-9e5cc468c827" },
-      { "venueId": "f62e9822-4a0f-4a5c-8dcf-205a4cf981d2" },
-      {
-        "id": "d5be2de6-4045-4c12-ae62-62080e7ebbd3",
-        "name": "Galle Clock Tower",
-        "description": "An iconic 19th-century clock tower that dominates the Fort skyline.",
-        "latitude": 6.0308,
-        "longitude": 80.2165
-      },
-      {
-        "id": "665d0628-c678-41e4-b6e4-0cd89a1a4be7",
-        "name": "Galle Lighthouse",
-        "description": "Sri Lanka's oldest light station, built in 1848, offering panoramic sea views.",
-        "latitude": 6.0259,
-        "longitude": 80.2201
-      },
-      {
-        "id": "203f4927-7b29-4b59-acc1-5fc36e457e3a",
-        "name": "Dutch Hospital Shopping Precinct",
-        "description": "Historic hospital now housing boutique shops, restaurants, and cafes.",
-        "latitude": 6.0268,
-        "longitude": 80.2187
-      },
-      {
-        "id": "d048c3f8-053e-498a-a4ae-ec4b832fcfd4",
-        "name": "Ramparts Walk",
-        "description": "Scenic walkway atop the fort walls with sunset views and sea breeze.",
-        "latitude": 6.0325,
-        "longitude": 80.2177
-      },
-      {
-        "id": "46ac9c98-d8b6-4d7d-bbbc-e770c23e5c6e",
-        "name": "Flag Rock Bastion",
-        "description": "Famous for dramatic waves and sunset, the best spot to watch cliff jumpers.",
-        "latitude": 6.0251,
-        "longitude": 80.2157
-      },
-      {
-        "id": "c827a2c8-1369-4f5a-b46b-1811c1b621f2",
-        "name": "Galle Fort Walls",
-        "description": "Walkable 17th-century walls that once protected the city from invaders.",
-        "latitude": 6.0331,
-        "longitude": 80.2169
-      },
-      {
-        "id": "5b27c3d5-44bc-4867-9547-6ab3c7286da4",
-        "name": "Old Gate",
-        "description": "Original entrance with British and Dutch coats of arms carved in stone.",
-        "latitude": 6.0361,
-        "longitude": 80.2159
-      },
-      {
-        "id": "bf4ecbe0-44c9-4e6d-93eb-9295eada025b",
-        "name": "Maritime Archaeology Museum",
-        "description": "Museum with exhibits from shipwrecks and colonial era.",
-        "latitude": 6.0354,
-        "longitude": 80.2148
-      },
-      {
-        "id": "9f35b1c6-c764-48d2-97c6-23bcb7b71a47",
-        "name": "Meera Mosque",
-        "description": "A white-washed mosque built in 1904, blending Islamic and colonial architecture.",
-        "latitude": 6.0296,
-        "longitude": 80.2197
-      },
-      {
-        "id": "d3b4d2cf-5dc1-4d47-9735-13c9892d3929",
-        "name": "All Saints’ Church",
-        "description": "Gothic-style Anglican church with beautiful stained glass windows.",
-        "latitude": 6.0298,
-        "longitude": 80.2181
-      },
-      {
-        "id": "d105ed1b-d37d-42e7-8e65-ef6221eaabef",
-        "name": "National Maritime Museum",
-        "description": "Museum featuring local marine history, fishing, and ecology exhibits.",
-        "latitude": 6.0329,
-        "longitude": 80.2162
-      },
-      {
-        "id": "e2bb6baf-3b7a-4f24-96e0-efede8dc95f3",
-        "name": "Pedlar Street",
-        "description": "Charming street lined with art galleries, cafes, and boutiques.",
-        "latitude": 6.0317,
-        "longitude": 80.2165
-      },
-      {
-        "id": "cf753a2b-d5d7-48c0-8ed1-8f9d4d4c69a5",
-        "name": "Historical Mansion Museum",
-        "description": "Private museum with antiques, curios, and colonial artifacts.",
-        "latitude": 6.0322,
-        "longitude": 80.2154
-      },
-      {
-        "id": "b8fc2487-1ff6-4eeb-86f2-96456d11080c",
-        "name": "Bastion Museum",
-        "description": "Exhibition dedicated to Galle’s defense and colonial history.",
-        "latitude": 6.0341,
-        "longitude": 80.2173
-      },
-      {
-        "id": "89b7a8c9-bc5a-4a65-a3ee-085b947baa1b",
-        "name": "Groote Kerk (Great Church)",
-        "description": "Historic Dutch Reformed Church with a centuries-old organ and tombstones.",
-        "latitude": 6.0276,
-        "longitude": 80.2172
-      }
-    ],
-    "events": [
-      {
-        "id": "a95e22b5-2fa5-4180-8e6b-6d89ad2dc58d",
-        "title": "Galle Literary Festival",
-        "category": "Festival",
-        "description": "Annual celebration of literature, arts, and culture within the fort.",
-        "date": "2025-01-18",
-        "startTime": "09:00",
-        "endTime": "21:00"
-      }
-    ]
-  },
-  {
-    "id": "a51773e5-5a8e-4a49-b4be-073cc774dba0",
-    "name": "Dutch Reformed Church",
-    "type": "Attraction",
-    "category": "Religious",
-    "city": "Galle",
-    "latitude": 6.0263,
-    "longitude": 80.2174,
-    "description": "Built in 1755, this beautiful church showcases Dutch colonial architecture with ornate pulpit and historic gravestones.",
-    "photos": [
-      "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp"
-    ],
-    "highlights": [
-      {
-        "id": "b01b7cc8-3501-42e3-9e12-6f3c01c6d088",
-        "name": "Historic Organ",
-        "description": "Original Dutch pipe organ from the 18th century.",
-        "latitude": 6.0263,
-        "longitude": 80.2174
-      },
-      {
-        "id": "d73ff9e1-6d51-4c60-b3b0-f7dfbe3a3e6f",
-        "name": "Colonial Gravestones",
-        "description": "Ancient tombstones with Dutch inscriptions in the church floor.",
-        "latitude": 6.0263,
-        "longitude": 80.2174
-      }
-    ],
-    "events": [
-      {
-        "id": "be3a3a3c-80c5-41f8-b9b1-3321e273f36c",
-        "title": "Christmas Service",
+    {
+        "id": "05c40e16-f729-4577-8352-c617a9f3671c",
+        "name": "Galle Fort",
+        "type": "Attraction",
+        "category": "Cultural",
+        "city": "Galle",
+        "latitude": 6.032,
+        "longitude": 80.217,
+        "description": "A historic UNESCO World Heritage Site with cobbled streets, ocean views, and centuries of history.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/galle-dutch-fort-sri-lanka-roaming-ceylon.webp",
+            "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp",
+            "https://media.roamingceylon.com/content/images/2025/05/galle-fort-lighthouse.webp"
+        ],
+        "highlights": [
+            {
+                "venueId": "a51773e5-5a8e-4a49-b4be-073cc774dba0"
+            },
+            {
+                "venueId": "b346bc55-1a2a-4443-9e67-13fcf505a3f8"
+            },
+            {
+                "venueId": "d7c3987d-2af4-480e-bf8d-6a4d9fdaacfe"
+            },
+            {
+                "venueId": "ea53c0ef-dad1-43d3-a325-118ac977c18f"
+            },
+            {
+                "venueId": "a00cb176-054c-4f7c-a6ae-9e5cc468c827"
+            },
+            {
+                "venueId": "f62e9822-4a0f-4a5c-8dcf-205a4cf981d2"
+            },
+            {
+                "id": "d5be2de6-4045-4c12-ae62-62080e7ebbd3",
+                "name": "Galle Clock Tower",
+                "description": "An iconic 19th-century clock tower that dominates the Fort skyline.",
+                "latitude": 6.0308,
+                "longitude": 80.2165
+            },
+            {
+                "id": "665d0628-c678-41e4-b6e4-0cd89a1a4be7",
+                "name": "Galle Lighthouse",
+                "description": "Sri Lanka's oldest light station, built in 1848, offering panoramic sea views.",
+                "latitude": 6.0259,
+                "longitude": 80.2201
+            },
+            {
+                "id": "203f4927-7b29-4b59-acc1-5fc36e457e3a",
+                "name": "Dutch Hospital Shopping Precinct",
+                "description": "Historic hospital now housing boutique shops, restaurants, and cafes.",
+                "latitude": 6.0268,
+                "longitude": 80.2187
+            },
+            {
+                "id": "d048c3f8-053e-498a-a4ae-ec4b832fcfd4",
+                "name": "Ramparts Walk",
+                "description": "Scenic walkway atop the fort walls with sunset views and sea breeze.",
+                "latitude": 6.0325,
+                "longitude": 80.2177
+            },
+            {
+                "id": "46ac9c98-d8b6-4d7d-bbbc-e770c23e5c6e",
+                "name": "Flag Rock Bastion",
+                "description": "Famous for dramatic waves and sunset, the best spot to watch cliff jumpers.",
+                "latitude": 6.0251,
+                "longitude": 80.2157
+            },
+            {
+                "id": "c827a2c8-1369-4f5a-b46b-1811c1b621f2",
+                "name": "Galle Fort Walls",
+                "description": "Walkable 17th-century walls that once protected the city from invaders.",
+                "latitude": 6.0331,
+                "longitude": 80.2169
+            },
+            {
+                "id": "5b27c3d5-44bc-4867-9547-6ab3c7286da4",
+                "name": "Old Gate",
+                "description": "Original entrance with British and Dutch coats of arms carved in stone.",
+                "latitude": 6.0361,
+                "longitude": 80.2159
+            },
+            {
+                "id": "bf4ecbe0-44c9-4e6d-93eb-9295eada025b",
+                "name": "Maritime Archaeology Museum",
+                "description": "Museum with exhibits from shipwrecks and colonial era.",
+                "latitude": 6.0354,
+                "longitude": 80.2148
+            },
+            {
+                "id": "9f35b1c6-c764-48d2-97c6-23bcb7b71a47",
+                "name": "Meera Mosque",
+                "description": "A white-washed mosque built in 1904, blending Islamic and colonial architecture.",
+                "latitude": 6.0296,
+                "longitude": 80.2197
+            },
+            {
+                "id": "d3b4d2cf-5dc1-4d47-9735-13c9892d3929",
+                "name": "All Saints’ Church",
+                "description": "Gothic-style Anglican church with beautiful stained glass windows.",
+                "latitude": 6.0298,
+                "longitude": 80.2181
+            },
+            {
+                "id": "d105ed1b-d37d-42e7-8e65-ef6221eaabef",
+                "name": "National Maritime Museum",
+                "description": "Museum featuring local marine history, fishing, and ecology exhibits.",
+                "latitude": 6.0329,
+                "longitude": 80.2162
+            },
+            {
+                "id": "e2bb6baf-3b7a-4f24-96e0-efede8dc95f3",
+                "name": "Pedlar Street",
+                "description": "Charming street lined with art galleries, cafes, and boutiques.",
+                "latitude": 6.0317,
+                "longitude": 80.2165
+            },
+            {
+                "id": "cf753a2b-d5d7-48c0-8ed1-8f9d4d4c69a5",
+                "name": "Historical Mansion Museum",
+                "description": "Private museum with antiques, curios, and colonial artifacts.",
+                "latitude": 6.0322,
+                "longitude": 80.2154
+            },
+            {
+                "id": "b8fc2487-1ff6-4eeb-86f2-96456d11080c",
+                "name": "Bastion Museum",
+                "description": "Exhibition dedicated to Galle’s defense and colonial history.",
+                "latitude": 6.0341,
+                "longitude": 80.2173
+            },
+            {
+                "id": "89b7a8c9-bc5a-4a65-a3ee-085b947baa1b",
+                "name": "Groote Kerk (Great Church)",
+                "description": "Historic Dutch Reformed Church with a centuries-old organ and tombstones.",
+                "latitude": 6.0276,
+                "longitude": 80.2172
+            }
+        ],
+        "events": [
+            {
+                "id": "a95e22b5-2fa5-4180-8e6b-6d89ad2dc58d",
+                "title": "Galle Literary Festival",
+                "category": "Festival",
+                "description": "Annual celebration of literature, arts, and culture within the fort.",
+                "date": "2025-01-18",
+                "startTime": "09:00",
+                "endTime": "21:00"
+            }
+        ]
+    },
+    {
+        "id": "a51773e5-5a8e-4a49-b4be-073cc774dba0",
+        "name": "Dutch Reformed Church",
+        "type": "Attraction",
         "category": "Religious",
-        "description": "Traditional Christmas service with organ music.",
-        "date": "2025-12-25",
-        "startTime": "10:00",
-        "endTime": "11:30"
+        "city": "Galle",
+        "latitude": 6.0263,
+        "longitude": 80.2174,
+        "description": "Built in 1755, this beautiful church showcases Dutch colonial architecture with ornate pulpit and historic gravestones.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/dutch-reformed-church-in-galle-srilanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "b01b7cc8-3501-42e3-9e12-6f3c01c6d088",
+                "name": "Historic Organ",
+                "description": "Original Dutch pipe organ from the 18th century.",
+                "latitude": 6.0263,
+                "longitude": 80.2174
+            },
+            {
+                "id": "d73ff9e1-6d51-4c60-b3b0-f7dfbe3a3e6f",
+                "name": "Colonial Gravestones",
+                "description": "Ancient tombstones with Dutch inscriptions in the church floor.",
+                "latitude": 6.0263,
+                "longitude": 80.2174
+            }
+        ],
+        "events": [
+            {
+                "id": "be3a3a3c-80c5-41f8-b9b1-3321e273f36c",
+                "title": "Christmas Service",
+                "category": "Religious",
+                "description": "Traditional Christmas service with organ music.",
+                "date": "2025-12-25",
+                "startTime": "10:00",
+                "endTime": "11:30"
+            }
+        ]
+    },
+    {
+        "id": "b346bc55-1a2a-4443-9e67-13fcf505a3f8",
+        "name": "All Saints’ Church",
+        "type": "Attraction",
+        "category": "Religious",
+        "city": "Galle",
+        "latitude": 6.0298,
+        "longitude": 80.2181,
+        "description": "Gothic-style Anglican church with beautiful stained glass windows and historic charm.",
+        "photos": [],
+        "highlights": [],
+        "events": []
+    },
+    {
+        "id": "d7c3987d-2af4-480e-bf8d-6a4d9fdaacfe",
+        "name": "Meera Mosque",
+        "type": "Attraction",
+        "category": "Religious",
+        "city": "Galle",
+        "latitude": 6.0296,
+        "longitude": 80.2197,
+        "description": "A white-washed mosque built in 1904, blending Islamic and colonial architecture.",
+        "photos": [],
+        "highlights": [],
+        "events": []
+    },
+    {
+        "id": "ea53c0ef-dad1-43d3-a325-118ac977c18f",
+        "name": "Maritime Archaeology Museum",
+        "type": "Attraction",
+        "category": "Museum",
+        "city": "Galle",
+        "latitude": 6.0354,
+        "longitude": 80.2148,
+        "description": "Museum with exhibits from shipwrecks and colonial era.",
+        "photos": [],
+        "highlights": [],
+        "events": []
+    },
+    {
+        "id": "a00cb176-054c-4f7c-a6ae-9e5cc468c827",
+        "name": "National Maritime Museum",
+        "type": "Attraction",
+        "category": "Museum",
+        "city": "Galle",
+        "latitude": 6.0329,
+        "longitude": 80.2162,
+        "description": "Museum featuring local marine history, fishing, and ecology exhibits.",
+        "photos": [],
+        "highlights": [],
+        "events": []
+    },
+    {
+        "id": "f62e9822-4a0f-4a5c-8dcf-205a4cf981d2",
+        "name": "Historical Mansion Museum",
+        "type": "Attraction",
+        "category": "Museum",
+        "city": "Galle",
+        "latitude": 6.0322,
+        "longitude": 80.2154,
+        "description": "Private museum with antiques, curios, and colonial artifacts.",
+        "photos": [],
+        "highlights": [],
+        "events": []
+    },
+    {
+        "id": "936d5912-5e30-4a31-900d-1c226a6de4d8",
+        "name": "Yala National Park Entrance",
+        "type": "Attraction",
+        "category": "Wildlife",
+        "city": "Yala",
+        "latitude": 6.4704,
+        "longitude": 81.5171,
+        "description": "Sri Lanka’s most famous national park, home to leopards, elephants, sloth bears, and an array of birdlife.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/yala-national-park-leopard-sri-lanka.webp",
+            "https://media.roamingceylon.com/content/images/2025/05/yala-elephant-wildlife.webp"
+        ],
+        "highlights": [
+            {
+                "id": "d8e5b9a2-88ec-4ed6-bd3d-0319f92cb5b1",
+                "name": "Leopard Watching",
+                "description": "Yala boasts one of the highest leopard densities in the world.",
+                "latitude": 6.4841,
+                "longitude": 81.5202
+            },
+            {
+                "id": "bd7c5e52-67c7-4af6-aeb7-059a94c0de01",
+                "name": "Elephant Herds",
+                "description": "Large herds of wild elephants roam freely in the park.",
+                "latitude": 6.4802,
+                "longitude": 81.5222
+            },
+            {
+                "id": "9b6c46cc-99d9-43ef-8b62-ccdc0672f2b8",
+                "name": "Magul Maha Viharaya",
+                "description": "Ancient Buddhist ruins inside the park, surrounded by nature.",
+                "latitude": 6.4562,
+                "longitude": 81.5453
+            }
+        ],
+        "events": [
+            {
+                "id": "4e3a0bdb-8375-4ab0-8822-2eae4bc64dd9",
+                "title": "Bird Watching Festival",
+                "category": "Wildlife",
+                "description": "A seasonal event for bird enthusiasts to spot rare species.",
+                "date": "2025-03-21",
+                "startTime": "06:00",
+                "endTime": "12:00"
+            }
+        ]
+    },
+    {
+        "id": "12ebfca2-cf97-4173-9b46-3e17e0dcf65d",
+        "name": "Udawalawe National Park",
+        "type": "Attraction",
+        "category": "Wildlife",
+        "city": "Udawalawe",
+        "latitude": 6.4766,
+        "longitude": 80.8998,
+        "description": "Best known for its elephant herds and birdlife, Udawalawe is a prime spot for wildlife photography.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/udawalawe-elephants-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "72b43c2a-4311-4f9d-bf92-3cb222b49cdd",
+                "name": "Elephant Transit Home",
+                "description": "See orphaned elephant calves being cared for and released to the wild.",
+                "latitude": 6.4827,
+                "longitude": 80.8932
+            },
+            {
+                "id": "b3e77490-b6a4-4a85-bd0e-185e705329ef",
+                "name": "Safari Jeep Tours",
+                "description": "Guided tours for wildlife spotting, best at sunrise and sunset.",
+                "latitude": 6.4800,
+                "longitude": 80.9000
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "e3a70d60-f8a6-4fbe-93e5-41bda88b2786",
+        "name": "Bundala National Park",
+        "type": "Attraction",
+        "category": "Wildlife",
+        "city": "Hambantota",
+        "latitude": 6.2001,
+        "longitude": 81.2369,
+        "description": "A Ramsar wetland, Bundala is famous for migratory birds, crocodiles, and wild buffalo.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/bundala-birds-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "fc2745c0-62a6-4d5d-b97f-2c93a94c4b31",
+                "name": "Flamingo Watching",
+                "description": "See thousands of migratory flamingos (Nov–Mar).",
+                "latitude": 6.1953,
+                "longitude": 81.2401
+            },
+            {
+                "id": "a9a0e73c-7757-4af0-8e12-5a9f661ef3a3",
+                "name": "Saltwater Crocodiles",
+                "description": "Watch crocodiles basking along the lagoons.",
+                "latitude": 6.2012,
+                "longitude": 81.2305
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "b9710cf1-dae4-46e5-9f44-2b5bc19b5f50",
+        "name": "Wilpattu National Park",
+        "type": "Attraction",
+        "category": "Wildlife",
+        "city": "Wilpattu",
+        "latitude": 8.5364,
+        "longitude": 80.0367,
+        "description": "Sri Lanka's largest national park, famous for its lakes (villus), leopards, sloth bears, and dense forest.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/wilpattu-leopard-sri-lanka.webp",
+            "https://media.roamingceylon.com/content/images/2025/05/wilpattu-villus-birdlife.webp"
+        ],
+        "highlights": [
+            {
+                "id": "f7f40359-d80e-40e4-9db8-95937d0d2a16",
+                "name": "Leopard Safari",
+                "description": "Wilpattu is renowned for leopard sightings in thick forest and near waterholes.",
+                "latitude": 8.5441,
+                "longitude": 80.0287
+            },
+            {
+                "id": "bd10e2ec-7d13-470c-bf77-795e1c0c33ae",
+                "name": "Willus (Natural Lakes)",
+                "description": "Picturesque lakes attract elephants, deer, and diverse birdlife.",
+                "latitude": 8.5311,
+                "longitude": 80.0294
+            },
+            {
+                "id": "63d37e49-78c5-4e6c-8125-b206b48554b6",
+                "name": "Sloth Bear Watching",
+                "description": "One of the best places in Sri Lanka to spot the elusive sloth bear.",
+                "latitude": 8.5370,
+                "longitude": 80.0400
+            }
+        ],
+        "events": [
+            {
+                "id": "eaf7c47e-789b-4e49-88bc-45e985dad3bb",
+                "title": "Wilpattu Birding Week",
+                "category": "Wildlife",
+                "description": "A guided week for birdwatchers and nature lovers.",
+                "date": "2025-11-10",
+                "startTime": "06:00",
+                "endTime": "12:00"
+            }
+        ]
+    },
+    {
+        "id": "701d768e-8ab5-4cfb-96e5-2d933e2b28fd",
+        "name": "Minneriya National Park",
+        "type": "Attraction",
+        "category": "Wildlife",
+        "city": "Minneriya",
+        "latitude": 8.0126,
+        "longitude": 80.8226,
+        "description": "Famous for 'The Gathering,' where hundreds of wild elephants congregate around the Minneriya Tank during the dry season.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/minneriya-elephant-gathering.webp"
+        ],
+        "highlights": [
+            {
+                "id": "8472b2d2-267a-46d8-a7fc-4a92cba92c18",
+                "name": "The Gathering",
+                "description": "One of the largest wild Asian elephant gatherings in the world (July–September).",
+                "latitude": 8.0161,
+                "longitude": 80.8184
+            },
+            {
+                "id": "9e5bb38f-70a7-4622-996c-595383dd4047",
+                "name": "Minneriya Tank",
+                "description": "Ancient reservoir attracting herds of elephants and water birds.",
+                "latitude": 8.0139,
+                "longitude": 80.8221
+            }
+        ],
+        "events": [
+            {
+                "id": "e0ab3e7d-ec9d-4c0f-8862-46e6c3926652",
+                "title": "Elephant Conservation Workshop",
+                "category": "Wildlife",
+                "description": "A special event for conservationists, travelers, and wildlife photographers.",
+                "date": "2025-08-15",
+                "startTime": "15:00",
+                "endTime": "18:00"
+            }
+        ]
+    },
+    {
+        "id": "c53dce22-1ad3-4b3a-bc23-bf1a2165d4d4",
+        "name": "Kaudulla National Park",
+        "type": "Attraction",
+        "category": "Wildlife",
+        "city": "Kaudulla",
+        "latitude": 8.1461,
+        "longitude": 80.9068,
+        "description": "A popular eco-tourism destination with large herds of elephants and migratory birds, centered around the Kaudulla Tank.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/kaudulla-sri-lanka-elephants.webp"
+        ],
+        "highlights": [
+            {
+                "id": "bee1abec-273e-4b5f-9255-fcb8a267e885",
+                "name": "Elephant Watching",
+                "description": "Hundreds of elephants migrate between Kaudulla, Minneriya, and Wasgamuwa parks.",
+                "latitude": 8.1457,
+                "longitude": 80.9110
+            },
+            {
+                "id": "9958a3c5-14f3-494e-92a4-5378edfa91bb",
+                "name": "Kaudulla Tank",
+                "description": "Picturesque ancient reservoir attracting wildlife, especially in the dry season.",
+                "latitude": 8.1475,
+                "longitude": 80.9082
+            }
+        ],
+        "events": [
+            {
+                "id": "ecb73d1e-23b8-4b9d-8882-05eafc8b474f",
+                "title": "Kaudulla Bird Migration Day",
+                "category": "Wildlife",
+                "description": "Spot rare migratory birds with local guides.",
+                "date": "2025-10-12",
+                "startTime": "06:00",
+                "endTime": "12:00"
+            }
+        ]
+    },
+    {
+        "id": "ae6efb35-651f-4b82-99a3-3b1c4094d020",
+        "name": "Sacred City of Anuradhapura",
+        "type": "Attraction",
+        "category": "Cultural",
+        "city": "Anuradhapura",
+        "latitude": 8.3356,
+        "longitude": 80.4100,
+        "description": "The ancient capital of Sri Lanka and UNESCO World Heritage Site, home to towering dagobas, sacred Bodhi trees, ancient monasteries, and centuries of Buddhist history.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/anuradhapura-ruwanwelisaya-sunset.webp",
+            "https://media.roamingceylon.com/content/images/2025/05/sri-maha-bodhi-anuradhapura.webp"
+        ],
+        "highlights": [
+            {
+                "id": "fc355e23-cdf0-41e8-8fc2-9ab965f3e4b1",
+                "name": "Sri Maha Bodhi",
+                "description": "The oldest historically documented tree in the world, grown from a cutting of the original Bodhi tree under which the Buddha attained enlightenment.",
+                "latitude": 8.3452,
+                "longitude": 80.3963
+            },
+            {
+                "id": "f1e0023a-4aeb-4f43-9ed7-7ed21e1c301e",
+                "name": "Ruwanwelisaya Stupa",
+                "description": "A massive white dagoba built in 140 B.C., an iconic landmark of Anuradhapura.",
+                "latitude": 8.3477,
+                "longitude": 80.3881
+            },
+            {
+                "id": "a2c53fa7-209e-4cfb-a8e4-f3b0f6a7d20a",
+                "name": "Jetavanaramaya Stupa",
+                "description": "Once the third tallest structure in the ancient world, made of over 90 million bricks.",
+                "latitude": 8.3544,
+                "longitude": 80.3957
+            },
+            {
+                "id": "e32d3c0e-0dd7-468d-b13e-c898ac3011c5",
+                "name": "Thuparamaya Dagoba",
+                "description": "The first dagoba built after the introduction of Buddhism to Sri Lanka, housing a collarbone relic of the Buddha.",
+                "latitude": 8.3473,
+                "longitude": 80.3969
+            },
+            {
+                "id": "e0f573a7-f7cf-41e1-a660-366222a69b97",
+                "name": "Abhayagiri Monastery",
+                "description": "A vast monastic complex with ruins, moonstones, and forested trails.",
+                "latitude": 8.3642,
+                "longitude": 80.3998
+            }
+        ],
+        "events": [
+            {
+                "id": "87f7c26c-bcd6-43ca-866e-0d4f95d82f3d",
+                "title": "Poson Full Moon Festival",
+                "category": "Festival",
+                "description": "Thousands of pilgrims gather to celebrate the introduction of Buddhism to Sri Lanka with processions, lanterns, and religious rituals.",
+                "date": "2025-06-21",
+                "startTime": "18:00",
+                "endTime": "23:00"
+            }
+        ]
+    },
+    {
+        "id": "7268e929-10be-41d4-8b68-3811e504753a",
+        "name": "Ancient City of Polonnaruwa",
+        "type": "Attraction",
+        "category": "Cultural",
+        "city": "Polonnaruwa",
+        "latitude": 7.9403,
+        "longitude": 81.0188,
+        "description": "Sri Lanka’s second most ancient kingdom, Polonnaruwa is a UNESCO World Heritage Site featuring well-preserved ruins, temples, stupas, and beautiful stone sculptures.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/polonnaruwa-gal-vihara-sri-lanka.webp",
+            "https://media.roamingceylon.com/content/images/2025/05/polonnaruwa-royal-palace-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "ba7dfd2d-362b-4bdf-bdcf-c47349d87eb8",
+                "name": "Gal Vihara",
+                "description": "Four massive Buddha statues carved into a single granite rock, a masterpiece of Sinhalese sculpture.",
+                "latitude": 7.9566,
+                "longitude": 81.0037
+            },
+            {
+                "id": "ef64a01e-2c4a-431f-bd99-6b024a46f01f",
+                "name": "Royal Palace of Parakramabahu",
+                "description": "Ruins of a grand 12th-century palace complex with thick walls and impressive brickwork.",
+                "latitude": 7.9406,
+                "longitude": 81.0006
+            },
+            {
+                "id": "91d19b42-2b99-4251-90df-b7c93ca67b8d",
+                "name": "Vatadage",
+                "description": "A circular relic house with stone carvings and guard stones, considered one of the best-preserved monuments.",
+                "latitude": 7.9401,
+                "longitude": 81.0039
+            },
+            {
+                "id": "e0a55d84-0bf3-4a46-9cfd-1d0c67be98c9",
+                "name": "Rankoth Vehera",
+                "description": "A massive brick stupa surrounded by a monastery, the largest dagoba in Polonnaruwa.",
+                "latitude": 7.9476,
+                "longitude": 81.0035
+            },
+            {
+                "id": "c3e7d420-3e1b-448c-bf9f-88eb331278da",
+                "name": "Lankathilaka Image House",
+                "description": "Imposing 17-meter-tall standing Buddha statue within a large brick shrine.",
+                "latitude": 7.9502,
+                "longitude": 81.0058
+            },
+            {
+                "id": "e8aaf8b2-9961-4b43-9f24-4ae8f1998d6b",
+                "name": "Nissanka Latha Mandapaya",
+                "description": "A unique stone pavilion with carved lotus columns, believed to be used for chanting Buddhist scriptures.",
+                "latitude": 7.9403,
+                "longitude": 81.0043
+            }
+        ],
+        "events": [
+            {
+                "id": "4e936a3f-ec6f-42b3-82fc-16ba53564e8d",
+                "title": "Polonnaruwa Perahera",
+                "category": "Festival",
+                "description": "A traditional religious procession with dancers, elephants, and music, celebrating the ancient heritage of the city.",
+                "date": "2025-08-10",
+                "startTime": "18:00",
+                "endTime": "22:00"
+            }
+        ]
+    },
+    {
+        "id": "e0e3f89c-11f3-4f92-a4b7-3f2e3a9ab8c1",
+        "name": "Pigeon Island National Park",
+        "type": "Attraction",
+        "category": "Wildlife",
+        "city": "Trincomalee",
+        "latitude": 8.7210,
+        "longitude": 81.1931,
+        "description": "One of Sri Lanka’s two marine national parks, renowned for its powdery white sand, turquoise water, and some of the best snorkeling with coral reefs and turtles.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/pigeon-island-national-park-sri-lanka.webp",
+            "https://media.roamingceylon.com/content/images/2025/05/pigeon-island-snorkeling-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "36b1ecb1-381b-46d8-a179-d2dfaa8e7b11",
+                "name": "Coral Gardens",
+                "description": "Colorful shallow reefs teeming with tropical fish and live coral.",
+                "latitude": 8.7213,
+                "longitude": 81.1932
+            },
+            {
+                "id": "23a8ecb3-b188-441a-9d86-9fbb5fa63222",
+                "name": "Snorkeling with Turtles",
+                "description": "Swim alongside hawksbill and green turtles in crystal-clear waters.",
+                "latitude": 8.7207,
+                "longitude": 81.1930
+            },
+            {
+                "id": "cdd1cf8d-4a0b-4e2b-b153-7f469595e1b2",
+                "name": "Pigeon Colony",
+                "description": "Home to the endangered rock pigeon, which gives the island its name.",
+                "latitude": 8.7211,
+                "longitude": 81.1931
+            }
+        ],
+        "events": [
+            {
+                "id": "0d37fc3a-13c3-4d8b-b134-91cdebaadf4b",
+                "title": "Pigeon Island Marine Conservation Day",
+                "category": "Nature & Conservation",
+                "description": "A day of guided snorkeling, beach cleanups, and conservation talks.",
+                "date": "2025-08-15",
+                "startTime": "08:00",
+                "endTime": "16:00"
+            }
+        ]
+    },
+    {
+        "id": "9c5a53e2-715d-488d-9eb3-203bebf85ea8",
+        "name": "Koneswaram Temple",
+        "type": "Attraction",
+        "category": "Religious",
+        "city": "Trincomalee",
+        "latitude": 8.5879,
+        "longitude": 81.2282,
+        "description": "A magnificent Hindu temple perched atop Swami Rock with panoramic views of the Indian Ocean.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/koneswaram-temple-trincomalee.webp"
+        ],
+        "highlights": [
+            {
+                "id": "b13a523e-184b-44b8-9976-b31c7f63a12b",
+                "name": "Swami Rock",
+                "description": "Sheer cliff offering breathtaking views and known as Lovers’ Leap.",
+                "latitude": 8.5883,
+                "longitude": 81.2284
+            },
+            {
+                "id": "314eaf3d-cfc1-4f2d-9e01-2e8ec8ffba38",
+                "name": "Sacred Pond",
+                "description": "A holy water tank within the temple complex.",
+                "latitude": 8.5881,
+                "longitude": 81.2280
+            }
+        ],
+        "events": [
+            {
+                "id": "f92d438b-9c41-4b7a-b62f-c77b74c1df22",
+                "title": "Ther Festival",
+                "category": "Religious",
+                "description": "Annual chariot procession drawing thousands of pilgrims.",
+                "date": "2025-06-25",
+                "startTime": "07:00",
+                "endTime": "12:00"
+            }
+        ]
+    },
+    {
+        "id": "7d67e8ca-7ef8-4c2e-a1ea-d9e56b2a8d1c",
+        "name": "Nilaveli Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Trincomalee",
+        "latitude": 8.6876,
+        "longitude": 81.1816,
+        "description": "A pristine stretch of white sand and turquoise water, famous for its calm seas and ideal swimming and water sports.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/nilaveli-beach-trincomalee.webp"
+        ],
+        "highlights": [
+            {
+                "id": "df5c159d-3d9a-49db-acc9-3d144a230c73",
+                "name": "Sunrise Walks",
+                "description": "Peaceful early morning walks along the empty shoreline.",
+                "latitude": 8.6876,
+                "longitude": 81.1816
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "96f31b2b-ff65-41e2-8e9a-b23edcab803f",
+        "name": "Marble Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Trincomalee",
+        "latitude": 8.5504,
+        "longitude": 81.1748,
+        "description": "A tranquil cove with crystal-clear water and fine sand, known for its safe swimming and picnicking.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/marble-beach-trincomalee.webp"
+        ],
+        "highlights": [
+            {
+                "id": "bd1fdc10-8dd5-4eab-88c2-90cc7f63db84",
+                "name": "Swimming Area",
+                "description": "Safe area for families and kids to swim.",
+                "latitude": 8.5504,
+                "longitude": 81.1748
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "264a6508-67b2-4ad1-b4d2-8e781a2a7de9",
+        "name": "Fort Frederick",
+        "type": "Attraction",
+        "category": "Historical",
+        "city": "Trincomalee",
+        "latitude": 8.5745,
+        "longitude": 81.2231,
+        "description": "A colonial-era fort originally built by the Portuguese and later fortified by the Dutch and British. Offers panoramic views and wild spotted deer.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/fort-frederick-trincomalee.webp"
+        ],
+        "highlights": [
+            {
+                "id": "e1ef7a8c-d1be-4a31-8b1a-98d9ee4ed564",
+                "name": "Deer Watching",
+                "description": "Spotted deer roam freely inside the fort.",
+                "latitude": 8.5747,
+                "longitude": 81.2230
+            },
+            {
+                "id": "9c5a53e2-715d-488d-9eb3-203bebf85ea8",
+                "venueId": "9c5a53e2-715d-488d-9eb3-203bebf85ea8"
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "a380b2e4-721e-4065-9c25-8e17d2dc2f5a",
+        "name": "Arugam Bay Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Arugam Bay",
+        "latitude": 6.8392,
+        "longitude": 81.8362,
+        "description": "World-famous surf beach with laid-back vibes, ideal for surfing, swimming, and beach parties.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/arugam-bay-surfing.webp"
+        ],
+        "highlights": [
+            {
+                "id": "7aee149a-8e18-4c9e-b9e7-13c517a37b5c",
+                "name": "Main Point",
+                "description": "Popular surf break attracting surfers from around the globe.",
+                "latitude": 6.8401,
+                "longitude": 81.8367
+            },
+            {
+                "id": "68d7f095-0c57-433f-a2f8-3cb04134aaba",
+                "name": "Whiskey Point",
+                "description": "Chilled spot for sunrise surfing and social gatherings.",
+                "latitude": 6.8686,
+                "longitude": 81.8650
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "f8eb47ae-c31b-42e7-9e5f-43238d2ff5b6",
+        "name": "Peanut Farm Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Arugam Bay",
+        "latitude": 6.7967,
+        "longitude": 81.8712,
+        "description": "A serene beach popular for beginner and intermediate surfers, with rustic beach shacks and laid-back vibes.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/peanut-farm-beach-arugam-bay.webp"
+        ],
+        "highlights": [
+            {
+                "id": "c1dc3d2d-5c0c-4b56-95b6-02ed9b377af9",
+                "name": "Surf Breaks",
+                "description": "Gentle waves ideal for beginner and intermediate surfers.",
+                "latitude": 6.7967,
+                "longitude": 81.8712
+            },
+            {
+                "id": "ab9282a7-9b8e-433b-8b7e-9be26719487a",
+                "name": "Rustic Beach Cafés",
+                "description": "Simple beach shacks serving fresh coconut and snacks.",
+                "latitude": 6.7967,
+                "longitude": 81.8712
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "91d7e31c-5cc2-4a90-8c36-c0fc2b57b17f",
+        "name": "Elephant Rock",
+        "type": "Attraction",
+        "category": "Natural",
+        "city": "Arugam Bay",
+        "latitude": 6.8203,
+        "longitude": 81.8810,
+        "description": "A large rocky outcrop south of Arugam Bay, popular for sunrise hikes, panoramic views, and a scenic surf break below.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/elephant-rock-arugam-bay.webp"
+        ],
+        "highlights": [
+            {
+                "id": "e5fc759d-2be3-4c4a-8c1b-fc27389f05eb",
+                "name": "Scenic Viewpoint",
+                "description": "Panoramic views over the ocean and bay, best at sunrise.",
+                "latitude": 6.8203,
+                "longitude": 81.8810
+            },
+            {
+                "id": "b3d1b7ab-b609-4768-9f6d-2e7cf3b956f8",
+                "name": "Surf Point",
+                "description": "A less-crowded surf break for intermediate surfers.",
+                "latitude": 6.8199,
+                "longitude": 81.8816
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "f0f6b9c5-442a-4cb0-9c8b-04fc6c9f65f4",
+        "name": "Sigiriya Rock Fortress",
+        "type": "Attraction",
+        "category": "Cultural",
+        "city": "Sigiriya",
+        "latitude": 7.9569,
+        "longitude": 80.7599,
+        "description": "A UNESCO World Heritage Site, Sigiriya is an ancient rock fortress famed for its frescoes, water gardens, and the Lion's Paw entrance. Once a royal palace, it is a marvel of urban planning and ancient engineering.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/sigiriya-lion-rock-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "2b7b6fa0-557e-4637-91d5-5d84c5aeb45d",
+                "name": "Lion's Paw Terrace",
+                "description": "Giant stone lion paws guard the main staircase to the summit.",
+                "latitude": 7.9578,
+                "longitude": 80.7605
+            },
+            {
+                "id": "2e23922b-993f-495f-8d99-94b25eb5d08d",
+                "name": "Frescoes & Mirror Wall",
+                "description": "Exquisite ancient frescoes of celestial maidens and a wall once polished to a mirror finish, inscribed with ancient graffiti.",
+                "latitude": 7.9563,
+                "longitude": 80.7587
+            },
+            {
+                "id": "8c2b09ae-c4a1-48d3-85db-2216e42fcff1",
+                "name": "Summit Palace Ruins",
+                "description": "Ruins of King Kasyapa's palace and panoramic views over the jungle.",
+                "latitude": 7.9572,
+                "longitude": 80.7600
+            },
+            {
+                "id": "5e5a373a-5c3d-427d-928f-27a4bc0e9ba1",
+                "name": "Water Gardens",
+                "description": "Symmetrical pools, fountains, and landscaped terraces at the base, showcasing ancient hydraulic engineering.",
+                "latitude": 7.9562,
+                "longitude": 80.7593
+            },
+            {
+                "id": "706e02c6-68ef-44e2-b93d-307eeae195ba",
+                "name": "Boulder Gardens",
+                "description": "Large boulders and winding paths, once used as meditation spaces and shelters.",
+                "latitude": 7.9557,
+                "longitude": 80.7585
+            },
+            {
+                "id": "9849309a-2af5-4ba5-8197-042799c473fd",
+                "name": "Cobra Hood Cave",
+                "description": "A rock formation resembling a cobra’s hood, adorned with ancient paintings.",
+                "latitude": 7.9567,
+                "longitude": 80.7576
+            },
+            {
+                "id": "e42bc477-bbe0-41aa-b7d8-4ca8e5c88ca4",
+                "name": "Audience Hall",
+                "description": "An open stone platform where the king met his ministers.",
+                "latitude": 7.9571,
+                "longitude": 80.7589
+            },
+            {
+                "id": "28a5c9c0-6bcb-4d25-bdf2-22fd7e211b14",
+                "name": "Terraced Gardens",
+                "description": "Stepped terraces rising from the gardens to the base of the rock.",
+                "latitude": 7.9575,
+                "longitude": 80.7591
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "fc09ad0e-c5d4-4e56-9519-92e89b94d48b",
+        "name": "Pidurangala Rock",
+        "type": "Attraction",
+        "category": "Natural",
+        "city": "Sigiriya",
+        "latitude": 7.9332,
+        "longitude": 80.7529,
+        "description": "A massive rock formation offering the best panoramic view of Sigiriya and stunning sunrises. A short hike leads to an ancient temple and reclining Buddha.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/pidurangala-rock-sigiriya.webp"
+        ],
+        "highlights": [
+            {
+                "id": "d31291b3-65da-4295-b0ab-4dfdf20e4bde",
+                "name": "Summit View",
+                "description": "Unbeatable sunrise/sunset views of Sigiriya and the surrounding forest.",
+                "latitude": 7.9337,
+                "longitude": 80.7526
+            },
+            {
+                "id": "51a0d3d0-2728-463b-9731-dfc96eec4c9f",
+                "name": "Reclining Buddha Statue",
+                "description": "Ancient brick Buddha statue partway up the climb.",
+                "latitude": 7.9341,
+                "longitude": 80.7530
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "67e4ca8c-d5f7-432e-97d4-d7ef07d9df15",
+        "name": "Nine Arches Bridge",
+        "type": "Attraction",
+        "category": "Historical",
+        "city": "Ella",
+        "latitude": 6.8761,
+        "longitude": 81.0576,
+        "description": "A spectacular stone railway viaduct with nine arches, nestled in lush tea fields. A must-see photo spot and popular train-watching viewpoint.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/nine-arches-bridge-ella.webp"
+        ],
+        "highlights": [
+            {
+                "id": "cbbcccf9-36b7-45ed-97a0-d82849ec55d2",
+                "name": "Viewpoint Trail",
+                "description": "Scenic walking trail leading to the best photo spot.",
+                "latitude": 6.8764,
+                "longitude": 81.0579
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "df1ecbf3-7c6d-48bb-8d56-c3d287b20aef",
+        "name": "Little Adam's Peak",
+        "type": "Attraction",
+        "category": "Natural",
+        "city": "Ella",
+        "latitude": 6.8662,
+        "longitude": 81.0613,
+        "description": "A short, rewarding hike with stunning 360° views over Ella Gap, tea plantations, and rolling hills. Best at sunrise or sunset.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/little-adams-peak-ella.webp"
+        ],
+        "highlights": [
+            {
+                "id": "98c0f755-72e6-4e2a-b8a4-6342a01b03c3",
+                "name": "Summit Views",
+                "description": "Panoramic view of Ella and surrounding mountains.",
+                "latitude": 6.8667,
+                "longitude": 81.0620
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "3ba5695a-cf31-4f35-a9c2-6f50b4c66822",
+        "name": "Ella Rock",
+        "type": "Attraction",
+        "category": "Natural",
+        "city": "Ella",
+        "latitude": 6.8541,
+        "longitude": 81.0705,
+        "description": "A challenging trek up through tea estates and forest, offering spectacular views over the valley. Popular with sunrise hikers.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/ella-rock-view-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "cb22d17a-574e-46f6-9f18-5ec5ed68dbfa",
+                "name": "Summit Sunrise",
+                "description": "Unforgettable sunrise from the rocky outcrop.",
+                "latitude": 6.8545,
+                "longitude": 81.0701
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "ca1c28a1-80d1-44b0-89a6-fb6271f25fef",
+        "name": "Ravana Falls",
+        "type": "Attraction",
+        "category": "Natural",
+        "city": "Ella",
+        "latitude": 6.8404,
+        "longitude": 81.0486,
+        "description": "A spectacular 25-meter-high waterfall cascading over jagged rocks, easily accessible from Ella town.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/ravana-falls-ella.webp"
+        ],
+        "highlights": [
+            {
+                "id": "2c2e1ffb-4162-47a6-9ac6-1b88de23ee7c",
+                "name": "Swimming Pool",
+                "description": "Natural pool at the base for cooling off (check safety).",
+                "latitude": 6.8408,
+                "longitude": 81.0483
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "bcd4e1a0-c9d0-4ea0-9be9-bc74eec5c69c",
+        "name": "Demodara Loop",
+        "type": "Attraction",
+        "category": "Railway",
+        "city": "Ella",
+        "latitude": 6.8814,
+        "longitude": 81.0698,
+        "description": "Ingenious railway loop and spiral tunnel where the track circles under itself—a marvel of colonial engineering.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/demodara-loop-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "d186d8da-7bbf-45a9-94b9-ffb267a5c033",
+                "name": "Spiral Tunnel View",
+                "description": "Watch the train complete the spiral from the station viewpoint.",
+                "latitude": 6.8820,
+                "longitude": 81.0703
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "cc79e7ea-d653-4c9e-b5f9-9d2b0b9f0c3d",
+        "name": "Diyaluma Falls",
+        "type": "Attraction",
+        "category": "Natural",
+        "city": "Koslanda",
+        "latitude": 6.7588,
+        "longitude": 81.0056,
+        "description": "The second tallest waterfall in Sri Lanka, cascading 220 meters in a single stunning drop, surrounded by lush greenery and dramatic cliffs.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/diyaluma-falls-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "32ae4f68-f1d8-4a91-9f0a-d9c6f2d5677e",
+                "name": "Base Viewpoint",
+                "description": "View the dramatic full drop from the bottom of the falls.",
+                "latitude": 6.7583,
+                "longitude": 81.0061
+            },
+            {
+                "id": "94b6726d-fb98-4198-874b-d7d8597e54ca",
+                "venueId": "b67adbe9-bc2a-4c55-87bb-30c35e7f8ab0"
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "b67adbe9-bc2a-4c55-87bb-30c35e7f8ab0",
+        "name": "Upper Diyaluma Falls",
+        "type": "Attraction",
+        "category": "Natural",
+        "city": "Koslanda",
+        "latitude": 6.7635,
+        "longitude": 81.0067,
+        "description": "Stunning natural pools at the top of Diyaluma Falls, ideal for a refreshing swim with breathtaking views over the valley below.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/upper-diyaluma-falls-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "ebf29e74-3b8a-4942-8f85-41be6dbfa172",
+                "name": "Infinity Pools",
+                "description": "Natural pools overlooking the edge, perfect for swimming and photography.",
+                "latitude": 6.7638,
+                "longitude": 81.0071
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "f8651cf0-6fa7-4b29-8de1-85dbcd9d1c0a",
+        "name": "Temple of the Sacred Tooth Relic",
+        "type": "Attraction",
+        "category": "Religious",
+        "city": "Kandy",
+        "latitude": 7.2936,
+        "longitude": 80.6411,
+        "description": "Sri Lanka's most sacred Buddhist temple, housing the relic of the tooth of the Buddha, and a UNESCO World Heritage Site.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/temple-of-the-tooth-kandy.webp"
+        ],
+        "highlights": [
+            {
+                "id": "f27db6a8-6e3d-41d8-843b-7ef1a6a16bc6",
+                "name": "Daily Pooja Ceremonies",
+                "description": "Traditional rituals performed three times a day, featuring drummers and dancers.",
+                "latitude": 7.2936,
+                "longitude": 80.6411
+            }
+        ],
+        "events": [
+            {
+                "id": "c2a253fa-f7a0-4630-8cc9-0e003e8f7fc7",
+                "title": "Esala Perahera",
+                "category": "Festival",
+                "description": "One of Asia’s grandest Buddhist festivals with parades, elephants, and dancers.",
+                "date": "2025-07-31",
+                "startTime": "18:00",
+                "endTime": "22:00"
+            }
+        ]
+    },
+    {
+        "id": "46fdaf44-2c8a-4e4d-9f7a-cfc527410095",
+        "name": "Kandy Lake",
+        "type": "Attraction",
+        "category": "Nature",
+        "city": "Kandy",
+        "latitude": 7.2936,
+        "longitude": 80.6389,
+        "description": "A picturesque lake at the heart of Kandy, perfect for peaceful strolls and boat rides.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/kandy-lake.webp"
+        ],
+        "highlights": [
+            {
+                "id": "8e5b8e0b-8b52-494a-89e7-44765043f48c",
+                "name": "Lake Walk",
+                "description": "Shaded lakeside promenade with city and temple views.",
+                "latitude": 7.2936,
+                "longitude": 80.6389
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "f1b7e28e-14f8-4e42-aef8-32a50e330abc",
+        "name": "Royal Botanical Gardens, Peradeniya",
+        "type": "Attraction",
+        "category": "Garden",
+        "city": "Kandy",
+        "latitude": 7.2715,
+        "longitude": 80.5952,
+        "description": "Famous for its vast collection of orchids, palms, and rare plants. Ideal for nature walks and picnics.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/peradeniya-royal-botanical-garden.webp"
+        ],
+        "highlights": [
+            {
+                "id": "3df84bc1-2f8c-484e-b8cd-2b6915adf062",
+                "name": "Giant Javan Fig Tree",
+                "description": "A majestic tree with enormous roots and canopy.",
+                "latitude": 7.2715,
+                "longitude": 80.5952
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "b20e7a20-d90c-41fa-839d-c649703164e7",
+        "name": "Bahirawakanda Buddha Statue",
+        "type": "Attraction",
+        "category": "Religious",
+        "city": "Kandy",
+        "latitude": 7.2975,
+        "longitude": 80.6332,
+        "description": "A giant white Buddha statue overlooking Kandy town, offering panoramic views of the city and surrounding hills.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/bahirawakanda-buddha-statue-kandy.webp"
+        ],
+        "highlights": [
+            {
+                "id": "01eea286-3358-4098-8d5e-d097e81a94c7",
+                "name": "Hilltop Viewpoint",
+                "description": "Best spot for sunrise and sunset photos over Kandy.",
+                "latitude": 7.2975,
+                "longitude": 80.6332
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "e979a6d8-3567-410e-a489-7b4c1f11a2c0",
+        "name": "Udawatta Kele Sanctuary",
+        "type": "Attraction",
+        "category": "Wildlife",
+        "city": "Kandy",
+        "latitude": 7.2990,
+        "longitude": 80.6414,
+        "description": "A lush forest reserve above Kandy Lake, popular for bird watching, nature walks, and ancient hermitages.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/udawatta-kele-forest-kandy.webp"
+        ],
+        "highlights": [
+            {
+                "id": "3653e5d2-1f5f-4bb5-824e-8e3b24946dc7",
+                "name": "Lover’s Walk Trail",
+                "description": "A peaceful forest path with a chance to spot rare birds and monkeys.",
+                "latitude": 7.2993,
+                "longitude": 80.6421
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "5dff7c55-8d68-4560-858a-4e3847dc941e",
+        "name": "Unawatuna Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Unawatuna",
+        "latitude": 6.0181,
+        "longitude": 80.2433,
+        "description": "A crescent-shaped golden sand beach famous for safe swimming, vibrant cafes, snorkeling, and lively nightlife.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/unawatuna-beach-sri-lanka.webp"
+        ],
+        "highlights": [],
+        "events": []
+    },
+    {
+        "id": "c2595e18-473e-4c7c-bd70-7d16b40dcd9e",
+        "name": "Jungle Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Unawatuna",
+        "latitude": 6.0292,
+        "longitude": 80.2452,
+        "description": "A secluded cove with clear turquoise water, surrounded by forest—great for snorkeling and kayaking.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/jungle-beach-unawatuna.webp"
+        ],
+        "highlights": [],
+        "events": []
+    },
+    {
+        "id": "3e322e65-2e93-41af-b8c7-2eafe4cfed39",
+        "name": "Dalawella Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Dalawella",
+        "latitude": 6.0047,
+        "longitude": 80.2448,
+        "description": "Famous for its Insta-worthy palm swing, relaxed vibe, turtle spotting, and safe swimming in a natural lagoon.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/dalawella-beach-sri-lanka.webp"
+        ],
+        "highlights": [],
+        "events": []
+    },
+    {
+        "id": "54a33080-cd2a-4a9e-b838-342474b38d49",
+        "name": "Wijaya Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Dalawella",
+        "latitude": 6.0037,
+        "longitude": 80.2454,
+        "description": "A lively beach with famous seafood restaurant, protected lagoon for swimming, and frequent turtle sightings.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/wijaya-beach-dalawella.webp"
+        ],
+        "highlights": [
+            {
+                "id": "fdfe688c-2b62-417b-9601-983efd21e18d",
+                "name": "Turtle Feeding",
+                "description": "Watch and feed wild sea turtles that visit the shallow lagoon—especially around sunset.",
+                "latitude": 6.0037,
+                "longitude": 80.2454
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "e5632c13-e89f-4e34-9e81-1de913eb4eaa",
+        "name": "Hikkaduwa Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Hikkaduwa",
+        "latitude": 6.1404,
+        "longitude": 80.0982,
+        "description": "A vibrant beach town famous for surfing, snorkeling with turtles, nightlife, and coral sanctuary.",
+        "photos": [
+            "https://media.roamingceylon.com/content/images/2025/05/hikkaduwa-beach-sri-lanka.webp"
+        ],
+        "highlights": [
+            {
+                "id": "f4ba57b8-728c-49d8-947b-38529c32ee4a",
+                "name": "Coral Sanctuary",
+                "description": "Snorkel among colorful corals and tropical fish in the protected marine park.",
+                "latitude": 6.1379,
+                "longitude": 80.1000
+            },
+            {
+                "id": "b94472b4-fd39-4870-93d0-fc44468050ad",
+                "name": "Turtle Spotting",
+                "description": "See giant sea turtles up close, often swimming near the shore.",
+                "latitude": 6.1404,
+                "longitude": 80.0982
+            },
+            {
+                "id": "e16e39e6-5e43-4c63-95ca-9629bb8f0a0b",
+                "name": "Surfing",
+                "description": "Hikkaduwa is famous for consistent waves and beginner-friendly surf schools.",
+                "latitude": 6.1376,
+                "longitude": 80.0991
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "5ca0e2d1-47b1-4a2a-8e8a-b2d582fd113c",
+        "name": "Ahangama Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Ahangama",
+        "latitude": 5.9726,
+        "longitude": 80.3815,
+        "description": "Popular among surfers for its consistent waves, sandy stretches, and relaxed coastal vibe.",
+        "photos": [],
+        "highlights": [
+            {
+                "id": "0e7a8f6a-b64f-4b65-8990-6ccbe8ef555c",
+                "name": "Surf Point",
+                "description": "Breaks for all levels, with surf schools nearby.",
+                "latitude": 5.9728,
+                "longitude": 80.3813
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "bd8ffef6-7b5c-47cd-9671-fbcb1e48e4b0",
+        "name": "Talpe Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Talpe",
+        "latitude": 6.0139,
+        "longitude": 80.2452,
+        "description": "A quiet golden beach with calm natural rock pools, palm trees, and sunset views.",
+        "photos": [],
+        "highlights": [
+            {
+                "id": "ada3e46a-092e-4e39-b97e-bc00d2381f15",
+                "name": "Rock Pools",
+                "description": "Swimmable pools formed by coral and rocks at low tide.",
+                "latitude": 6.0141,
+                "longitude": 80.2449
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "d83ccdda-ec70-4ca6-bd24-3c8fd4950a25",
+        "name": "Midigama Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Midigama",
+        "latitude": 5.9763,
+        "longitude": 80.3615,
+        "description": "Renowned for surf breaks, a chilled vibe, and picturesque sunsets.",
+        "photos": [],
+        "highlights": [
+            {
+                "id": "0e447a54-80e7-48d5-aed6-289abf7e9640",
+                "name": "Lazy Left & Right",
+                "description": "Two iconic surf spots: Lazy Left for long left-handers, Lazy Right for mellow rides.",
+                "latitude": 5.9765,
+                "longitude": 80.3611
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "cd4c6dc8-1a0f-4362-85f5-307c16c5e6a8",
+        "name": "Koggala Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Koggala",
+        "latitude": 5.9927,
+        "longitude": 80.3195,
+        "description": "Wide sandy beach famous for stilt fishermen, lagoons, and turtle hatcheries.",
+        "photos": [],
+        "highlights": [
+            {
+                "id": "fe87db3b-c59e-41e1-97ee-bf8f0320e2e3",
+                "name": "Stilt Fishermen",
+                "description": "Traditional fishermen balancing on wooden stilts along the shore.",
+                "latitude": 5.9942,
+                "longitude": 80.3189
+            },
+            {
+                "id": "4bdfa1cc-5d98-4571-a23d-04cc9c7c5f48",
+                "name": "Turtle Hatchery",
+                "description": "See and learn about sea turtle conservation efforts.",
+                "latitude": 5.9909,
+                "longitude": 80.3198
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "46b0ea85-3ed2-4b5f-90da-4a3f70757e40",
+        "name": "Mirissa Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Mirissa",
+        "latitude": 5.9457,
+        "longitude": 80.4572,
+        "description": "Famous for its crescent-shaped bay, whale watching, vibrant nightlife, and palm tree swing.",
+        "photos": [],
+        "highlights": [
+            {
+                "id": "24c5c165-5ffb-42b5-92da-13f947317e50",
+                "name": "Whale Watching",
+                "description": "Boat trips to see blue whales and dolphins (Nov–Apr).",
+                "latitude": 5.9461,
+                "longitude": 80.4580
+            },
+            {
+                "id": "1c0ffbbe-45e8-497f-ae1d-dc826eaf78e6",
+                "name": "Parrot Rock",
+                "description": "Rocky islet offering panoramic views of the bay.",
+                "latitude": 5.9453,
+                "longitude": 80.4562
+            }
+        ],
+        "events": []
+    },
+    {
+        "id": "3c9e5a9f-9a4a-4b03-b9a9-2ccbfebc181a",
+        "name": "Hiriketiya Beach",
+        "type": "Attraction",
+        "category": "Beach",
+        "city": "Hiriketiya",
+        "latitude": 5.9634,
+        "longitude": 80.7108,
+        "description": "Horseshoe-shaped bay with beginner-friendly surf, yoga, beach cafes, and a mellow atmosphere.",
+        "photos": [],
+        "highlights": [
+            {
+                "id": "8a964f65-dcf5-4ca1-b7b7-c4b7d928ec5d",
+                "name": "Surf Lessons",
+                "description": "Ideal spot for learning to surf and relaxing at beachside cafes.",
+                "latitude": 5.9635,
+                "longitude": 80.7105
+            }
+        ],
+        "events": []
+    },
+  {
+    "id": "ae183e99-51a0-4d6e-b544-6c3a2457e991",
+    "name": "Tangalle Beach",
+    "type": "Attraction",
+    "category": "Beach",
+    "city": "Tangalle",
+    "latitude": 6.0244,
+    "longitude": 80.7911,
+    "description": "A peaceful stretch of golden sand and turquoise water, ideal for relaxation and sunset views.",
+    "photos": [],
+    "highlights": [
+      {
+        "id": "5a6ab09f-7e15-470d-9eac-7e05e735c6ed",
+        "name": "Sunset Point",
+        "description": "The best spot for sunset watching and evening strolls.",
+        "latitude": 6.0250,
+        "longitude": 80.7918
       }
-    ]
+    ],
+    "events": []
   },
   {
-    "id": "b346bc55-1a2a-4443-9e67-13fcf505a3f8",
-    "name": "All Saints’ Church",
+    "id": "7b87eaaa-595f-4ca8-b110-d232f2a1c1d8",
+    "name": "Hummanaya Blow Hole",
+    "type": "Attraction",
+    "category": "Natural",
+    "city": "Dikwella",
+    "latitude": 5.9637,
+    "longitude": 80.6968,
+    "description": "Sri Lanka’s only blowhole and the second largest in the world, shooting seawater high into the air.",
+    "photos": [],
+    "highlights": [
+      {
+        "id": "6e8b1710-4ca2-40e0-a34b-d53ab0177e94",
+        "name": "Water Jet Viewpoint",
+        "description": "Best seen during rough seas for dramatic water spouts.",
+        "latitude": 5.9638,
+        "longitude": 80.6966
+      }
+    ],
+    "events": []
+  },
+  {
+    "id": "5ecab267-bd46-4449-919d-d80814636698",
+    "name": "Dikwella Beach",
+    "type": "Attraction",
+    "category": "Beach",
+    "city": "Dikwella",
+    "latitude": 5.9674,
+    "longitude": 80.6876,
+    "description": "A tranquil, sandy beach popular with families and for swimming in calm waters.",
+    "photos": [],
+    "highlights": [
+      {
+        "id": "3e50ee63-8f41-45ae-8011-7b1dbe6e76f1",
+        "name": "Safe Swimming Area",
+        "description": "Protected bay ideal for a relaxed swim.",
+        "latitude": 5.9679,
+        "longitude": 80.6881
+      }
+    ],
+    "events": []
+  },
+  {
+    "id": "ab40e6c0-4b13-4e8a-8410-4e1d486ea94b",
+    "name": "Wewurukannala Vihara Temple",
     "type": "Attraction",
     "category": "Religious",
-    "city": "Galle",
-    "latitude": 6.0298,
-    "longitude": 80.2181,
-    "description": "Gothic-style Anglican church with beautiful stained glass windows and historic charm.",
+    "city": "Dikwella",
+    "latitude": 5.9744,
+    "longitude": 80.6849,
+    "description": "Features Sri Lanka’s largest seated Buddha statue, a temple with ornate murals, and quirky statues.",
     "photos": [],
-    "highlights": [],
+    "highlights": [
+      {
+        "id": "f4ea22b4-6b64-433c-b6b1-1a7558be3ac2",
+        "name": "Giant Buddha Statue",
+        "description": "At 50m tall, this is the tallest Buddha statue in Sri Lanka.",
+        "latitude": 5.9748,
+        "longitude": 80.6846
+      }
+    ],
     "events": []
   },
   {
-    "id": "d7c3987d-2af4-480e-bf8d-6a4d9fdaacfe",
-    "name": "Meera Mosque",
+    "id": "b187a83b-61fa-4325-bdbf-7e57056172a2",
+    "name": "Tissamaharama Raja Maha Vihara",
     "type": "Attraction",
     "category": "Religious",
-    "city": "Galle",
-    "latitude": 6.0296,
-    "longitude": 80.2197,
-    "description": "A white-washed mosque built in 1904, blending Islamic and colonial architecture.",
+    "city": "Tissamaharama",
+    "latitude": 6.2797,
+    "longitude": 81.2766,
+    "description": "One of the largest and oldest Buddhist stupas in Sri Lanka, a place of pilgrimage with a tranquil atmosphere.",
     "photos": [],
-    "highlights": [],
+    "highlights": [
+      {
+        "id": "7d3cbd4d-9952-4440-8f08-0014432bc62d",
+        "name": "Historic Stupa",
+        "description": "Impressive white dagoba dating back to the 2nd century BC.",
+        "latitude": 6.2799,
+        "longitude": 81.2767
+      }
+    ],
     "events": []
   },
   {
-    "id": "ea53c0ef-dad1-43d3-a325-118ac977c18f",
-    "name": "Maritime Archaeology Museum",
+    "id": "a93b73d4-6ae8-43bc-b3c7-8d9300ed78ef",
+    "name": "Tissa Lake",
     "type": "Attraction",
-    "category": "Museum",
-    "city": "Galle",
-    "latitude": 6.0354,
-    "longitude": 80.2148,
-    "description": "Museum with exhibits from shipwrecks and colonial era.",
+    "category": "Nature",
+    "city": "Tissamaharama",
+    "latitude": 6.2812,
+    "longitude": 81.2718,
+    "description": "A picturesque lake fringed by palm trees, great for bird watching, boat rides, and sunset walks.",
     "photos": [],
-    "highlights": [],
+    "highlights": [
+      {
+        "id": "bddc4e55-df55-46f5-90f0-7702b60c2a13",
+        "name": "Birdwatching Spot",
+        "description": "Home to herons, egrets, pelicans, and more.",
+        "latitude": 6.2821,
+        "longitude": 81.2711
+      }
+    ],
     "events": []
   },
   {
-    "id": "a00cb176-054c-4f7c-a6ae-9e5cc468c827",
-    "name": "National Maritime Museum",
+    "id": "9a8a5b67-4f77-48d5-86f2-7b36b6e7311e",
+    "name": "Sinharaja Forest Reserve",
     "type": "Attraction",
-    "category": "Museum",
-    "city": "Galle",
-    "latitude": 6.0329,
-    "longitude": 80.2162,
-    "description": "Museum featuring local marine history, fishing, and ecology exhibits.",
+    "category": "Wildlife",
+    "city": "Sinharaja",
+    "latitude": 6.4067,
+    "longitude": 80.4583,
+    "description": "Sri Lanka’s last viable area of primary tropical rainforest, a UNESCO World Heritage Site renowned for endemic wildlife, bird watching, and guided rainforest walks.",
     "photos": [],
-    "highlights": [],
+    "highlights": [
+      {
+        "id": "7584ed09-3b99-4e6d-81bb-d72e3747fd9e",
+        "name": "Rainforest Trails",
+        "description": "Guided nature walks through ancient forest teeming with rare birds and plants.",
+        "latitude": 6.4067,
+        "longitude": 80.4583
+      },
+      {
+        "id": "e1079cf8-023e-432f-bb70-9b71f45ec67f",
+        "name": "Bird Watching",
+        "description": "Spotting rare endemics such as the Sri Lanka blue magpie and red-faced malkoha.",
+        "latitude": 6.4070,
+        "longitude": 80.4579
+      },
+      {
+        "id": "c4b1e6a9-ec1c-4ec1-949f-17585b19a95e",
+        "name": "Waterfall Swimming",
+        "description": "Cool off in natural jungle pools and hidden waterfalls.",
+        "latitude": 6.4082,
+        "longitude": 80.4564
+      }
+    ],
     "events": []
   },
   {
-    "id": "f62e9822-4a0f-4a5c-8dcf-205a4cf981d2",
-    "name": "Historical Mansion Museum",
+    "id": "c7f6ec77-3263-43a7-bfae-9bc79a8183e8",
+    "name": "Kanneliya Rainforest",
     "type": "Attraction",
-    "category": "Museum",
-    "city": "Galle",
-    "latitude": 6.0322,
-    "longitude": 80.2154,
-    "description": "Private museum with antiques, curios, and colonial artifacts.",
+    "category": "Wildlife",
+    "city": "Kanneliya",
+    "latitude": 6.1875,
+    "longitude": 80.3645,
+    "description": "Part of the Kanneliya–Dediyagala–Nakiyadeniya (KDN) forest complex, this rainforest is a biodiversity hotspot with streams, cascades, and endemic species.",
     "photos": [],
-    "highlights": [],
+    "highlights": [
+      {
+        "id": "e9a75d3e-bd9e-4dc9-b04a-b5be78541c36",
+        "name": "Anagimale Waterfall",
+        "description": "Picturesque jungle waterfall with a natural pool for swimming.",
+        "latitude": 6.1842,
+        "longitude": 80.3601
+      },
+      {
+        "id": "4d37bfe0-77e6-4159-98c1-2c4e48ad07de",
+        "name": "Canopy Walk",
+        "description": "Suspension bridges and canopy walks for forest views and birdlife.",
+        "latitude": 6.1870,
+        "longitude": 80.3640
+      }
+    ],
     "events": []
-  }
+  },
+  {
+    "id": "c6e30319-315e-454d-81be-7ffb7cce1d56",
+    "name": "Makandawa Forest Reserve",
+    "type": "Attraction",
+    "category": "Wildlife",
+    "city": "Kitulgala",
+    "latitude": 6.9794,
+    "longitude": 80.4212,
+    "description": "A lush rainforest near Kitulgala, known for birding, riverine rainforest, and adventure activities like white-water rafting.",
+    "photos": [],
+    "highlights": [
+      {
+        "id": "b36a60db-9b7a-4f49-881e-7a0f528a263a",
+        "name": "Jungle Bird Watching",
+        "description": "Look for the rare Sri Lanka spot-winged thrush and green pit viper.",
+        "latitude": 6.9798,
+        "longitude": 80.4209
+      },
+      {
+        "id": "aa28d6fc-e857-42b5-a26c-65e94ca4744d",
+        "name": "Rainforest Trails",
+        "description": "Guided walks and nature trails under dense jungle canopy.",
+        "latitude": 6.9801,
+        "longitude": 80.4205
+      }
+    ],
+    "events": []
+  },
+  {
+  "id": "e318d56b-9146-46d5-a225-b3ea3729ee23",
+  "name": "Horton Plains National Park",
+  "type": "Attraction",
+  "category": "Wildlife",
+  "city": "Nuwara Eliya",
+  "latitude": 6.8003,
+  "longitude": 80.7998,
+  "description": "A UNESCO World Heritage Site, Horton Plains is a montane cloud forest and grassland plateau, famous for its dramatic landscapes, rare flora and fauna, and stunning viewpoints.",
+  "photos": [
+    "https://media.roamingceylon.com/content/images/2025/07/horton-plains-worlds-end.webp",
+    "https://media.roamingceylon.com/content/images/2025/07/bakers-falls-horton-plains.webp"
+  ],
+  "highlights": [
+    {
+      "id": "913bcfaf-0242-4d44-bb18-337753a2a2f0",
+      "name": "World's End",
+      "description": "A sheer precipice with a 900-meter drop and breathtaking views over the southern plains.",
+      "latitude": 6.8014,
+      "longitude": 80.8034
+    },
+    {
+      "id": "85b0c97a-7991-46d0-8926-f6f66111f7ee",
+      "name": "Baker's Falls",
+      "description": "A picturesque waterfall surrounded by lush forest, popular with hikers.",
+      "latitude": 6.7969,
+      "longitude": 80.8147
+    },
+    {
+      "id": "b71a7f9e-b868-4c1f-9c86-1e55f15b1cb3",
+      "name": "Mini World's End",
+      "description": "A smaller cliff viewpoint, less crowded, with scenic valley vistas.",
+      "latitude": 6.8012,
+      "longitude": 80.8009
+    },
+    {
+      "id": "22ce2a87-37e5-40ae-b84b-84fa4bc84a19",
+      "name": "Sambar Deer Watching",
+      "description": "Early morning sightings of wild sambar deer grazing in the grasslands.",
+      "latitude": 6.8030,
+      "longitude": 80.7987
+    },
+    {
+      "id": "f78e9322-1b23-4c3c-8c33-9b3ae431f421",
+      "name": "Cloud Forest Trails",
+      "description": "Walking trails through unique highland cloud forest, rich in endemic flora and birds.",
+      "latitude": 6.8003,
+      "longitude": 80.7998
+    }
+  ],
+  "events": []
+},
+{
+  "id": "5c088003-baf8-443c-9e4c-76e4c9b2b355",
+  "name": "Bentota Beach",
+  "type": "Attraction",
+  "category": "Beach",
+  "city": "Bentota",
+  "latitude": 6.4227,
+  "longitude": 79.9976,
+  "description": "A popular golden sand beach known for safe swimming, water sports, and relaxing resorts along the southern coast.",
+  "photos": [
+    "https://media.roamingceylon.com/content/images/2025/07/bentota-beach.webp"
+  ],
+  "highlights": [
+    {
+      "id": "bfa015ae-b355-41e3-87d1-24ed1320fa02",
+      "name": "Water Sports",
+      "description": "Try jet-skiing, windsurfing, banana boats, and more at the Bentota Lagoon.",
+      "latitude": 6.4233,
+      "longitude": 79.9967
+    },
+    {
+      "id": "e3d47c51-cda8-4a41-bd6b-ef1b29753de2",
+      "name": "Turtle Hatchery",
+      "description": "Visit nearby turtle conservation projects in Kosgoda.",
+      "latitude": 6.3417,
+      "longitude": 80.0272
+    }
+  ],
+  "events": []
+},
+{
+  "id": "b9703f2c-f2e3-4b43-8d2b-b90b32fd4d85",
+  "name": "Brief Garden",
+  "type": "Attraction",
+  "category": "Garden",
+  "city": "Bentota",
+  "latitude": 6.4462,
+  "longitude": 80.0619,
+  "description": "The former home and estate of landscape architect Bevis Bawa, now a lush and whimsical tropical garden open to visitors.",
+  "photos": [
+    "https://media.roamingceylon.com/content/images/2025/07/brief-garden-bentota.webp"
+  ],
+  "highlights": [
+    {
+      "id": "6c6d282f-d48b-42b8-b67a-f8b5f61dcffa",
+      "name": "Garden Walks",
+      "description": "Stroll winding paths through exotic trees, sculptures, and tranquil ponds.",
+      "latitude": 6.4462,
+      "longitude": 80.0619
+    }
+  ],
+  "events": []
+},
+{
+  "id": "9cdea13d-7e2d-487e-8125-95a4fd222a21",
+  "name": "Madu Ganga River Safari",
+  "type": "Attraction",
+  "category": "Nature",
+  "city": "Balapitiya",
+  "latitude": 6.3102,
+  "longitude": 80.0348,
+  "description": "A scenic boat safari through mangroves and islets of the Madu Ganga river, home to abundant birdlife and traditional cinnamon island villages.",
+  "photos": [
+    "https://media.roamingceylon.com/content/images/2025/07/madu-ganga-safari.webp"
+  ],
+  "highlights": [
+    {
+      "id": "be0c2120-20d9-4edc-9f89-8eec25bc1322",
+      "name": "Mangrove Forests",
+      "description": "Explore winding waterways teeming with wildlife.",
+      "latitude": 6.3081,
+      "longitude": 80.0394
+    },
+    {
+      "id": "b68b6b7b-2cf4-46d3-a4c5-6db43b4160f2",
+      "name": "Cinnamon Island",
+      "description": "Visit local families and learn about cinnamon peeling.",
+      "latitude": 6.3105,
+      "longitude": 80.0341
+    }
+  ],
+  "events": []
+},
+{
+  "id": "b7f4d4d2-fef3-41b6-bec6-2c9a763b50a3",
+  "name": "Ahungalla Beach",
+  "type": "Attraction",
+  "category": "Beach",
+  "city": "Ahungalla",
+  "latitude": 6.3327,
+  "longitude": 80.0433,
+  "description": "A wide and quiet sandy beach known for its palm groves, tranquil resorts, and beautiful sunsets, ideal for peaceful getaways.",
+  "photos": [
+    "https://media.roamingceylon.com/content/images/2025/07/ahungalla-beach-sri-lanka.webp"
+  ],
+  "highlights": [
+    {
+      "id": "4ecaa079-3066-4c5a-80c6-59f31a1de0f4",
+      "name": "Sunset Walks",
+      "description": "Stroll along the palm-fringed shoreline as the sun sets over the Indian Ocean.",
+      "latitude": 6.3327,
+      "longitude": 80.0433
+    }
+  ],
+  "events": []
+}
+
 ]
