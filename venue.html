@@ -1,0 +1,864 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Venue Details | Roaming Ceylon Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0E718C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #FDFDFD;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 12px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: #0E718C;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 12px;
+            padding: 5px 10px;
+            border: 1px solid #0E718C;
+            border-radius: 20px;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0E718C;
+            color: white;
+        }
+
+        .back-button i {
+            font-size: 14px;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #0E718C, #1a8ba6);
+            color: white;
+            padding: 16px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            box-shadow: 0 3px 12px rgba(14, 113, 140, 0.12);
+        }
+
+        .header-section h1 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .venue-badges {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-description {
+            font-size: 14px;
+            opacity: 0.95;
+            line-height: 1.4;
+        }
+        
+        /* Directions button */
+        .directions-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+            margin-left: 8px;
+        }
+        
+        .directions-btn:hover {
+            background: #218838;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+        #map {
+            height: 250px;
+            margin-bottom: 16px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+        }
+
+        .info-card h2 {
+            color: #0E718C;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .info-card h2 i {
+            font-size: 17px;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #0E718C;
+            min-width: 100px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+        }
+
+        .info-value {
+            flex: 1;
+            color: #555;
+            font-size: 13px;
+        }
+
+        .info-value a {
+            color: #0E718C;
+            text-decoration: none;
+        }
+
+        .info-value a:hover {
+            text-decoration: underline;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 8px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background: #e8f4f8;
+            color: #0E718C;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rating-stars {
+            color: #ffc107;
+            font-size: 18px;
+        }
+
+        .rating-text {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .share-section {
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+            margin-bottom: 16px;
+        }
+
+        .share-input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 16px;
+            background: #f8f9fa;
+            color: #666;
+            transition: border-color 0.3s ease;
+        }
+
+        .share-input:focus, .back-button:focus {
+            outline: none;
+            border-color: #0E718C;
+            box-shadow: 0 0 0 3px rgba(14, 113, 140, 0.2);
+        }
+
+        .event-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card h3 {
+            color: #0E718C;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .event-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .event-meta-item i {
+            color: #0E718C;
+            font-size: 16px;
+        }
+
+        .event-description {
+            color: #555;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        .no-events {
+            text-align: center;
+            color: #888;
+            padding: 30px 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header-section {
+                padding: 20px;
+            }
+
+            .header-section h1 {
+                font-size: 24px;
+            }
+
+            .info-card {
+                padding: 20px;
+            }
+
+            /* .info-row {
+                flex-direction: column;
+                gap: 5px;
+            } */
+
+            /* .info-label {
+                min-width: auto;
+                font-weight: 600;
+            } */
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            #map {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-section h1 {
+                font-size: 20px;
+            }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+        \n        /* Loading state */\n        .loading {\n            text-align: center;\n            padding: 40px;\n            color: #666;\n        }\n        \n        .loading i {\n            animation: spin 1s linear infinite;\n            font-size: 24px;\n            color: #0E718C;\n            margin-bottom: 10px;\n        }\n        \n        @keyframes spin {\n            0% { transform: rotate(0deg); }\n            100% { transform: rotate(360deg); }\n        }\n        \n        /* Smooth transitions */\n        .info-card, .event-card, .header-section {\n            opacity: 0;\n            transform: translateY(20px);\n            transition: opacity 0.5s ease, transform 0.5s ease;\n        }\n        \n        .info-card.loaded, .event-card.loaded, .header-section.loaded {\n            opacity: 1;\n            transform: translateY(0);\n        }\n        \n        /* Share buttons */\n        .share-buttons {\n            display: flex;\n            flex-wrap: wrap;\n            gap: 8px;\n            margin-bottom: 12px;\n        }\n        \n        .share-buttons button {\n            padding: 6px 12px;\n            border: none;\n            border-radius: 20px;\n            cursor: pointer;\n            font-size: 11px;\n            font-weight: 500;\n            transition: all 0.3s ease;\n            display: flex;\n            align-items: center;\n            gap: 4px;\n        }\n        \n        .share-buttons button:hover {\n            transform: translateY(-2px) scale(1.05);\n            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;\n        }\n        \n        .share-buttons button:active {\n            transform: translateY(0) scale(0.98);\n        }\n        \n        /* Highlights section */\n        .highlights-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n            gap: 12px;\n            margin-top: 12px;\n        }\n        \n        .highlight-item {\n            background: #f8f9fa;\n            border: 1px solid #e0e0e0;\n            border-radius: 8px;\n            padding: 12px;\n            cursor: pointer;\n            transition: all 0.2s ease;\n        }\n        \n        .highlight-item:hover {\n            background: #e8f4f8;\n            border-color: #0E718C;\n            transform: translateY(-1px);\n        }\n        \n        .highlight-item h4 {\n            margin: 0 0 6px 0;\n            font-size: 13px;\n            font-weight: 600;\n            color: #0E718C;\n        }\n        \n        .highlight-item p {\n            margin: 0;\n            font-size: 12px;\n            color: #666;\n            line-height: 1.4;\n        }\n        \n        /* Better scrollbar */\n        body::-webkit-scrollbar {\n            width: 4px;\n        }\n        \n        body::-webkit-scrollbar-track {\n            background: #f1f1f1;\n        }\n        \n        body::-webkit-scrollbar-thumb {\n            background: #0E718C;\n            border-radius: 2px;\n        }\n    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">
+            <i class="material-icons">arrow_back</i>
+            Back to map
+        </a>
+        
+        <div id="venueHeader"></div>
+        <div id="map"></div>
+        
+        <div class="share-section">
+            <h2 style="color: #0E718C; margin-bottom: 8px; font-size: 13px; font-weight: 600;">
+                <i class="material-icons" style="font-size: 15px;">share</i>
+                Share
+            </h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px;">
+                <button id="nativeShareBtn" onclick="shareNative()" style="
+                    background: #0E718C;
+                    color: white;
+                    display: none;
+                    padding: 4px 8px;
+                    font-size: 10px;
+                    border: none;
+                    border-radius: 16px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    align-items: center;
+                    gap: 3px;
+                ">
+                    <i class="material-icons" style="font-size: 12px;">share</i>
+                    Share
+                </button>
+                <button onclick="shareWhatsApp()" style="
+                    background: #25D366;
+                    color: white;
+                    padding: 4px 8px;
+                    font-size: 10px;
+                    border: none;
+                    border-radius: 16px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+                ">
+                    <i class="material-icons" style="font-size: 12px;">chat</i>
+                    WhatsApp
+                </button>
+                <button onclick="shareFacebook()" style="
+                    background: #1877F2;
+                    color: white;
+                    padding: 4px 8px;
+                    font-size: 10px;
+                    border: none;
+                    border-radius: 16px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+                ">
+                    <i class="material-icons" style="font-size: 12px;">facebook</i>
+                    Facebook
+                </button>
+                <button onclick="shareTwitter()" style="
+                    background: #1DA1F2;
+                    color: white;
+                    padding: 4px 8px;
+                    font-size: 10px;
+                    border: none;
+                    border-radius: 16px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+                ">
+                    <span style="font-size: 12px; font-weight: bold;">𝕏</span>
+                    Twitter
+                </button>
+                <button id="copyBtn" onclick="copyShareUrl()" style="
+                    background: #6c757d;
+                    color: white;
+                    padding: 4px 8px;
+                    font-size: 10px;
+                    border: none;
+                    border-radius: 16px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+                ">
+                    <i class="material-icons" style="font-size: 12px;">content_copy</i>
+                    Copy
+                </button>
+            </div>
+            <input id="shareUrl" type="text" readonly class="share-input" style="margin-top: 6px;" />
+        </div>
+        
+        <div class="content-grid">
+            <div id="venueDetails"></div>
+        </div>
+        
+        <div id="eventsList"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/map-app.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const venueId = urlParams.get("id");
+        const shareInput = document.getElementById("shareUrl");
+        shareInput.value = window.location.href;
+
+        // map variable is already declared in map-app.js, no need to redeclare
+        
+        // Initialize native share if available
+        if (navigator.share) {
+            document.getElementById('nativeShareBtn').style.display = 'flex';
+        }
+
+        function shareNative() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.querySelector('.header-section h1')?.textContent || 'Venue Details',
+                    text: document.querySelector('.header-description')?.textContent || 'Check out this amazing venue in Sri Lanka!',
+                    url: window.location.href
+                }).catch(err => console.log('Error sharing:', err));
+            }
+        }
+
+        function shareWhatsApp() {
+            const title = document.querySelector('.header-section h1')?.textContent || 'Amazing Venue';
+            const description = document.querySelector('.header-description')?.textContent || 'Check out this place!';
+            const text = encodeURIComponent(title + '\n\n' + description + '\n\n' + window.location.href);
+            window.open('https://wa.me/?text=' + text, '_blank');
+        }
+
+        function shareFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank', 'width=600,height=400');
+        }
+
+        function shareTwitter() {
+            const title = document.querySelector('.header-section h1')?.textContent || 'Amazing Venue';
+            const text = encodeURIComponent(title + ' - Check out this amazing place in Sri Lanka!');
+            const url = encodeURIComponent(window.location.href);
+            window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank', 'width=600,height=400');
+        }
+
+        function copyShareUrl() {
+            const shareInput = document.getElementById("shareUrl");
+            shareInput.select();
+            shareInput.setSelectionRange(0, 99999);
+            
+            try {
+                document.execCommand('copy');
+                const copyBtn = document.getElementById('copyBtn');
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="material-icons" style="font-size: 14px;">check</i>Copied!';
+                copyBtn.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                    copyBtn.style.background = '#6c757d';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+            }
+        }
+        
+
+        async function loadVenueDetails() {
+            const res = await fetch('./data/map-data.json');
+            const data = await res.json();
+
+            const venue = data.find(v => v.id === venueId);
+            if (!venue) {
+                document.getElementById("venueDetails").innerHTML = "<p>Venue not found.</p>";
+                return;
+            }
+
+            // Create header section
+            document.getElementById("venueHeader").innerHTML = `
+                <div class="header-section">
+                    <h1>${venue.name}</h1>
+                    <div class="venue-badges">
+                        <span class="badge">${venue.category}</span>
+                        <span class="badge">${venue.type}</span>
+                        <span class="badge">${venue.city}</span>
+                    </div>
+                    <div class="header-description">${venue.description}</div>
+                </div>
+            `;
+
+            map = L.map('map').setView([venue.latitude, venue.longitude], 13);
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap & CartoDB'
+            }).addTo(map);
+
+            const bounds = [];
+
+            // Main venue marker
+            const mainMarker = L.marker([venue.latitude, venue.longitude]).addTo(map);
+            mainMarker.bindPopup(`
+                <div>
+                    <b>${venue.name}</b><br>
+                    ${venue.description}
+                    <br><br>
+                    <a onclick="getDirections(${venue.latitude}, ${venue.longitude})" style="
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                        padding: 4px 8px;
+                        background: #28a745;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 16px;
+                        font-size: 10px;
+                        font-weight: 500;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='#218838'" onmouseout="this.style.background='#28a745'">
+                        <i class="material-icons" style="font-size: 12px;">directions</i>
+                        Directions
+                    </a>
+                </div>
+            `).openPopup();
+            bounds.push([venue.latitude, venue.longitude]);
+
+            // Add highlights/attractions if present
+            if (venue.highlights && Array.isArray(venue.highlights)) {
+                venue.highlights.forEach(highlight => {
+                    // If it's a reference to a sub-venue by venueId, look up that venue in the loaded data
+                    if (highlight.venueId) {
+                        // data is the full JSON loaded earlier, already available
+                        const subVenue = data.find(v => v.id === highlight.venueId);
+                        if (subVenue && subVenue.latitude && subVenue.longitude) {
+                            const marker = L.marker([subVenue.latitude, subVenue.longitude]).addTo(map);
+                            marker.bindPopup(`
+                                <div>
+                                    <b>${subVenue.name}</b><br>
+                                    ${subVenue.description || ''}
+                                    <br><br>
+                                    <a onclick="getDirections(${subVenue.latitude}, ${subVenue.longitude})" style="
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: 4px;
+                                        padding: 4px 8px;
+                                        background: #28a745;
+                                        color: white;
+                                        text-decoration: none;
+                                        border-radius: 16px;
+                                        font-size: 10px;
+                                        font-weight: 500;
+                                        cursor: pointer;
+                                        transition: all 0.3s ease;
+                                    " onmouseover="this.style.background='#218838'" onmouseout="this.style.background='#28a745'">
+                                        <i class="material-icons" style="font-size: 12px;">directions</i>
+                                        Directions
+                                    </a>
+                                </div>
+                            `);
+                            bounds.push([subVenue.latitude, subVenue.longitude]);
+                        }
+                    } else if (highlight.latitude && highlight.longitude) {
+                        // Standard highlight with lat/lng
+                        const marker = L.marker([highlight.latitude, highlight.longitude]).addTo(map);
+                        marker.bindPopup(`
+                            <div>
+                                <b>${highlight.name}</b><br>
+                                ${highlight.description || ''}
+                                <br><br>
+                                <a onclick="getDirections(${highlight.latitude}, ${highlight.longitude})" style="
+                                    display: inline-flex;
+                                    align-items: center;
+                                    gap: 4px;
+                                    padding: 4px 8px;
+                                    background: #28a745;
+                                    color: white;
+                                    text-decoration: none;
+                                    border-radius: 16px;
+                                    font-size: 10px;
+                                    font-weight: 500;
+                                    cursor: pointer;
+                                    transition: all 0.3s ease;
+                                " onmouseover="this.style.background='#218838'" onmouseout="this.style.background='#28a745'">
+                                    <i class="material-icons" style="font-size: 12px;">directions</i>
+                                    Directions
+                                </a>
+                            </div>
+                        `);
+                        bounds.push([highlight.latitude, highlight.longitude]);
+                    }
+                });
+            }
+
+            // Fit map to all markers
+            if (bounds.length > 1) {
+                map.fitBounds(bounds, { padding: [30, 30] });
+            }
+
+            document.getElementById("venueDetails").innerHTML = `
+                <div class="info-card">
+                    <h2><i class="material-icons">info</i>Venue Information</h2>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <button onclick="getDirections(${venue.latitude}, ${venue.longitude})" style="
+                            background: #28a745;
+                            color: white;
+                            border: none;
+                            border-radius: 20px;
+                            padding: 6px 12px;
+                            font-size: 11px;
+                            font-weight: 500;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                            margin-bottom: 8px;
+                        " onmouseover="this.style.transform='translateY(-2px) scale(1.05)'; this.style.boxShadow='0 4px 12px rgba(40, 167, 69, 0.3)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                            <i class="material-icons" style="font-size: 14px;">directions</i>
+                            Get Directions
+                        </button>
+                    </div>
+                    
+                    ${venue.openingHours ? `
+                    <div class="info-row">
+                        <div class="info-label"><i class="material-icons">schedule</i>Hours:</div>
+                        <div class="info-value">${venue.openingHours}</div>
+                    </div>` : ''}
+                    
+                    ${venue.entryFee ? `
+                    <div class="info-row">
+                        <div class="info-label"><i class="material-icons">attach_money</i>Entry Fee:</div>
+                        <div class="info-value">${venue.entryFee}</div>
+                    </div>` : ''}
+
+                    ${venue.contact ? `
+                        ${venue.contact.phone ? `
+                        <div class="info-row">
+                            <div class="info-label"><i class="material-icons">phone</i>Phone:</div>
+                            <div class="info-value">${venue.contact.phone}</div>
+                        </div>` : ''}
+                        
+                        ${venue.contact.email ? `
+                        <div class="info-row">
+                            <div class="info-label"><i class="material-icons">email</i>Email:</div>
+                            <div class="info-value"><a href="mailto:${venue.contact.email}">${venue.contact.email}</a></div>
+                        </div>` : ''}
+                        
+                        ${venue.contact.website ? `
+                        <div class="info-row">
+                            <div class="info-label"><i class="material-icons">language</i>Website:</div>
+                            <div class="info-value"><a href="${venue.contact.website}" target="_blank">${venue.contact.website}</a></div>
+                        </div>` : ''}
+                    ` : ''}
+
+                    ${venue.amenities ? `
+                        <div class="info-row">
+                            <div class="info-label"><i class="material-icons">home</i>Amenities:</div>
+                            <div class="info-value">
+                                <div class="amenities-grid">
+                                    ${venue.amenities.parking ? '<div class="amenity-item"><i class="material-icons">local_parking</i>Parking</div>' : ''}
+                                    ${venue.amenities.toilets ? '<div class="amenity-item"><i class="material-icons">wc</i>Toilets</div>' : ''}
+                                    ${venue.amenities.wifi ? '<div class="amenity-item"><i class="material-icons">wifi</i>Wi-Fi</div>' : ''}
+                                    ${venue.amenities.accessibility ? '<div class="amenity-item"><i class="material-icons">accessible</i>' + venue.amenities.accessibility + '</div>' : ''}
+                                    ${venue.amenities.childFriendly ? '<div class="amenity-item"><i class="material-icons">child_friendly</i>Child Friendly</div>' : ''}
+                                </div>
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    ${venue.tags && venue.tags.length > 0 ? `
+                        <div class="info-row">
+                            <div class="info-label"><i class="material-icons">local_offer</i>Tags:</div>
+                            <div class="info-value">
+                                <div class="tags-container">
+                                    ${venue.tags.map(t => `<span class="tag">#${t}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    ${venue.reviews ? `
+                        <div class="info-row">
+                            <div class="info-label"><i class="material-icons">star</i>Rating:</div>
+                            <div class="info-value">
+                                <div class="rating-container">
+                                    <span class="rating-stars">${'★'.repeat(Math.floor(venue.reviews.rating))}${'☆'.repeat(5-Math.floor(venue.reviews.rating))}</span>
+                                    <span class="rating-text">${venue.reviews.rating} (${venue.reviews.totalReviews} reviews on ${venue.reviews.source})</span>
+                                </div>
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+
+            if (venue.photos && venue.photos.length > 0) {
+                const gallery = venue.photos.map(p => `<img src="${p}" alt="Venue photo" loading="lazy"/>`).join('');
+                document.getElementById("venueDetails").innerHTML += `
+                    <div class="info-card">
+                        <h2><i class="material-icons">photo_library</i>Photo Gallery</h2>
+                        <div class="photo-gallery">${gallery}</div>
+                    </div>
+                `;
+            }
+
+            if (venue.events && venue.events.length > 0) {
+                const eventsHTML = venue.events.map(e => `
+                    <div class="event-card">
+                        <h3>${e.title}</h3>
+                        <div class="event-meta">
+                            <div class="event-meta-item">
+                                <i class="material-icons">event</i>
+                                ${e.date}
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="material-icons">schedule</i>
+                                ${e.startTime} – ${e.endTime}
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="material-icons">category</i>
+                                ${e.category}
+                            </div>
+                        </div>
+                        <div class="event-description">${e.description}</div>
+                    </div>
+                `).join("");
+
+                document.getElementById("eventsList").innerHTML = `
+                    <div class="info-card">
+                        <h2><i class="material-icons">event</i>Upcoming Events</h2>
+                        ${eventsHTML}
+                    </div>
+                `;
+            } else {
+                document.getElementById("eventsList").innerHTML = `
+                    <div class="info-card">
+                        <h2><i class="material-icons">event</i>Upcoming Events</h2>
+                        <div class="no-events">No upcoming events scheduled.</div>
+                    </div>
+                `;
+            }
+        }
+
+        loadVenueDetails();
+    </script>
+</body>
+
+</html>

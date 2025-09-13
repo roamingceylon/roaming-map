@@ -1,0 +1,429 @@
+[
+    {
+        "id": "9fee5dae-6b66-4fe3-ada5-600603677d64",
+        "name": "Galle Fort",
+        "type": "attraction",
+        "category": "Historical",
+        "city": "Galle",
+        "latitude": "6.02717100",
+        "longitude": "80.21680400",
+        "description": "Popular cultural attraction in Galle.",
+        "address": "Galle Fort Thalpe Unawatuna, Unawatura, Galle 80000, Sri Lanka",
+        "phone": "",
+        "website": "",
+        "opening_hours": null,
+        "entry_fee": null,
+        "best_time_to_visit": null,
+        "estimated_duration": null,
+        "difficulty_level": null,
+        "tags": [],
+        "amenities": {
+            "shop": true,
+            "wifi": false,
+            "parking": false,
+            "restrooms": true,
+            "restaurant": false,
+            "wheelchair_accessible": false
+        },
+        "accessibility_features": [],
+        "rating": "0.00",
+        "review_count": 0,
+        "verified": true,
+        "photos": [
+            "http://localhost:3001/images/venues/9fee5dae-6b66-4fe3-ada5-600603677d64/9fee5dae-6b66-4fe3-ada5-600603677d64-2.jpg",
+            "http://localhost:3001/images/venues/9fee5dae-6b66-4fe3-ada5-600603677d64/9fee5dae-6b66-4fe3-ada5-600603677d64-5.jpg",
+            "http://localhost:3001/images/venues/9fee5dae-6b66-4fe3-ada5-600603677d64/9fee5dae-6b66-4fe3-ada5-600603677d64-3.jpg",
+            "http://localhost:3001/images/venues/9fee5dae-6b66-4fe3-ada5-600603677d64/9fee5dae-6b66-4fe3-ada5-600603677d64-1.jpg",
+            "http://localhost:3001/images/venues/9fee5dae-6b66-4fe3-ada5-600603677d64/9fee5dae-6b66-4fe3-ada5-600603677d64-4.jpg"
+        ],
+        "highlights": [
+            {
+                "name": "Dutch Reformed Church",
+                "description": "Sub-attraction reference",
+                "venueId": "78ef495f-ca04-401a-8185-2eb8da3ad216"
+            },
+            {
+                "name": "Galle Lighthouse",
+                "description": "Sub-attraction reference",
+                "venueId": "800800c9-879e-4d7a-b7a8-cacca71eb536"
+            },
+            {
+                "name": "Dutch Reformed Church",
+                "description": "Sub-attraction reference",
+                "venueId": "78ef495f-ca04-401a-8185-2eb8da3ad216"
+            },
+            {
+                "name": "Galle Lighthouse",
+                "description": "Sub-attraction reference",
+                "venueId": "800800c9-879e-4d7a-b7a8-cacca71eb536"
+            }
+        ],
+        "hasEvent": true,
+        "events": [
+            {
+                "title": "Music Night",
+                "date": "2025-12-25",
+                "description": "Music Night",
+                "time": "18:00:00",
+                "price": "",
+                "booking_url": ""
+            },
+            {
+                "title": "Galle Kite Festival",
+                "date": "2025-10-10",
+                "description": "Galle Kite Festival",
+                "time": "10:30:00",
+                "price": "",
+                "booking_url": ""
+            }
+        ]
+    },
+    {
+        "id": "78ef495f-ca04-401a-8185-2eb8da3ad216",
+        "name": "Dutch Reformed Church",
+        "type": "attraction",
+        "category": "Religious",
+        "city": "Galle",
+        "latitude": "6.02826740",
+        "longitude": "80.21708680",
+        "description": "Dutch Reformed Church",
+        "address": "26H8+7RQ, Galle 80000, Sri Lanka",
+        "phone": "",
+        "website": "",
+        "opening_hours": null,
+        "entry_fee": null,
+        "best_time_to_visit": null,
+        "estimated_duration": null,
+        "difficulty_level": null,
+        "tags": [],
+        "amenities": {},
+        "accessibility_features": [],
+        "rating": "0.00",
+        "review_count": 0,
+        "verified": true,
+        "photos": [
+            "http://localhost:3001/images/venues/78ef495f-ca04-401a-8185-2eb8da3ad216/78ef495f-ca04-401a-8185-2eb8da3ad216-3.jpg",
+            "http://localhost:3001/images/venues/78ef495f-ca04-401a-8185-2eb8da3ad216/78ef495f-ca04-401a-8185-2eb8da3ad216-2.jpg",
+            "http://localhost:3001/images/venues/78ef495f-ca04-401a-8185-2eb8da3ad216/78ef495f-ca04-401a-8185-2eb8da3ad216-5.jpg",
+            "http://localhost:3001/images/venues/78ef495f-ca04-401a-8185-2eb8da3ad216/78ef495f-ca04-401a-8185-2eb8da3ad216-4.jpg",
+            "http://localhost:3001/images/venues/78ef495f-ca04-401a-8185-2eb8da3ad216/78ef495f-ca04-401a-8185-2eb8da3ad216-1.jpg"
+        ],
+        "highlights": [
+            {
+                "name": "Dutch Reformed Church",
+                "description": "Sub-attraction reference",
+                "venueId": "78ef495f-ca04-401a-8185-2eb8da3ad216"
+            },
+            {
+                "name": "Galle Lighthouse",
+                "description": "Sub-attraction reference",
+                "venueId": "800800c9-879e-4d7a-b7a8-cacca71eb536"
+            }
+        ],
+        "hasEvent": true,
+        "events": [
+            {
+                "title": "Xmas mask",
+                "date": "2025-12-25",
+                "description": "",
+                "time": "10:00:00",
+                "price": "",
+                "booking_url": ""
+            }
+        ]
+    },
+    {
+        "id": "eb48f133-80bb-4e45-9908-213c5cce3eb6",
+        "name": "ගොන්ගල කන්ද .Gongala Mountain",
+        "type": "eventvenue",
+        "category": "Adventure",
+        "city": "Matara",
+        "latitude": "6.38171300",
+        "longitude": "80.64373080",
+        "description": "Popular cultural attraction in Deniyaya.",
+        "address": "9JJV+MFQ, Ullinduwawa, Sri Lanka",
+        "phone": "",
+        "website": "",
+        "opening_hours": null,
+        "entry_fee": null,
+        "best_time_to_visit": null,
+        "estimated_duration": null,
+        "difficulty_level": null,
+        "tags": [],
+        "amenities": {
+            "shop": true,
+            "wifi": false,
+            "parking": false,
+            "restrooms": true,
+            "restaurant": false,
+            "wheelchair_accessible": false
+        },
+        "accessibility_features": [],
+        "rating": "0.00",
+        "review_count": 0,
+        "verified": true,
+        "photos": [
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpdHBKMb2NHb8rYI6PRmd-OVEwP0JHT6shPeGpCA7gV295TxnGd9G8EFtbYs5RGwZP4Tw2atWsDDKy3thXwckK-H-aGGzF4-VHqeEF0wDzHTbjy8RwBFs3hNIG3l11b81UPaHqL-hv-PxNgtJjS93_aiMwz-gUqOwcQgqcayVUovUx2Wz7ytNfPM3W2wFZcZ53vLf_3ElVo89My7dvr7TAT4A_tnsx3_GNBTGeEQ-sdxkDoTh1S0CpQwOUF1gPuMsVHAwHfSXbQgRJOJx3P2KBTIvAypAJe2LFDUOiFB4AqXud4UMjwxLhxJpPcRYGrVGGniab9NiEw9zm4UFdHC2fm6Tn2YvVkMhuBTWHe9_n75P0wFtxP7OsaYafVMGuAexS9vEejWA8fizeIdWcy5TltzsaI3BjthQfOag4CJxK8aH75P&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpfnl50R5hzMpd1lKZ9bZL-pSMcajGuWPYU4n1JdUtXRh1uX9qh8GFLp7iYEiytfTaS83w5TomnkqdRZe5nPG8iXcnOiBPuLHE2jx8y-CY3aWFEnU2UCgMN_L_CTE-zVTinIFPcAnxS05ZLgLaSwLAO3Xo8uEiOBLz2-cBoEiCvO7t-LxN2-5Yv4kPmDwypqbWXF4f9Qphn1uf4Qb0VDvlJfWiddrOfb3Y6B3ahevw9430bJM9vqWmF8gB6jC8N8Wfg9U88jQHtYC6PrV7fmhBPETahDuitqtrEbYohd0dtjTtC7H-_xHdI4faF59YUdY_gyLFWFudThRtVrJBhy5ioBat8mHqL0x22JGz312-ggO2H4JdbitSNSppt8IhDQ6FL1taIoYki-MntkqvHYNu09MtPagrO0FAidehPycLcuZGU&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpfxJJv9t-uQKaM0vCkmwA5uq1axUN5HXbvm4I1FrBiKAcO_oNBWwHlkm4sPHrU0RE5v9CAOsBdW9Yhvwxt_Sa9Su9Fnc6NJIqyMVVyiFYsvB85DNfiCn1kRPjUxfTjiWuuUTGCjLUvtiiFgN4vg3MLH49gPHET6Hg3D_JqgOivfLi90_gZMbVK_HTJza8PXGOMATtg61xBYB4hVOKkiMDYU2RW22Ov8KdoC0re_APtWBhAL-EoftZixYqwwcA0Qkw6nSwPTc0AGG40RRWxf-5uBNf7HYIHZVP53MO5D4tadMETBnxyopy0mpXDNQ1g5veWq4d39uZT6gUBiHQmKz7o9d8CJqTf9AVKRg0RmK8MpuqCXGAMVniN_UKN4MG-kWiamXDoT4x58i8onNYa58e9PDB4x6gWCRum4_2KKlI9Uwnk&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpdBPboikT26w0fvNvM626z4Y2wkEFTMvn2Oik2jL1hWGwxwd8Ou_H9-GPZsyJjx_Wo3SKo_KjSk58L6Y1tpmh65vmhRAEVbyiIrDc3vQ5HMHEzUjCqS_h6CyQNJYEai8L_OIaBfGLWaLurex8RHx1r5cpWf8-98ikVhsK_C_-_eUMyRwKpnUpYyQL6BJszPscpTzAMl5vdP9P8X9H7iqEMA7wXJB1wX8ClXSS4KUojA12zI8UGraqeDFnZMJPNhntAZ8kRnxV26-MtH2b4MuEni2gtHs_6p209F-C1QLFzxOAplQQZ0nzCR-iaPEq6qAJXmw1BV6iarl_M3LIo30G5EA3sKw5OjUWkHtRx3K-mA1Cx8vX2BTmAFhSoSN_bPbrFqxZAX8vpMgpuXpOVd4PmPSsyi5PaKl73mzXwkD3n6yQ&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpfrsWgSDdM5516_gwocPKKcQIrjMRdSKeoMtPF5EMtP0bjCgNViWDwRgBUzCsL05W_7cGQ7Qv4yFTBFNwUs99uRe-k6YTfaTmJQmNQR6OzGazHSWFf-9SUXWEcKLJfcqwA5KF3t7gI8twP9X1wFNKDJgtFaVRSR5hKS1F8Vim71ldKnclhNKzVT1o6QKMC8oP-T_Njr3zf0WP9ctuyDNOz5WDcKRCYqoC7687QNWc1wY3fevJBsGXmb-VU5BHV5oI39ZV79CsnRgzLmRZsrDyxsLDaBypry_yR51eP5q8lznyYsYagbv_-BNuq9SkIOe65AEZdULkAbe8T31V01kUPgxdVMkdOQSHOq__QMd0wwM7n2FLo6nEpvcg7MAIMWsMF73TGR9PB9PT4JnhHYnGugigkuiv3cLSDVuD5kuMrWPA&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo"
+        ],
+        "highlights": [],
+        "hasEvent": true,
+                "events": [
+            {
+                "title": "Hiking Trip",
+                "date": "2026-01-25",
+                "description": "",
+                "time": "10:00:00",
+                "price": "",
+                "booking_url": ""
+            }
+        ]
+    },
+    {
+        "id": "c15b41be-47d9-4920-bb54-5b3ecea91abf",
+        "name": "Fetteresso Water Falls",
+        "type": "attraction",
+        "category": "Cultural",
+        "city": "Dambulla",
+        "latitude": "7.77206250",
+        "longitude": "80.69156250",
+        "description": "Popular cultural attraction in Dabulla.",
+        "address": "QMCR+RJ, fetteresso, Sri Lanka",
+        "phone": "",
+        "website": "",
+        "opening_hours": null,
+        "entry_fee": null,
+        "best_time_to_visit": null,
+        "estimated_duration": null,
+        "difficulty_level": null,
+        "tags": [],
+        "amenities": {
+            "shop": true,
+            "wifi": false,
+            "parking": false,
+            "restrooms": true,
+            "restaurant": false,
+            "wheelchair_accessible": false
+        },
+        "accessibility_features": [],
+        "rating": "0.00",
+        "review_count": 0,
+        "verified": true,
+        "photos": [],
+        "highlights": [],
+        "hasEvent": false
+    },
+    {
+        "id": "a2b11bb3-4c3b-4b79-9a00-18136e70fc70",
+        "name": "Nilaveli Main Beach",
+        "type": "attraction",
+        "category": "Cultural",
+        "city": "",
+        "latitude": "8.69226060",
+        "longitude": "81.19536460",
+        "description": "Popular cultural attraction in Trinkomalee.",
+        "address": "M5RW+W45, Nilaveli, Sri Lanka",
+        "phone": "",
+        "website": "",
+        "opening_hours": null,
+        "entry_fee": null,
+        "best_time_to_visit": null,
+        "estimated_duration": null,
+        "difficulty_level": null,
+        "tags": [],
+        "amenities": {
+            "shop": true,
+            "wifi": false,
+            "parking": false,
+            "restrooms": true,
+            "restaurant": false,
+            "wheelchair_accessible": false
+        },
+        "accessibility_features": [],
+        "rating": "0.00",
+        "review_count": 0,
+        "verified": true,
+        "photos": [
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpd241MNkyt7uleon1aYZ4ajb70qY5WqDSaPWEdXm6ecaxJMlSTjTE5PeO2iRCj71-Jn1KYjlOdys-PmoO0LsO7PkR8Xjq27z3nxLQObFwHgeffb4ambGJGw3n9twPtKaV0bVc4RLpLeWI33Bf37mdvZSvJxRMn_kKVdr4pppIskoCLMPqhOL3DD8PfgP_x4VvESHECF7NTczWGWqKk_TpK2wU9Mwi0us8nBCjWJlwFG9EaCTa25NvNTb-Vk8HmTIsLUqeXw_kp9f8rXWd7NWXHf1e3syyTx3tGCy4PGjxUzRGCjJyTwOUMf6m-RycAXJVxefzLDLMZCUn6y1nAgIkf0b-RKkBnQ2_Rj1CySqq3oscjW1qEH_rq8m8Yskt7p89WeoU61t2I4AyfAy1rDOUNsP_Ovm5nkK5fWfpzmC0HloIRKMKhmY60to2iVeIJF&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpf_STk_fnpxO7CqejrhyJDT8r93CY5PA-PA-IJZ3xYoMhd-bXVmSs1PqB3Z_v-1RbMecMyOa850Q65BuJ9P1FRm-kj_Dx_GKUQ1cW0jXOqh3G-dG4UVPFUR-D7-teM4POszW45L7lcuxCn_rEBy53HbaZkjG2Nw213-QXkqtUv4bwwJ686R5Qjg9hECn5G3DpICUZrh5eRROikefg9qDaGJGsJSjOeyXd7QhcDho-F2jyFHxxE3iD1hiruqr-BYTk2FG_coptol_J1a4bqrHYIpsnpwJc52DSI168pZtS55SLptqb3H8lhAguEKJPPf9e4ooekkrbqo1yZBI2Row1C5ChsP-HYw2Quywt154lqRPxLm-d4MQbVOoMZK1O2pnehL2CjwuiYK7Nxtc8DNyzuTZtH3aCkDYZN9NKWO3H_OI2hM&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpegCddKsFLioVpp96She8nsVOXr5iFZb7qkq9tLNMG3GK23Al8ZRJuh7hr1ZTpk6oSAGTcZuCBMboCnyoROVZ26bvv9hKvxoWm7WTlgrL8G7IqTFYZy6uRp_Lf1Ag2uiE4kW3-oxc_9ACp7fpPKZRh67EhLYGxAUs6_BT-AZ8uQqk1Y3soah6D_o2V9UzWpBF4CTNSr1p7ncr-GGsX3Sx_a2j0OEmEzyVkRKS07TqcrPtdrWfdpj6tW8lNSXAjhvXlZpXj66lohcGPFxuOHzVvmUhP0BlqNWa5oLGa0kpNTUnL9oerFbPzceSc98QH-ILFCDZOXnK0J_MwfTFfSoVuBArtqOWlFjI69TB9nSh92_inWcfb_RIjEOKrWNhrNwFCEZOD61YkJxP3wCauQ0DUTgKEqB9HQGoPAFf3sSqfWrw&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpfzJ4zCohRjrb0-iIISlL3jN9_l4k4CThGRTW7l5F8fbWjoWxRMIIn5nN2L3NBGp1UfB0udLK7hwnjqo13wxPIQtRrx39wLQTZU1eVdCa5BwCE6UkeSe7Le3vHIMGS3p13mFMv2CRHhEBhgwlX_4ZXosCoSMckSYQzA12KmQ7eJuDwylSStVP4UK97SaF73jRN1xC1DCzswJdyBTq8YNtfxGxuiZF9ueDs0u7Y91oVfJqzKYyo_0BrqW8aE_lhXHJsDzqllAZKqUd9Agzy6d-1BCK-x1qbAoTJNCG_fw_e3_RmmwNhx3BDOL_ZbdEU_TY3bBD4dp8nHTa6xfZyaMNHC7mZEFxwZooWncVMecTTLrqtKcQmvzyRF7VVA8mOWOPOtDXi2vR6UGI9CSSTj0NHM5vrt9UmFcpWcwnJVsFzxwg&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpd1gu4jIKDQ80l3SetICvBAnaQeelQe2qyYoaA03BjXQS1kEtooFMLcWK-IwgnGCwQsbaPKqPU4MUo2YcwucICErra8StLoacCgFLXeysPqjADFcPyw6ZeG5cizD3pzXuH6eNLsNZf5aXudtu0wsJwuv__ieX7n9Hedb3CKzTyElrK-7tthudJjbvBEQ3hh4CRd9JI4zqIzR2JCr2h3QI8pP7QD9ffGW9-xx4VGgtaOkvvK6gOT5ZD8WcgJ0F95vuq-ghZVnJzHQsTaCscp-rAE6vun0uGGwKHQ_KeMGaaxB5IXg1EZ6LTufKpwx5IdsUZNONcTunqP8asjZCN1yedzasqEfPR2WSmz-ly9oS4VGUnfNT60ZI7m9PcN1z5CeXfjkWRfQyvDcWP3EO1SZQLAXqs6avL23UvDXoBs-uv36Q&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo"
+        ],
+        "highlights": [],
+        "hasEvent": false
+    },
+    {
+        "id": "522d2094-2047-4ba3-adaf-43687016aec6",
+        "name": "Whisky Point Beach",
+        "type": "attraction",
+        "category": "Cultural",
+        "city": "Arugam Bay",
+        "latitude": "6.90520110",
+        "longitude": "81.84463020",
+        "description": "Popular cultural attraction in Arugambe.",
+        "address": "WR4V+3VJ, Pottuvil, Sri Lanka",
+        "phone": "",
+        "website": "",
+        "opening_hours": null,
+        "entry_fee": null,
+        "best_time_to_visit": null,
+        "estimated_duration": null,
+        "difficulty_level": null,
+        "tags": [],
+        "amenities": {
+            "shop": true,
+            "wifi": false,
+            "parking": false,
+            "restrooms": true,
+            "restaurant": false,
+            "wheelchair_accessible": false
+        },
+        "accessibility_features": [],
+        "rating": "0.00",
+        "review_count": 0,
+        "verified": true,
+        "photos": [
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpfnxp5mjri6IC8V3bMuVDp7yIgpSzGYZfzY8L-cRZqiV9gR3B8kpqggCqFpBUVaHJhoAqMgKvd6YqtLWF8kiM_2k2UWkbErnEXwtOvOZuF3AzwSwqUojW2HtZ7a292Hw0h8JWsNn1SOM52gVJR72uDQiJhliNSay7SsmK_F2mmpz2U66WNYsH8MdKvbht87GjjD9X1ppgo73gd3H2FngB2tuiSWBaE8nO8vyVUv19Td5AzuG7tND3AJDKXPEnFnB5DtoKIGf99GAQmfH8OczjGbugpA5fUDPX9vt0ciz6rllDdwtgnhE0e5MR125-05ftDdGaO8UvR6U8Z3wJDEq5_PhENVJlWaEahALQlqPQ7vSuoIYYp-yU5UFPK5Bs0AbJA8QsvP_cNrWkt6CtZW5sbhzSlc7r0Ph6qeZSpQ200&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpd9Ua5P5HjWJPjXATVEQN0UICjiYwYcS7evsa2uPOTnhFq7h-m4jiiLw0BsCDElfyNQ_i1CA-R_-tm71Agn0YTgY-Mje3ctASLeEydQmTkn81bsuk5I5lGJorkpQnJhY6ECDWCxNRgyugUQfrzOmAGo4lPUrS4xyMWm9OsmKaP2XBT1V2pcgZQYMcfmXc0z4zSPJx0pshJSKAX3xXfXJSocx63LRb7Ktj1cBH3XoeKkEfaeZm34gX-tsy9lO86PDXCHuPhSL5g9mGF4ResPYe4eLx9tW6Dj5ZFkz2mHzcRXR9w-oFxKuYAYKwm1Gcf6HMmLoS2jB_9FLE6OH8U7y09fvgTqUHRtWguM3eTasp5Gw3ApJD8ym6r3upAhARwu5V5O32HWTZj8vEm7P9-vFyKQ2ncIa-ANbERFR1BdZA9n-94&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpdne7abkCJ3qfiyXzZa5d9dhc-Mlq18hAKpd3b1ZQfcjdJv_CLgSF1NLyeAJqoM8Nv8msx1rumm3TWeF-YxOGcvyRVf44KWPYv55uBWYXgqBKQYlp-NHxIMzBq1alR6MJKPs0l8IC9A2jB9LjnJPxBXwaHL6P2Wj_YaR9T1sL7wyzD5ZECy66SRtw8kE7DqqylGsigxJ9Dcmj6NcpS5GtlUjg5rKiRD1sdjcBG32GtGihF-GnSDfC1A0BY6nW8RPCwAwCdR7or4HgN79IS8pnQ8apBO8VpxYtEWpcODoDAuEApS9awhXF4Be0NFfCwDOyrDxCgGvL9qoQ7s72naIuD2m6SFdB0r51u_wxFdtYXdIcpLbQ8fIQW25C6rRYV7E7H8gpBhfmp1gMX-84qJlYQKfutXZ5XTu5ttDQlzZCZyBg&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpccpBNVRwTZHU9G8B3-ZB4KR7W0rOTogWfVgo7fF5Zonyo_lBtFVMUQPRNdeJXKEZYmu0rper_bbYVnyaPd1EwwKXBcszpVwoXLUYPZxSE6vOmIdhE7Qk9rhRr48gV9TunppYGKQHmA8NppQ3jnVsn8CTNfgXO7FcT0QSxCew1plOFWbKjJ9qNcfyoNll8k9ldJfq2EHpseOclCLojW7soJkdFPtC8eAp1kT3Y0KCOGX2f_jXfLE5pTbRBeAaMAg4KjT8xKZZRaVyWmOhRMQZPqQ-eJF21DsWiYF1_op_2z-V7044_fR-UpllXojS0pq2qcr8slfa6uBRLWp23u6UGnQV5dfWSjGpU7IL5gk0cQcnBlSV0IJfFSNTyDTjTxBqeuTCYQwni7SZTEPTNRmGAWDIoEe0WYw85J836iknr6jNA&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpfFmVNa0lfInEaoJX5rHsV6nn97AlH8xCaIQBGEoGmuhXsv94S1fy85Jg2b_-EfFnt2-1NAfKWTTnsMj-62OZlsRHDvgu0Ih0xcKUxZvzN7Z2n4ZrM3gtssnSzt8DIQWoslqzF7HEzpogRIZgqTvi9CdyegDU_Yu-3gdcKUr3Rd7xNd4FrNO4-eznb11g1AGLDgfT7Ff8UG-XTQWHb9GidQoQvvPP4hUoRo1AE69svECz63aotqho-CYIamKHCDsL_ZOGBJ_n6YRBrnerAInx_1yX9Alq_pa5ud-l9O32y69eIFYUAexWNChoINC2hMJKv3XK-o4A9uKfJ-DwGwdXpjvI_5RqixUVXb5Hinym0CieNr6MBlSpf7OrY8kLWxDwVlVWrYIqL5SSgHjFlLHeZR0LGQanqznz-MUQXkUcs&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo"
+        ],
+        "highlights": [],
+        "hasEvent": false
+    },
+    {
+        "id": "40939a94-d90e-4bf4-8661-a4422906bbf8",
+        "name": "Panama Beach",
+        "type": "attraction",
+        "category": "Adventure",
+        "city": "Arugam Bay",
+        "latitude": "6.76633700",
+        "longitude": "81.82562270",
+        "description": "Popular cultural attraction in Arugambe.",
+        "address": "QR8G+73P, Beach Rd, Panama, Sri Lanka",
+        "phone": "",
+        "website": "",
+        "opening_hours": null,
+        "entry_fee": null,
+        "best_time_to_visit": null,
+        "estimated_duration": null,
+        "difficulty_level": null,
+        "tags": [],
+        "amenities": {
+            "shop": true,
+            "wifi": false,
+            "parking": false,
+            "restrooms": true,
+            "restaurant": false,
+            "wheelchair_accessible": false
+        },
+        "accessibility_features": [],
+        "rating": "0.00",
+        "review_count": 0,
+        "verified": true,
+        "photos": [
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpfYnVV5vl0pcQGytjR5m12bKbcFH7J0EQlYEezXOzYPQEVkq_4NtjbeUVdrMnK5v2Y_YQ9dk-o9lo-jEni39RRZg3zLDqk2qDN0n8NUJoLT20bwpztDU-UqkPF7ctokZZQq42mKoKLmjljNeOLrXNxRnZM-n7ynfN5vYrlKXPJj5j0WD6TiVX97f6dz5hkVk8-df5rFC9JNN4i1nkv3SbqpBoLIaW1hG3O3w3j3ki0r-5YyrRMLsvrcclcSlCXp7ieRh1N7uhpkQ-6-a3UgLryPkwDb3U8Xx9WYYOzl1nEa5LSo5mBICDYwkjqRr35-CO5PyyRLdXm0073ZlTf7fs1NefSIxmb_9TwVcH6dY7PqxQUKdKYPJhDtXTLDWgk0-Ew_ppj_Pvw6jPBCTbT8QtwWxwTzUYzc0AHbQvyEE329b3Xe&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpe5GmXdjRNmXhlNL_xdgfYdvWFRpw9qdJMzL0F82jOKOFb3lOzClNuOMELL1iDt3mE_xnOkZsoFqIgl0aqCwExNcQ6u_m_9xR4vgbsoswdisKtKTXFtUSbU1ErAHggKrD4-NkCTWyh1crHMGG4v-1KCHC30zWhWNhkwfPw_NVuEn8UquFFIraDnlpjtCjB5oMPI3EY4fdUeWakVmpduKJQKqcz_HXpDyEbLd0vIbsX42eB-KQlkHwugSRdn3cEoj0q_4HVuQMglmmtKTYd0ZlGEpjO0RT0hyQjQJBfp6u_cWYE6pWdQOtQH4ZZFZfYfGrdC00SqIGSmuGurjBfENYVIblT0gIFu7UiYHGQ_3Cgd6hq3jMeNAczM43fbIr3QzSHPytGqIXFpwxFHJ_GdToLMy4cgdxMf0IiwNaiNRFbMzw&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpeyA-HQUAjYQFwVYgykmVcDHYeLXEWfWPNTe30-8XhaMTNxqBrvSNmxA4rXmqUydNt68A531ZX202VWBogwLo1Fg17p2qOWqvwHOO7DjAjfwyo7ayDFWzTn3_Q_ouLDuvi1uH2nZodVdwdSELanVlZnDQ9-ckzFpTZrnZGRoP9omAoge3J_TAp9HIebTthlXL-UoA45HrrFoWxqvXyAwhUwK0Fx8XpLFKMI6yaSFWTN0hi-k1NBpM3xqVZ0IlqD1BT7cPeTi103Vpown7pX-T4y5lUtis1BhJweS0MnHl7OujBZmlDK-EBcoc8V7dhsqCmMiPdZ_jbHPsxlST2X6d9hndbwuib1VYrnJVrLplXYcSNF433D9WNi-ntaEzMotl5X0cIQ2z847UgDOaz3AVWDotLCyoMfkSE3GSFuitYDGlUD&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpdokeE1FXeY8oo89o-99cBXmOEku1FSIB5ypBpsqRYI1M91qaqPyCpo2MI3Z5tTzNURAy9Tr8L0C2-owDuZ9PGr5Rk8TPO7qVHGYbSktkHHekAOlgU-boUtxYe49RyiOGmUFR3fCTGYLgtPi2KXA-c2pAlAfhpJJfvPTnfe2-78F8zplcTCdc6xR_K-6KkRTSTAoxkRu3X4GX0TSfbugnld5blkOT9c7kxDZ7L3xeqAiCCaxFT6lCw3i8qptSGKVQ5QOlGBBafu-QagTsfTokZNSG1CVhlk4MI-3EXop35zfqRI2DGsAAOSTTfA_8EMgU_hJw7hy6WsQwXoqTNH8wjARJRJp70qllIR3GsNptHW2OisAqF_PYupOJPnjUf0K6jyxxWPyShbxQTl2whVIFAfSlrFR3RwYsbj5ghwR1GL2Q&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpfmotCO5ARLlEjD27oUk0KkcXEp9ef1skSLgLzEK97HWclgwKGr4lTNIZH7u-FAbFk-ho9PsSA3QemCWOjl4K3wi8wWGjRmw2NeRp1_TLvwS_0Wg-cX9dpBUP66IIfDI7ZQSp2h_lVCAEGtrcRA7ofp-gac9DTC02nYsGVgBUR25hvDiNu4oylaywbLqdLjHYyu3r0LqcYgjRa2U9N0eHpkEtOzcsJzf5-04abAuIS8FLNJyHIB7IvAWbfNJ-uzRHoLcmYiWMQl-t1DzkV3x7BWxGQeBJxEeQnDlP7Nr00Cf3F09tnW5_4Lg6SYaG5GZVLmPyqG0b58qsZrmfiJw7apgXx6Wm9IoBWrFivBtG_CeDzRtxKXZt1nuKrlWqGo2rVM9_Pw9ok-G8y3EAZNZuNQI6WNT-8Ukp1RpD8-zFzpCjjm&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo"
+        ],
+        "highlights": [],
+        "hasEvent": false
+    },
+    {
+        "id": "800800c9-879e-4d7a-b7a8-cacca71eb536",
+        "name": "Galle Lighthouse",
+        "type": "attraction",
+        "category": "Cultural",
+        "city": "Galle",
+        "latitude": "6.02471430",
+        "longitude": "80.21945260",
+        "description": "Historic lighthouse at a fort with simple style & a nearby beach popular with swimmers.",
+        "address": "Galle Fort, 32 Hospital St, Galle 80000, Sri Lanka",
+        "phone": "",
+        "website": "",
+        "opening_hours": null,
+        "entry_fee": null,
+        "best_time_to_visit": null,
+        "estimated_duration": null,
+        "difficulty_level": null,
+        "tags": [],
+        "amenities": {
+            "shop": true,
+            "wifi": false,
+            "parking": false,
+            "restrooms": true,
+            "restaurant": false,
+            "wheelchair_accessible": false
+        },
+        "accessibility_features": [],
+        "rating": "0.00",
+        "review_count": 0,
+        "verified": true,
+        "photos": [
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpfa7V_sxJ8TdRcz5HgZj_ZdheXZsA9QpkprT3ULgXQFm2UCsxKDZUggyjfCGPrZ_5lnP7ijRI5cVYczaOX5uxDUsIHyulrhyBYwQtkHzoftObhyyDwrlHR4ezKkXCZVQiTliQPgrmbjUkQOyXcxyuAfCMvs5on5ooYLrACb6mgWKrlshMdlbxl5qgkNADhUB18CvTp5JIzfSXWhsVpzoq0AGeLMwaGDYk917PHvWxdDU_mW-epifqe8VAIJsOZkl4h5NmghLFeff6fD47EFCdFN7Lln7OK5rSU6LxhfvedvXo5xau3lPZkCtNN5gBCAthHCzv80zwCy56h1Z0J8geCB7mts6t2OPP77pSiYvsJPkc7N1vQFCAnUq--GBKzMKdKbsjoogO4Gm7w0OA7g37GWW3BrEgzIrqtNnliSnYnzT1U-&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpceJ6kjngPVa0pDPkR45TdmQW7Xl3j74pazBRnEeA-xhFFSRpgizhbJq2ROiS4O6ZCaUNLENOoNtB_9MCXaPb5WSDnW-c4d02XxU2fqwxhYGrMyJnzEx7OyAeD58NH_DW22RVDSgG001Ea6Bw54H2acLl2IJ7nfr0ORlSdRRhL88vs5mOUozJYc78NYipzB3SjNShT2iYmRjwFmk7OkN1AY45thuqhgBf_JxARHdzJd9UtACyJ0ScoM73KzQRKovrsr1cXS54FAxfSPEw3bha6SdDT8B52dpI_OS8u9AnR33tDybADUqdaxBDXHhWK0d1wqy6zyL9ygEcLPIEeSYYb3_4CGGzXj7d_prpzzXYwiH0ETNsuWPCET8sr7nqmtNhVDx4NH1QHRdVlbWi0jL5W34T_4O6baMLD7Uzk5TRLdzxfE&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpc_Tj-t3nL-gXa17KIMjc9hu91UxD3UI2zFCcZOjBvP9cHmMrcbw-ZAmLgbShXesXrz_fnRPEufh_4UHa5sbVEfpdxWj4YBnzNYUf_dZ-a3JUP6OMhHU1Hedq69YJ8hOf3uzp5o36j6WNbaUrgEULnaZe7TPZHtJ5r82iMs1HEh6cB19JmYW7oKtfBQJuz8GK8Bg7qUHnGlkSQpuwEy25g5X6hFDgJ-FxxO3Oz5ObCEUn2g4DIGiFD6kiHl4i5gL3NR1k4_MQc4ZqYQEq_gRpfqunUJ7SsdatvnHwZeo1OH66DEt8n2USmR43eHgLyhwjC7rofIF1j-f25fnmH-w5ijoR1oftov7CiF2CX8-TldHoGMdYrNOYwREa2tnfOVDmt0blNuHDxO2V9vYGVwRJE3rsEhNiIx2rCI-zmHgGRtXUE&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpeMuWzK3PhU5LulPfUMz2TbdP61awr2jhCqI3OVQmyrh-tCz7dB24YjO8S6D1-P2zAvhrr7644fcT1n7yXVuhVo19eyyWdpSjOX5dFX0hJUGsEUHf9e-iXaoJaFj0WBNLklDg9wsuBXK7wkPpnHMXfbUWc9cA98HjExmJslN6cwNiAqsVn2QTdXweXshN34EELHmldIqJBR7aoeXjYrNyY6CvhXpat4Off7UwvVHzB8Rne87zyJAA3hfZMmQCbVrDIRFyhNNefjBTg4gnVpnYW6JbiueSzqdaOHULF69jLdDndOH3Ga7rqzh9lKhI53_EJD18xMM2Aazp3YRWbh807djAt-VwEFG1dtqDUdOOzqrM6BxsyvZYYeaS1WbNOL_baEwiXEc5Sla9M-wHnwknAqc2z_mbIRzZE617iHk_lW_A&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpcRZT9bLhXzeH6YSPcrhqO6ERlC_oArA71jQnxRjDCLhbhMpM-Tf6RFPsG9lvULK3FPhRMnIs9Se0s2SOxTB2p7GPu9C80XwZhGnUFJHHhrsnvV_pjxWAphTL_dMaGg12-b_mmST5RBw0AUwA8DtQAanXCtnIAkkChxkMysfqqtbkNJwroll0YNmkHiIIgJyj8h3GTmRGmx6P4YYSgybfwhEswRXBUOk1BMYQLI_jsZ5KtPHcvFd2-4cJdG4SNvvSa-X6gYwO_-G8fiIxiTjpLCoUYYJVQKKXZ4cBqOD7iIb9Klt-8eS_9fUBXhezoPMNRpDnr6bpaXEcWw3iWgk4v-kw1GdM0_NdFo3CFHwKRlf34Psit1Xz45D73deWnv0nxE5Wqmmc0VgwK0D0AKE3i8iKsM3Yd67KgIhRlrZRckKw&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo"
+        ],
+        "highlights": [
+            {
+                "name": "Popular attraction"
+            },
+            {
+                "name": "Tourist destination"
+            },
+            {
+                "name": "Highly rated"
+            }
+        ],
+        "hasEvent": false
+    },
+    {
+        "id": "2b166a54-8bd3-473d-a663-04382b5e2ef9",
+        "name": "Sri Dalada Museum",
+        "type": "attraction",
+        "category": "Cultural",
+        "city": "Kandy",
+        "latitude": "7.29346090",
+        "longitude": "80.64151060",
+        "description": "Popular cultural attraction in Kandy.",
+        "address": "7JVR+9JJ, Kandy, Sri Lanka",
+        "phone": "",
+        "website": "",
+        "opening_hours": null,
+        "entry_fee": null,
+        "best_time_to_visit": null,
+        "estimated_duration": null,
+        "difficulty_level": null,
+        "tags": [],
+        "amenities": {
+            "shop": true,
+            "wifi": false,
+            "parking": false,
+            "restrooms": true,
+            "restaurant": false,
+            "wheelchair_accessible": false
+        },
+        "accessibility_features": [],
+        "rating": "0.00",
+        "review_count": 0,
+        "verified": true,
+        "photos": [
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpcUSO7DV97oFtOYUi7P0J9QDabvdmfBG0zlhBn9imu_DoXcKmKk95kJgYF6Yv1AtmW2T9vckbGQlQHGIWXeIICBv7kTB8QlsnfBaZAYbDYt-b32zFNi3n9_Pm-hlkBrbbwLuWNwJ3Zr9HaAGGUcc9-ZbMcuoDth--cd-eU941UNKGDWWiT4EpE0hVcJzFRLEJPTDaPAMk70U6CHYHQ7ZfUNCBgqJN2L5_iiLw50qShNekwhr0BUdz4WPdVYa9F3q0raNkburHSgVTcHt14XoUbj8BSTMsw-KfdTUSXVxNVv2nbyDBbDWlcAx2FahWftIjsIVNJunYGzGnWrd3RUK35GwlEmv7vlHYPH8__jp52osyaNy1HVJhpQhvgw3eGJjNqpLq75wTaK5boqLQaqh4cG00B3illjHTSA8Wje4p1LzAuh&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpd005FCIdhCuQYGlvuG-82uJlEvuGZd54x3MiMyWzJqjCOE8DTAUfKVWPF5HzwB6_4QClU7i5BGZXcu5zcJ82vyLukCEvKIshdHz5Oq5M5arnH_C4wlqXmg1wdb76ELufiyj3FVYWzN7GLP4iSFoiMQlaJ1cpUO-kpG8juVf-t5KzjCTPc4W3VKwavyTubEiyejApS0RJNCJ9XnEDVFCXrGhccba4vHbLtbp8G7sSJQEv1GGBb6QJH-tt53ok5hWxOCDQVfD3q16CUVhka13VeYLkOOIE8km4ogYKZh2WhGGpPcmjYEAoot6UQVuOC4PQC2aM0GrJMgAUVua1gkFwac0YOF3J633Hj_jnOWGbUd-UrNS5xeDqI1HaEQtH5HhteQPMOXv9ZzURLXxjYPxUhMijIwqa9OPLyQKnge9TfVIfQ&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpckwobvmuPC8oX02cZd_yv7vTb0XW1UXmh9f9RxgDExiG6VLLm0KDeGeFYr3RnvITl4PlI6iqIuvUZ-LaUlmFLtnkOOaF5KUyz__EBT2A-kKGhoTyPfsccWlxbsK2_7sbz-zR9F2Y62J3LzR8iHwEu6I0Yw52jnerWg-68qHPEvBtI0GNOTpyR2mB8Is7CYeirS_MGdbZrwUQ9PZPrJO1Sb3b3fLxMKK48F1x4Ht8fjqIBVAq59sgxqi-x0MLgmvc4E_lsGv8ri2xvG1ih67kPJEgK5NvIcrcAWczfYwAHaq9K2Tv-Sfzt5pFNylPAZDNU6i-vfDcCatKnsGa2TIGkHqmMTrtvPd0av_ejd70A5JXedK3E056DXCuxw1Oz96skclXxgvGnNio24rWHhtZjOIOZGXsHFoaF0AxuDXU4Dxg&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpcvqXX7gLjsxNoD0Z1_994FxlECf9rbpg8xRBaaJQOzHJYM5j18Tdod-W9V9VQa-2GxEikePL67pAp-lcI3h96J55xgyTAKYjO_dqwg1wzlTzoSmcCdYgF8qMvTMPLmYDVvQAEG0RqSAKsVRmKPwxbYgG1O8AaBjmhVFfkQqIlOnHPCUcSs7jhKEDgalbDZeUEZ-Jw-_LcFvq79L19RYHIbtDelLEdWweLl0l4yFjaVvn7Q2ESWHPIyjvanZFrtOKiLwJeX63Djk84U2rfdA77Pfy77DHiNAcA17u9VU2i_jI-jEW-k_PspcyT4wC3OULgqlDB3KBtVn6zIkHn36UmJnbEW6KvcvhrsyMczZCmHYwX18UvFgXqQljOelRPRqyem7xuDlzC3t1KYSiMCPvGJ2nQy65QrVyJOgls9wKZ3P9r4&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo",
+            "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=ATKogpcJV1bEAQL9v4K3KDm3WGVPjfAP8VOMUoB2uL8AY5uj1K4-4YeSYiHHJt1O3c94JbUCoAspyeV70lKawm-b0FE-B-oT4rh2oEvM1vu7hiAruUmlDoHVcMK9cfHvep7UbQsR5twJEZyHo__7Jt87aQ4n2-X4J9RxFpES76U09ppVQRfUK9-z1QzgF4Kzmqte_oR0N0Bd9ExAQ7TESd6zGwQ0CoWTKrkMojISL5Y0lSXRnO1GwT4leC-PPmtB2dodcTERzju1mqmnpYAb68gEBffj2hJW2Ph4WAltL8sBSDzWdOmywYHBsXShHjjfyBiMYQYostrtnQd9YaOGMI1uWEZvNS2lSw9g_72etRkoknJiS48b2Fb5UKXUAaJleyXP2sSVxYtsvIR5gYNIs8sN14XFMjcMECglMRRyqg2hrsU&key=AIzaSyDy0d5JQ21Y0n_gFnXZSUy1khHrLYftMIo"
+        ],
+        "highlights": [],
+        "hasEvent": false
+    }
+]
