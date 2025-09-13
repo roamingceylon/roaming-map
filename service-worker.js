@@ -1,11 +1,11 @@
-const CACHE_VERSION = "v1.0.10";
+const CACHE_VERSION = "v1.0.11";
 const CACHE_NAME = `roaming-map-cache-${CACHE_VERSION}`;
 const MAP_TILES_CACHE = `map-tiles-cache-${CACHE_VERSION}`;
 const DATA_CACHE = `data-cache-${CACHE_VERSION}`;
 
 // Data cache configuration
 const DATA_CONFIG = {
-  maxAge:  1000, // 24 hours
+  maxAge:  60 * 60 * 24 * 1000, // 24 hours
   version: '1.0.4' // Increment this when map-data.json structure changes
 };
 

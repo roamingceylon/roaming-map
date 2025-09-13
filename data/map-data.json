@@ -46,16 +46,6 @@
                 "name": "Galle Lighthouse",
                 "description": "Sub-attraction reference",
                 "venueId": "800800c9-879e-4d7a-b7a8-cacca71eb536"
-            },
-            {
-                "name": "Dutch Reformed Church",
-                "description": "Sub-attraction reference",
-                "venueId": "78ef495f-ca04-401a-8185-2eb8da3ad216"
-            },
-            {
-                "name": "Galle Lighthouse",
-                "description": "Sub-attraction reference",
-                "venueId": "800800c9-879e-4d7a-b7a8-cacca71eb536"
             }
         ],
         "hasEvent": true,
